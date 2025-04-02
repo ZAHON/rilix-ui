@@ -89,7 +89,7 @@ const UncontrolledDemo = component$(() => {
 
 | Prop                | Type                                   | Default | Description                                                                             |
 | ------------------- | -------------------------------------- | ------- | --------------------------------------------------------------------------------------- |
-| `uncontrolledValue` | `T \| undefined`                       | `-`     | Initial value for uncontrolled state. Use when you do not need to control the state     |
+| `uncontrolledValue` | `T \| undefined`                       | `-`     | Initial value for uncontrolled state. Use when you do not need to control the state.    |
 | `controlledSignal`  | `Signal<T> \| undefined`               | `-`     | The controlled signal. Must be used in conjunction with `onChange$.                     |
 | `finalValue`        | `T`                                    | `-`     | Final value for state when `uncontrolledValue` and `controlledSignal` are not provided. |
 | `onChange$`         | `QRL<(value: T) => void> \| undefined` | `-`     | Controlled state handler.                                                               |
