@@ -20,8 +20,22 @@ export const useUncontrolled = <T>(params: UseUncontrolledParams<T>) => {
     });
 
     return {
+      /**
+       * A readonly signal representing the current state.
+       * If `controlledSignal` is provided, it reflects the controlled state;
+       * otherwise, it holds the internal unmanaged state.
+       */
       state: controlledSignal as ReadonlySignal<T>,
+
+      /**
+       * Function to update the state.
+       * Calls `onChange$` when the state is controlled, or updates the internal state otherwise.
+       */
       setState$: handleControlledChange$,
+
+      /**
+       * Indicates whether the state is controlled or uncontrolled.
+       */
       controlled: true,
     };
   }
@@ -35,8 +49,22 @@ export const useUncontrolled = <T>(params: UseUncontrolledParams<T>) => {
   });
 
   return {
+    /**
+     * A readonly signal representing the current state.
+     * If `controlledSignal` is provided, it reflects the controlled state;
+     * otherwise, it holds the internal unmanaged state.
+     */
     state: uncontrolledState as ReadonlySignal<T>,
+
+    /**
+     * Function to update the state.
+     * Calls `onChange$` when the state is controlled, or updates the internal state otherwise.
+     */
     setState$: handleUncontrolledChange$,
+
+    /**
+     * Indicates whether the state is controlled or uncontrolled.
+     */
     controlled: false,
   };
 };
