@@ -2,24 +2,25 @@ import type { Signal, QRL } from '@builder.io/qwik';
 
 export interface UseUncontrolledParams<T> {
   /**
-   * Initial value for uncontrolled state.
-   * Use when you do not need to control the state.
+   * Default value used when the state is uncontrolled.
+   * Ignored if `controlledSignal` is provided.
    */
   uncontrolledValue: T | undefined;
 
   /**
-   * The controlled signal.
-   * Must be used in conjunction with `onChange$.
+   * A reactive signal that fully controls the component's state.
+   * Requires `onChange$` to propagate updates.
    */
   controlledSignal: Signal<T> | undefined;
 
   /**
-   * Final value for state when `uncontrolledValue` and `controlledSignal` are not provided.
+   * A fallback value that is used when neither `uncontrolledValue` nor `controlledSignal` are set.
    */
   finalValue: T;
 
   /**
-   * Controlled state handler.
+   * Callback triggered when the state changes.
+   * Used to synchronize controlled state updates.
    */
   onChange$: QRL<(value: T) => void> | undefined;
 }
