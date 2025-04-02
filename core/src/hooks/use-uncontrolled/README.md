@@ -1,6 +1,6 @@
 # useUncontrolled
 
-Manage state of both controlled and uncontrolled components.
+A hook for managing both controlled and uncontrolled state in a component.
 
 ## Import
 
@@ -51,12 +51,7 @@ const CustomInput = component$<CustomInputProps>((props) => {
 
   return (
     <>
-      <input
-        type="text"
-        value={state.value}
-        onInput$={(event: Event, currentTarget: HTMLInputElement) => setState$(currentTarget.value)}
-      />
-
+      <input type="text" value={state.value} onInput$={(event, currentTarget) => setState$(currentTarget.value)} />
       <p>
         Component is: <code>{controlled ? 'controlled' : 'uncontrolled'}</code>
       </p>
@@ -87,17 +82,17 @@ const UncontrolledDemo = component$(() => {
 
 ### Parameters
 
-| Prop                | Type                                   | Default | Description                                                                             |
-| ------------------- | -------------------------------------- | ------- | --------------------------------------------------------------------------------------- |
-| `uncontrolledValue` | `T \| undefined`                       | `-`     | Initial value for uncontrolled state. Use when you do not need to control the state.    |
-| `controlledSignal`  | `Signal<T> \| undefined`               | `-`     | The controlled signal. Must be used in conjunction with `onChange$.                     |
-| `finalValue`        | `T`                                    | `-`     | Final value for state when `uncontrolledValue` and `controlledSignal` are not provided. |
-| `onChange$`         | `QRL<(value: T) => void> \| undefined` | `-`     | Controlled state handler.                                                               |
+| Prop                | Type                                   | Default | Description                                                                                             |
+| ------------------- | -------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------- |
+| `uncontrolledValue` | `T \| undefined`                       | `-`     | Default value used when the state is uncontrolled. Ignored if `controlledSignal` is provided.           |
+| `controlledSignal`  | `Signal<T> \| undefined`               | `-`     | A reactive signal that fully controls the component's state. Requires `onChange$` to propagate updates. |
+| `finalValue`        | `T`                                    | `-`     | A fallback value that is used when neither `uncontrolledValue` nor `controlledSignal` are set.          |
+| `onChange$`         | `QRL<(value: T) => void> \| undefined` | `-`     | Callback triggered when the state changes. Used to synchronize controlled state updates.                |
 
 ### Returns
 
-| Prop         | Type                      | Description                                                      |
-| ------------ | ------------------------- | ---------------------------------------------------------------- |
-| `state`      | `ReadonlySignal<T>`       | The current value.                                               |
-| `setState$`  | `QRL<(value: T) => void>` | Function that allow change value.                                |
-| `controlled` | `boolean`                 | The value that indicates if state is controlled or uncontrolled. |
+| Prop         | Type                      | Description                                                                                                                                                              |
+| ------------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `state`      | `ReadonlySignal<T>`       | A readonly signal representing the current state. If `controlledSignal` is provided, it reflects the controlled state; otherwise, it holds the internal unmanaged state. |
+| `setState$`  | `QRL<(value: T) => void>` | Function to update the state. Calls `onChange$` when the state is controlled, or updates the internal state otherwise.                                                   |
+| `controlled` | `boolean`                 | Indicates whether the state is controlled or uncontrolled.                                                                                                               |
