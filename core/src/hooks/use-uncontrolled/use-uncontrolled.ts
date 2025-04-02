@@ -4,7 +4,7 @@ import { useSignal, $ } from '@builder.io/qwik';
 import { isDev, isSignal } from '@builder.io/qwik';
 
 /**
- * Manage state of both controlled and uncontrolled components.
+ * A hook for managing both controlled and uncontrolled state in a component.
  */
 export const useUncontrolled = <T>(params: UseUncontrolledParams<T>) => {
   const { controlledSignal, uncontrolledValue, finalValue, onChange$ } = params;
