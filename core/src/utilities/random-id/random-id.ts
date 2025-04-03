@@ -1,7 +1,7 @@
 import type { RandomIdParams } from './random-id.types';
 
 /**
- * A utility function that return random id.
+ * A utility function that generates a unique identifier with an optional prefix.
  */
 export const randomId = (params: RandomIdParams = {}) => {
   const { prefix = 'rilix-ui-' } = params;
