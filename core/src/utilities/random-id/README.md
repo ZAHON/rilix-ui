@@ -1,6 +1,6 @@
 # randomId
 
-Utility function that return random id.
+A utility function that generates a unique identifier with an optional prefix.
 
 ## Usage
 
@@ -26,15 +26,15 @@ const Demo = component$(() => {
 
 ### Parameters
 
-| Prop     | Type     | Default     | Description                                        |
-| -------- | -------- | ----------- | -------------------------------------------------- |
-| `prefix` | `string` | `rilix-ui-` | A prefix, which will be added to the generated id. |
+| Prop     | Type     | Default     | Description                                                                   |
+| -------- | -------- | ----------- | ----------------------------------------------------------------------------- |
+| `prefix` | `string` | `rilix-ui-` | An optional prefix that will be prepended to the generated unique identifier. |
 
 ### Returns
 
-| Prop   | Type     | Description    |
-| ------ | -------- | -------------- |
-| `uuid` | `string` | The random id. |
+| Prop   | Type     | Description          |
+| ------ | -------- | -------------------- |
+| `uuid` | `string` | A unique identifier. |
 
 ## Examples
 
