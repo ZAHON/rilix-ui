@@ -8,5 +8,10 @@ export const randomId = (params: RandomIdParams = {}) => {
 
   const uuid = `${prefix}${crypto.randomUUID().slice(0, 13)}`;
 
-  return { uuid };
+  return {
+    /**
+     * A unique identifier.
+     */
+    uuid,
+  };
 };
