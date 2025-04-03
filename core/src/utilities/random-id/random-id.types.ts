@@ -1,6 +1,6 @@
 export interface RandomIdParams {
   /**
-   * A prefix, which will be added to the generated id.
+   * An optional prefix that will be prepended to the generated unique identifier.
    * @default "rilix-ui-"
    */
   prefix?: string;
