@@ -2,6 +2,12 @@
 
 A utility function that generates a unique identifier with an optional prefix.
 
+## Import
+
+```tsx
+import { randomId } from 'rilix-ui';
+```
+
 ## Usage
 
 Utility function `randomId` that generates a random id with prefix. This function is usually used to generates a random id to bind input elements to labels.
