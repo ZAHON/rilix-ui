@@ -26,9 +26,9 @@ const Demo = component$(() => {
 
 ### Parameters
 
-| Prop     | Type     | Default     | Description                                                                   |
-| -------- | -------- | ----------- | ----------------------------------------------------------------------------- |
-| `prefix` | `string` | `rilix-ui-` | An optional prefix that will be prepended to the generated unique identifier. |
+| Prop     | Type     | Default       | Description                                                                   |
+| -------- | -------- | ------------- | ----------------------------------------------------------------------------- |
+| `prefix` | `string` | `"rilix-ui-"` | An optional prefix that will be prepended to the generated unique identifier. |
 
 ### Returns
 
