@@ -9,7 +9,7 @@ import { isDev, isSignal } from '@builder.io/qwik';
 export const useUncontrolled = <T>(params: UseUncontrolledParams<T>) => {
   const { controlledSignal, uncontrolledValue, finalValue, onChange$ } = params;
 
-  if (isDev && !isSignal(controlledSignal)) {
+  if (isDev && controlledSignal && !isSignal(controlledSignal)) {
     throw new Error('Rilix UI: useUncontrolled hook controlledSignal prop must be object of type Signal.');
   }
 
