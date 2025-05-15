@@ -59,10 +59,21 @@ describe('VisuallyHidden', () => {
 			`);
     });
 
-    it('should have inline style provided via style prop', async () => {
-      const VISUALLY_HIDDEN_COLOR = 'test';
+    it('should have inline style provided via style prop as objects', async () => {
+      const VISUALLY_HIDDEN_COLOR = 'rgb(255, 0, 0)';
 
-      await render(<VisuallyHidden.Root data-testid={VISUALLY_HIDDEN_TESTID} />);
+      await render(
+        <VisuallyHidden.Root style={{ color: VISUALLY_HIDDEN_COLOR }} data-testid={VISUALLY_HIDDEN_TESTID} />
+      );
+      expect(screen.getByTestId(VISUALLY_HIDDEN_TESTID)).toHaveStyle(`color: ${VISUALLY_HIDDEN_COLOR}`);
+    });
+
+    it('should have inline style provided via style prop as string', async () => {
+      const VISUALLY_HIDDEN_COLOR = 'rgb(255, 0, 0)';
+
+      await render(
+        <VisuallyHidden.Root style={`color: ${VISUALLY_HIDDEN_COLOR}`} data-testid={VISUALLY_HIDDEN_TESTID} />
+      );
       expect(screen.getByTestId(VISUALLY_HIDDEN_TESTID)).toHaveStyle(`color: ${VISUALLY_HIDDEN_COLOR}`);
     });
 
