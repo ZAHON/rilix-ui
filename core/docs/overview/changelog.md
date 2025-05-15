@@ -12,7 +12,11 @@
 
 - Add `useUncontrolled` hook.
 
+- Add `randomId` utility function.
+
 - Add `usePrevious` hook.
+
+- Add `useId` hook.
 
 - Add `composeRefs` utility function.
 
