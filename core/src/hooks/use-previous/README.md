@@ -18,7 +18,7 @@ import { usePrevious } from 'rilix-ui';
 
 const Demo = component$(() => {
   const currentValue = useSignal('');
-  const { previousValue } = usePrevious({ value: currentValue });
+  const previousValue = usePrevious({ value: currentValue });
 
   return (
     <>
@@ -47,6 +47,6 @@ const Demo = component$(() => {
 
 ### Returns
 
-| Prop            | Type                             | Description                                                                                                                                                   |
-| --------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `previousValue` | `ReadonlySignal<T \| undefined>` | A readonly signal containing the previous value of the provided signal. Initially, this signal has a value of `undefined` until the first change is detected. |
+| Type                             | Description                                                                                                                                                   |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ReadonlySignal<T \| undefined>` | A readonly signal containing the previous value of the provided signal. Initially, this signal has a value of `undefined` until the first change is detected. |
