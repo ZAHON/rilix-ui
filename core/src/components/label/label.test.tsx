@@ -43,6 +43,20 @@ describe('Label', () => {
       expect(screen.getByTestId(LABEL_ROOT_TESTID)).toHaveTextContent(LABEL_ROOT_TEXT);
     });
 
+    it('should have inline style provided via style prop as objects', async () => {
+      const LABEL_ROOT_COLOR = 'rgb(255, 0, 0)';
+
+      await render(<Label.Root style={{ color: LABEL_ROOT_COLOR }} data-testid={LABEL_ROOT_TESTID} />);
+      expect(screen.getByTestId(LABEL_ROOT_TESTID)).toHaveStyle(`color: ${LABEL_ROOT_COLOR}`);
+    });
+
+    it('should have inline style provided via style prop as string', async () => {
+      const LABEL_ROOT_COLOR = 'rgb(255, 0, 0)';
+
+      await render(<Label.Root style={`color: ${LABEL_ROOT_COLOR}`} data-testid={LABEL_ROOT_TESTID} />);
+      expect(screen.getByTestId(LABEL_ROOT_TESTID)).toHaveStyle(`color: ${LABEL_ROOT_COLOR}`);
+    });
+
     it('should prevent text selection when double clicking by default', async () => {
       const user = userEvent.setup();
       const LABEL_ROOT_TEXT = 'LABEL_ROOT_TEXT';
