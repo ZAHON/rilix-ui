@@ -26,7 +26,7 @@ interface InputProps {
 const Input = component$<InputProps>((props) => {
   const { id } = props;
 
-  const { uuid } = useId({ id });
+  const uuid = useId({ id });
 
   return (
     <>
@@ -60,6 +60,6 @@ const Demo = component$(() => {
 
 ### Returns
 
-| Prop   | Type     | Description                                                                                                             |
-| ------ | -------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `uuid` | `string` | A unique id. Either the custom `id` provided via parameters, or an auto-generated one prefixed with the given `prefix`. |
+| Type     | Description                                                                                                             |
+| -------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `string` | A unique id. Either the custom `id` provided via parameters, or an auto-generated one prefixed with the given `prefix`. |
