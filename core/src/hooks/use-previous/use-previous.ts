@@ -25,11 +25,5 @@ export const usePrevious = <T>(params: UsePreviousParams<T>) => {
     }
   });
 
-  return {
-    /**
-     * A readonly signal containing the previous value of the provided signal.
-     * Initially, this signal has a value of `undefined` until the first change is detected.
-     */
-    previousValue: previousValue as ReadonlySignal<typeof previousValue.value>,
-  };
+  return previousValue as ReadonlySignal<typeof previousValue.value>;
 };
