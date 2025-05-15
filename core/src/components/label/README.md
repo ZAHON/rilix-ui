@@ -54,7 +54,6 @@ Contains the content for the label. This component is based on the `label` eleme
 | `as`                           | `FunctionComponent` | `-`     | Change the default rendered element for the one passed as, merging their props and behavior. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
 | `for`                          | `string`            | `-`     | The id of the element the label is associated with.                                                                                                                                                                      |
 | `preventDblClickTextSelection` | `boolean`           | `true`  | When `true`, text selection is prevented when double clicking label.                                                                                                                                                     |
-| `style`                        | `CSSProperties`     | `-`     | The inline style for the element.                                                                                                                                                                                        |
 
 | Data attribute                            | Values                                                               |
 | ----------------------------------------- | -------------------------------------------------------------------- |
