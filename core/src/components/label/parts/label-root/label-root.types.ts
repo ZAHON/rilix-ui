@@ -1,4 +1,4 @@
-import type { PropsOf, FunctionComponent, CSSProperties } from '@builder.io/qwik';
+import type { PropsOf, FunctionComponent } from '@builder.io/qwik';
 
 export interface LabelRootProps extends PropsOf<'label'> {
   /**
@@ -18,9 +18,4 @@ export interface LabelRootProps extends PropsOf<'label'> {
    * @default true
    */
   preventDblClickTextSelection?: boolean;
-
-  /**
-   * The inline style for the element.
-   */
-  style?: CSSProperties;
 }
