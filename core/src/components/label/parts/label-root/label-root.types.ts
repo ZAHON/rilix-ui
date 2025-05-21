@@ -10,6 +10,7 @@ export interface LabelRootProps extends PropsOf<'label'> {
 
   /**
    * The id of the element the label is associated with.
+   * See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label#for).
    */
   for?: string;
 
