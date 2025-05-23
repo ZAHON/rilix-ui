@@ -62,9 +62,9 @@ const VisuallyHiddenDemo = component$(() => {
 
 Anything you put inside this component will be hidden from the screen but will be announced by screen readers. This component is based on the `span` element.
 
-| Prop | Type                | Default | Description                                                                                                                                                                                                              |
-| ---- | ------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `as` | `FunctionComponent` | `-`     | Change the default rendered element for the one passed as, merging their props and behavior. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
+| Prop | Type                | Default | Description                                         |
+| ---- | ------------------- | ------- | --------------------------------------------------- |
+| `as` | `FunctionComponent` | `-`     | The component that this component should render as. |
 
 | Data attribute | Values              |
 | -------------- | ------------------- |
