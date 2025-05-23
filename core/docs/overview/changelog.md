@@ -42,7 +42,7 @@
 
   ```tsx
   import { component$ } from '@builder.io/qwik';
-  import { Primitive } from '@/components';
+  import { Primitive } from 'rilix-ui';
 
   const PrimitiveDemo = component$(() => {
     return (
