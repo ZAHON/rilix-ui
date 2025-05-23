@@ -18,7 +18,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('A');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.a as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('A');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -36,7 +36,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('ABBR');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.abbr as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('ABBR');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -54,7 +54,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('ADDRESS');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.address as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('ADDRESS');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -72,7 +72,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('AREA');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.area as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('AREA');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -91,7 +91,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('ARTICLE');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.article as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('ARTICLE');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -109,7 +109,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('ASIDE');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.aside as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('ASIDE');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -127,7 +127,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('AUDIO');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.audio as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('AUDIO');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -145,7 +145,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('B');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.b as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('B');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -163,7 +163,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('BDI');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.bdi as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('BDI');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -181,7 +181,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('BDO');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.bdo as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('BDO');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -199,7 +199,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('BLOCKQUOTE');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.blockquote as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('BLOCKQUOTE');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -217,7 +217,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('BR');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.br as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('BR');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -235,7 +235,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('BUTTON');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.button as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('BUTTON');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -253,7 +253,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('CANVAS');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.canvas as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('CANVAS');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -271,7 +271,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('CAPTION');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.caption as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('CAPTION');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -289,7 +289,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('CITE');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.cite as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('CITE');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -307,7 +307,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('CODE');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.code as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('CODE');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -325,7 +325,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('COL');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.col as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('COL');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -344,7 +344,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('COLGROUP');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.colgroup as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('COLGROUP');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -362,7 +362,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('DATA');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.data as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('DATA');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -380,7 +380,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('DATALIST');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.datalist as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('DATALIST');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -398,7 +398,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('DD');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.dd as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('DD');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -416,7 +416,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('DEL');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.del as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('DEL');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -434,7 +434,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('DETAILS');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.details as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('DETAILS');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -452,7 +452,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('DFN');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.dfn as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('DFN');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -470,7 +470,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('DIALOG');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.dialog as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('DIALOG');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -488,7 +488,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('DIV');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.div as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('DIV');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -506,7 +506,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('DL');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.dl as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('DL');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -524,7 +524,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('DT');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.dt as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('DT');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -542,7 +542,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('EM');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.em as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('EM');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -560,7 +560,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('EMBED');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.embed as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('EMBED');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -579,7 +579,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('FIELDSET');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.fieldset as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('FIELDSET');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -597,7 +597,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('FIGCAPTION');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.figcaption as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('FIGCAPTION');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -615,7 +615,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('FIGURE');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.figure as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('FIGURE');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -633,7 +633,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('FOOTER');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.footer as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('FOOTER');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -651,7 +651,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('FORM');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.form as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('FORM');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -669,7 +669,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('H1');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.h1 as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('H1');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -687,7 +687,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('H2');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.h2 as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('H2');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -705,7 +705,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('H3');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.h3 as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('H3');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -723,7 +723,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('H4');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.h4 as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('H4');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -741,7 +741,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('H5');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.h5 as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('H5');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -759,7 +759,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('H6');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.h6 as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('H6');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -777,7 +777,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('HEADER');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.header as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('HEADER');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -795,7 +795,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('HGROUP');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.hgroup as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('HGROUP');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -813,7 +813,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('HR');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.hr as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('HR');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -832,7 +832,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('I');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.i as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('I');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -850,7 +850,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('IFRAME');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.iframe as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('IFRAME');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -869,7 +869,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('IMG');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.img as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('IMG');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -888,7 +888,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('INPUT');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.input as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('INPUT');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -907,7 +907,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('INS');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.ins as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('INS');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -925,7 +925,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('KBD');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.kbd as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('KBD');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -943,7 +943,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('LABEL');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.label as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('LABEL');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -961,7 +961,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('LEGEND');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.legend as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('LEGEND');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -979,7 +979,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('LI');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.li as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('LI');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -997,7 +997,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('MAIN');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.main as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('MAIN');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1015,7 +1015,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('MAP');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.map as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('MAP');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1033,7 +1033,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('MARK');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.mark as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('MARK');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1051,7 +1051,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('MENU');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.menu as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('MENU');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1069,7 +1069,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('METER');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.meter as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('METER');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1087,7 +1087,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('NAV');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.nav as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('NAV');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1105,7 +1105,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('NOSCRIPT');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.noscript as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('NOSCRIPT');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1123,7 +1123,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('OBJECT');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.object as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('OBJECT');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1141,7 +1141,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('OL');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.ol as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('OL');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1159,7 +1159,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('OPTGROUP');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.optgroup as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('OPTGROUP');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1177,7 +1177,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('OPTION');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.option as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('OPTION');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1195,7 +1195,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('OUTPUT');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.output as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('OUTPUT');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1213,7 +1213,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('P');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.p as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('P');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1231,7 +1231,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('PICTURE');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.picture as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('PICTURE');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1249,7 +1249,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('PRE');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.pre as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('PRE');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1267,7 +1267,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('PROGRESS');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.progress as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('PROGRESS');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1285,7 +1285,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('Q');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.q as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('Q');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1303,7 +1303,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('RP');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.rp as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('RP');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1321,7 +1321,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('RT');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.rt as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('RT');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1339,7 +1339,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('RUBY');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.ruby as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('RUBY');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1357,7 +1357,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('S');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.s as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('S');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1375,7 +1375,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('SAMP');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.samp as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('SAMP');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1393,7 +1393,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('SEARCH');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.search as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('SEARCH');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1411,7 +1411,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('SECTION');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.section as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('SECTION');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1429,7 +1429,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('SELECT');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.select as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('SELECT');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1447,7 +1447,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('SMALL');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.small as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('SMALL');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1465,7 +1465,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('SOURCE');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.source as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('SOURCE');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1484,7 +1484,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('SPAN');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.span as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('SPAN');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1502,7 +1502,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('STRONG');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.strong as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('STRONG');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1520,7 +1520,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('SUB');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.sub as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('SUB');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1538,7 +1538,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('SUMMARY');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.summary as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('SUMMARY');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1556,7 +1556,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('SUP');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.sup as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('SUP');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1574,7 +1574,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('svg');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.svg as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('svg');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1592,7 +1592,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('TABLE');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.table as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('TABLE');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1610,7 +1610,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('TBODY');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.tbody as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('TBODY');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1628,7 +1628,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('TD');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.td as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('TD');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1646,7 +1646,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('TEMPLATE');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.template as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('TEMPLATE');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1664,7 +1664,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('TEXTAREA');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.textarea as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('TEXTAREA');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1683,7 +1683,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('TFOOT');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.tfoot as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('TFOOT');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1701,7 +1701,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('TH');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.th as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('TH');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1719,7 +1719,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('THEAD');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.thead as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('THEAD');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1737,7 +1737,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('TIME');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.time as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('TIME');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1755,7 +1755,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('TR');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.tr as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('TR');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1773,7 +1773,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('TRACK');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.track as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('TRACK');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1792,7 +1792,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('U');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.u as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('U');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1810,7 +1810,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('UL');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.ul as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('UL');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1828,7 +1828,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('VAR');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.var as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('VAR');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1846,7 +1846,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('VIDEO');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.video as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('VIDEO');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
@@ -1864,7 +1864,7 @@ describe('Primitive', () => {
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('WBR');
     });
 
-    it('should be element provided via as prop', async () => {
+    it('should render as the element specified by the "as" prop', async () => {
       await render(<Primitive.wbr as={AS_COMPONENT} data-testid={PRIMITIVE_TESTID} />);
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).not.toBe('WBR');
       expect(screen.getByTestId(PRIMITIVE_TESTID).tagName).toBe('XYZ');
