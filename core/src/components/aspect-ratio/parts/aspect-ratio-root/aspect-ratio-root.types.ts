@@ -1,4 +1,4 @@
-import type { PropsOf, FunctionComponent } from '@builder.io/qwik';
+import type { PropsOf, Component } from '@builder.io/qwik';
 
 export interface AspectRatioRootProps extends PropsOf<'div'> {
   /**
@@ -6,7 +6,7 @@ export interface AspectRatioRootProps extends PropsOf<'div'> {
    *
    * Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details.
    */
-  as?: FunctionComponent;
+  as?: Component;
 
   /**
    * The desired ratio, e.g. `16 / 9`.
