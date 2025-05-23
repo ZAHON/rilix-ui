@@ -1,5 +1,6 @@
 import { AspectRatioRootProps } from './aspect-ratio-root.types';
 import { component$, useComputed$, useContextProvider, Slot } from '@builder.io/qwik';
+import { Primitive } from '@/components';
 import { combineStyle } from '@/utilities';
 import { AspectRatioContext } from '../../context';
 
@@ -18,7 +19,7 @@ export const AspectRatioRoot = component$<AspectRatioRootProps>((props) => {
 
   useContextProvider(AspectRatioContext, { aspect });
 
-  const Component = as || 'div';
+  const Component = as || (Primitive.div as unknown as 'div');
 
   return (
     <Component
