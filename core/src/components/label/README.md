@@ -49,11 +49,11 @@ const LabelDemo = component$(() => {
 
 Contains the content for the label. This component is based on the `label` element.
 
-| Prop                           | Type                | Default | Description                                                                                                                                                                                                              |
-| ------------------------------ | ------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `as`                           | `FunctionComponent` | `-`     | Change the default rendered element for the one passed as, merging their props and behavior. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
-| `for`                          | `string`            | `-`     | The id of the element the label is associated with. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label#for).                                                                           |
-| `preventDblClickTextSelection` | `boolean`           | `true`  | When `true`, text selection is prevented when double clicking label.                                                                                                                                                     |
+| Prop                           | Type                | Default | Description                                                                                                                                    |
+| ------------------------------ | ------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `as`                           | `FunctionComponent` | `-`     | The component that this component should render as.                                                                                            |
+| `for`                          | `string`            | `-`     | The id of the element the label is associated with. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label#for). |
+| `preventDblClickTextSelection` | `boolean`           | `true`  | When `true`, text selection is prevented when double clicking label.                                                                           |
 
 | Data attribute                            | Values                                                               |
 | ----------------------------------------- | -------------------------------------------------------------------- |
