@@ -1,5 +1,5 @@
 import type { LabelRootProps } from './label-root.types';
-import { component$, useComputed$, sync$, Slot } from '@builder.io/qwik';
+import { component$, sync$, Slot } from '@builder.io/qwik';
 import { Primitive } from '@/components';
 
 /**
@@ -7,9 +7,7 @@ import { Primitive } from '@/components';
  * This component is based on the `label` element.
  */
 export const LabelRoot = component$<LabelRootProps>((props) => {
-  const { as, preventDblClickTextSelection = true, onMouseDown$, style: _style, ...others } = props;
-
-  const style = useComputed$(() => _style);
+  const { as, preventDblClickTextSelection = true, onMouseDown$, ...others } = props;
 
   const handleMouseDownSync$ = sync$((event: MouseEvent, currentTarget: HTMLElement) => {
     // Only prevent text selection if clicking inside the label itself.
@@ -30,7 +28,6 @@ export const LabelRoot = component$<LabelRootProps>((props) => {
       data-part="root"
       data-prevent-dbl-click-text-selection={preventDblClickTextSelection ? '' : undefined}
       onMouseDown$={[handleMouseDownSync$, onMouseDown$]}
-      style={style.value}
       {...others}
     >
       <Slot />
