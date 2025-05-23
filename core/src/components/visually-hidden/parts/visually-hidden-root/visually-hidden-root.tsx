@@ -1,6 +1,6 @@
 import type { VisuallyHiddenRootProps } from './visually-hidden-root.types';
 import { component$, useComputed$, Slot } from '@builder.io/qwik';
-import { combineStyle, visuallyHiddenStyle } from '@//utilities';
+import { combineStyle, visuallyHiddenStyle } from '@/utilities';
 
 /**
  * Anything you put inside this component will be hidden from the screen but will be announced by screen readers.
