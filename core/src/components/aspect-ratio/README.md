@@ -58,10 +58,10 @@ const AspectRatioDemo = component$(() => {
 
 Contains all the parts of an aspect ratio. This component is based on the `div` element.
 
-| Prop    | Type                | Default | Description                                                                                                                                                                                                              |
-| ------- | ------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `as`    | `FunctionComponent` | `-`     | Change the default rendered element for the one passed as, merging their props and behavior. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
-| `ratio` | `number`            | `1`     | The desired ratio, e.g. `16 / 9`.                                                                                                                                                                                        |
+| Prop    | Type        | Default | Description                                         |
+| ------- | ----------- | ------- | --------------------------------------------------- |
+| `as`    | `Component` | `-`     | The component that this component should render as. |
+| `ratio` | `number`    | `1`     | The desired ratio, e.g. `16 / 9`.                   |
 
 | Data attribute  | Values                           |
 | --------------- | -------------------------------- |
@@ -73,9 +73,9 @@ Contains all the parts of an aspect ratio. This component is based on the `div` 
 
 Contains the content you want to constrain to a given ratio. This component is based on the `div` element.
 
-| Prop | Type                | Default | Description                                                                                                                                                                                                              |
-| ---- | ------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `as` | `FunctionComponent` | `-`     | Change the default rendered element for the one passed as, merging their props and behavior. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
+| Prop | Type        | Default | Description                                         |
+| ---- | ----------- | ------- | --------------------------------------------------- |
+| `as` | `Component` | `-`     | The component that this component should render as. |
 
 | Data attribute  | Values                           |
 | --------------- | -------------------------------- |
