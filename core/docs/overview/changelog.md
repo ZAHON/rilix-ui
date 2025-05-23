@@ -227,7 +227,7 @@
 
 ## 0.3.1 (06.04.2025)
 
-🐞 Bug Fixes
+### 🐞 Bug Fixes
 
 - Fix runtime error in `useUncontrolled` hook. Previously, tthis hook performed a type check on `controlledSignal` using `isSignal` without ensuring it was defined. In development mode, this could result in a runtime error when `controlledSignal` was undefined.
 
