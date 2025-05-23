@@ -235,15 +235,173 @@
 
 ### 🚀 Features
 
-- Add `useUncontrolled` hook.
+- Add `useUncontrolled` hook, which manages both controlled and uncontrolled state within a component.
 
-- Add `randomId` utility function.
+  ```tsx
+  import type { Signal, QRL } from '@builder.io/qwik';
+  import { component$, useSignal } from '@builder.io/qwik';
+  import { useUncontrolled } from 'rilix-ui';
 
-- Add `usePrevious` hook.
+  interface CustomInputProps {
+    /**
+     * The default value of the custom input when initially rendered.
+     * Use when you do not need to control its the value.
+     */
+    defaultValue?: string;
 
-- Add `useId` hook.
+    /**
+     * The controlled value of the custom input.
+     * Must be used in conjunction with `onValueChange$`.
+     */
+    value?: Signal<string>;
 
-- Add `composeRefs` utility function.
+    /**
+     * Event handler called when the value of the custom input changes.
+     */
+    onValueChange$?: QRL<(value: string) => void>;
+  }
+
+  /**
+   * This custom input can be controlled or uncontrolled.
+   */
+  const CustomInput = component$<CustomInputProps>((props) => {
+    const { defaultValue, value, onValueChange$ } = props;
+
+    const { state, setState$, controlled } = useUncontrolled({
+      uncontrolledValue: defaultValue,
+      controlledSignal: value,
+      finalValue: '',
+      onChange$: onValueChange$,
+    });
+
+    return (
+      <>
+        <input type="text" value={state.value} onInput$={(event, currentTarget) => setState$(currentTarget.value)} />
+        <p>
+          Component is: <code>{controlled ? 'controlled' : 'uncontrolled'}</code>
+        </p>
+      </>
+    );
+  });
+
+  const ControlledDemo = component$(() => {
+    const controlledValue = useSignal('controlled');
+
+    return (
+      <>
+        <p>Controlled value: {controlledValue.value}</p>
+        <button type="button" onClick$={() => (controlledValue.value = crypto.randomUUID())}>
+          Set random controlled value
+        </button>
+        <CustomInput value={controlledValue} onValueChange$={(value) => (controlledValue.value = value)} />
+      </>
+    );
+  });
+
+  const UncontrolledDemo = component$(() => {
+    return <CustomInput defaultValue="uncontrolled" />;
+  });
+  ```
+
+- Add `usePrevious` hook, which tracks and returns the previous value of a given signal.
+
+  ```tsx
+  import { component$, useSignal } from '@builder.io/qwik';
+  import { usePrevious } from 'rilix-ui';
+
+  const Demo = component$(() => {
+    const currentValue = useSignal('');
+    const { previousValue } = usePrevious({ value: currentValue });
+
+    return (
+      <>
+        <label for="input">Enter some text here</label>
+        <input
+          type="text"
+          id="input"
+          autocomplete="off"
+          value={currentValue.value}
+          onInput$={(event, currentTarget) => (currentValue.value = currentTarget.value)}
+        />
+        <p>Current value: {currentValue.value}</p>
+        <p>Previous value: {previousValue.value}</p>
+      </>
+    );
+  });
+  ```
+
+- Add `useId` hook, which generates a unique identifier with an optional prefix and supports custom ID overrides.
+
+  ```tsx
+  import { component$ } from '@builder.io/qwik';
+  import { useId } from 'rilix-ui';
+
+  interface InputProps {
+    /**
+     * A unique id of the input.
+     */
+    id?: string;
+  }
+
+  const Input = component$<InputProps>((props) => {
+    const { id } = props;
+
+    const { uuid } = useId({ id });
+
+    return (
+      <>
+        <label for={uuid}>Input label</label>
+        <input type="text" id={uuid} />
+      </>
+    );
+  });
+
+  const Demo = component$(() => {
+    return (
+      <>
+        {/* Input and label will have unique id. */}
+        <Input />
+
+        {/* Input and label will have id "my-id". */}
+        <Input id="my-id" />
+      </>
+    );
+  });
+  ```
+
+- Add `randomId` utility function, which returns a random ID.
+
+  ```tsx
+  import { component$, useConstant } from '@builder.io/qwik';
+  import { randomId } from 'rilix-ui';
+
+  const Demo = component$(() => {
+    const { uuid } = useConstant(randomId());
+
+    return (
+      <>
+        <label for={uuid}>Input label</label>
+        <input type="text" id={uuid} />
+      </>
+    );
+  });
+  ```
+
+- Add `composeRefs` utility function, which allows assigning a single DOM element to multiple refs.
+
+  ```tsx
+  import type { PropsOf } from '@builder.io/qwik';
+  import { component$, useSignal } from '@builder.io/qwik';
+  import { composeRefs } from 'rilix-ui';
+
+  const Demo = component$<PropsOf<'div'>>((props) => {
+    const { ref, ...others } = props;
+
+    const localRef = useSignal<HTMLElement | undefined>(undefined);
+
+    return <div ref={composeRefs([ref, localRef])} {...others} />;
+  });
+  ```
 
 ## 0.2.0 (02.04.2025)
 
