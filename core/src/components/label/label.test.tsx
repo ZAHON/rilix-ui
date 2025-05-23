@@ -1,5 +1,5 @@
 import type { PropsOf } from '@builder.io/qwik';
-import { component$, Slot } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 import { describe, it, expect } from 'vitest';
 import { render, screen, waitFor } from '@noma.to/qwik-testing-library';
 import { userEvent } from '@testing-library/user-event';
@@ -12,28 +12,18 @@ describe('Label', () => {
   describe('Root', () => {
     it('should be <label> element by default', async () => {
       await render(<Label.Root data-testid={LABEL_ROOT_TESTID} />);
-      expect(screen.getByTestId(LABEL_ROOT_TESTID)).toBeInstanceOf(HTMLLabelElement);
+      expect(screen.getByTestId(LABEL_ROOT_TESTID).tagName).toBe('LABEL');
     });
 
-    it('should be element provided via as prop', async () => {
-      const LABEL_ROOT_TEXT = 'LABEL_ROOT_TEXT';
-
+    it('should render as the element specified by the "as" prop', async () => {
       const Primitive = component$((props: PropsOf<'span'>) => {
-        return (
-          <span {...props}>
-            <Slot />
-          </span>
-        );
+        return <span {...props} />;
       });
 
-      await render(
-        <Label.Root as={Primitive} data-testid={LABEL_ROOT_TESTID}>
-          {LABEL_ROOT_TEXT}
-        </Label.Root>
-      );
+      await render(<Label.Root as={Primitive} data-testid={LABEL_ROOT_TESTID} />);
       expect(screen.getByTestId(LABEL_ROOT_TESTID)).not.toBeInstanceOf(HTMLLabelElement);
-      expect(screen.getByTestId(LABEL_ROOT_TESTID)).toBeInstanceOf(HTMLSpanElement);
-      expect(screen.getByTestId(LABEL_ROOT_TESTID)).toHaveTextContent(LABEL_ROOT_TEXT);
+      expect(screen.getByTestId(LABEL_ROOT_TESTID).tagName).not.toBe('LABEL');
+      expect(screen.getByTestId(LABEL_ROOT_TESTID).tagName).toBe('SPAN');
     });
 
     it('should contain passed children', async () => {
