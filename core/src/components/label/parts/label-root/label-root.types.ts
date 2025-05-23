@@ -1,10 +1,10 @@
-import type { PropsOf, FunctionComponent } from '@builder.io/qwik';
+import type { PropsOf, Component } from '@builder.io/qwik';
 
 export interface LabelRootProps extends PropsOf<'label'> {
   /**
    * The component that this component should render as.
    */
-  as?: FunctionComponent;
+  as?: Component;
 
   /**
    * The id of the element the label is associated with.
