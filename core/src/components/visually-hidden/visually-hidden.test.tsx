@@ -1,5 +1,5 @@
 import type { PropsOf } from '@builder.io/qwik';
-import { component$, Slot } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@noma.to/qwik-testing-library';
 import { VisuallyHidden } from '.';
@@ -10,28 +10,17 @@ describe('VisuallyHidden', () => {
   describe('Root', () => {
     it('should be <span> element by default', async () => {
       await render(<VisuallyHidden.Root data-testid={VISUALLY_HIDDEN_TESTID} />);
-      expect(screen.getByTestId(VISUALLY_HIDDEN_TESTID)).toBeInstanceOf(HTMLSpanElement);
+      expect(screen.getByTestId(VISUALLY_HIDDEN_TESTID).tagName).toBe('SPAN');
     });
 
-    it('should be element provided via as prop', async () => {
-      const VISUALLY_HIDDEN_TEXT = 'VISUALLY_HIDDEN_TEXT';
-
+    it('should render as the element specified by the "as" prop', async () => {
       const Primitive = component$((props: PropsOf<'fiv'>) => {
-        return (
-          <div {...props}>
-            <Slot />
-          </div>
-        );
+        return <div {...props} />;
       });
 
-      await render(
-        <VisuallyHidden.Root as={Primitive} data-testid={VISUALLY_HIDDEN_TESTID}>
-          {VISUALLY_HIDDEN_TEXT}
-        </VisuallyHidden.Root>
-      );
-      expect(screen.getByTestId(VISUALLY_HIDDEN_TESTID)).not.toBeInstanceOf(HTMLSpanElement);
-      expect(screen.getByTestId(VISUALLY_HIDDEN_TESTID)).toBeInstanceOf(HTMLDivElement);
-      expect(screen.getByTestId(VISUALLY_HIDDEN_TESTID)).toHaveTextContent(VISUALLY_HIDDEN_TEXT);
+      await render(<VisuallyHidden.Root as={Primitive} data-testid={VISUALLY_HIDDEN_TESTID} />);
+      expect(screen.getByTestId(VISUALLY_HIDDEN_TESTID).tagName).not.toBe('SPAN');
+      expect(screen.getByTestId(VISUALLY_HIDDEN_TESTID).tagName).toBe('DIV');
     });
 
     it('should contain passed children', async () => {
