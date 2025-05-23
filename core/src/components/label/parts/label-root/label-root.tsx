@@ -1,5 +1,6 @@
 import type { LabelRootProps } from './label-root.types';
 import { component$, useComputed$, sync$, Slot } from '@builder.io/qwik';
+import { Primitive } from '@/components';
 
 /**
  * Contains the content for the label.
@@ -20,7 +21,7 @@ export const LabelRoot = component$<LabelRootProps>((props) => {
     if (preventDblClickTextSelection && !event.defaultPrevented && event.detail > 1) event.preventDefault();
   });
 
-  const Component = as || 'label';
+  const Component = as || (Primitive.label as unknown as 'label');
 
   return (
     <Component
