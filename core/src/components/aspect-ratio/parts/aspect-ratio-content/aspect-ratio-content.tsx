@@ -1,5 +1,6 @@
 import { AspectRatioContentProps } from './aspect-ratio-content.types';
 import { component$, useContext, useComputed$, Slot } from '@builder.io/qwik';
+import { Primitive } from '@/components';
 import { combineStyle } from '@//utilities';
 import { AspectRatioContext } from '../../context';
 
@@ -16,7 +17,7 @@ export const AspectRatioContent = component$<AspectRatioContentProps>((props) =>
     combineStyle({ position: 'absolute', top: 0, right: 0, bottom: 0, left: 0 }, style)
   );
 
-  const Component = as || 'div';
+  const Component = as || (Primitive.div as unknown as 'div');
 
   return (
     <Component
