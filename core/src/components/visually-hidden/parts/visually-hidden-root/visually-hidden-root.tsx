@@ -1,5 +1,6 @@
 import type { VisuallyHiddenRootProps } from './visually-hidden-root.types';
 import { component$, useComputed$, Slot } from '@builder.io/qwik';
+import { Primitive } from '@/components';
 import { combineStyle, visuallyHiddenStyle } from '@/utilities';
 
 /**
@@ -11,7 +12,7 @@ export const VisuallyHiddenRoot = component$<VisuallyHiddenRootProps>((props) =>
 
   const combinedStyle = useComputed$(() => combineStyle(visuallyHiddenStyle, style));
 
-  const Component = as || 'span';
+  const Component = as || (Primitive.span as unknown as 'span');
 
   return (
     <Component
