@@ -1003,7 +1003,7 @@ const Text = component$<TextProps>((props) => {
   const { as, ...others } = props;
 
   // If `as` prop is not passed this component will render the `p` element by default.
-  const Component = as || Primitive.p;
+  const Component = as || (Primitive.p as unknown as 'p');
 
   return (
     <Component {...others}>
