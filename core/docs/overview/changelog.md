@@ -1,5 +1,60 @@
 # Changelog
 
+## 0.5.0 (24.05.2025)
+
+### 🚀 Features
+
+- Add the `AspectRatio` component that displays content within a desired ratio.
+
+  ```tsx
+  import { component$ } from '@builder.io/qwik';
+  import { AspectRatio } from 'rilix-ui';
+
+  const AspectRatioDemo = component$(() => {
+    return (
+      <div style={{ width: '18.75rem', overflow: 'hidden' }}>
+        <AspectRatio.Root ratio={16 / 9}>
+          <AspectRatio.Content>
+            <img
+              src="https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80"
+              alt="Landscape photograph by Tobias Tullius"
+              style={{ objectFit: 'cover', height: '100%', width: '100%' }}
+            />
+          </AspectRatio.Content>
+        </AspectRatio.Root>
+      </div>
+    );
+  });
+  ```
+
+- Add the `Alert` component to display a brief, important message in a way that attracts the user's attention without interrupting their task.
+
+  ```tsx
+  import { component$ } from '@builder.io/qwik';
+  import { Alert } from 'rilix-ui';
+
+  const AlertDemo = component$(() => {
+    return <Alert.Root>Access denied. Please contact the network administrator to view this page.</Alert.Root>;
+  });
+  ```
+
+- Add the `Primitive` component, which offers base components that wrap standard HTML elements, providing their default behavior and props. These can be rendered using an alternative element type or your own component via the `as` prop, enabling flexible composition and overriding the underlying element.
+
+  ```tsx
+  import { component$ } from '@builder.io/qwik';
+  import { Primitive } from '@/components';
+
+  const PrimitiveDemo = component$(() => {
+    return (
+      <>
+        <Primitive.p>This is a paragraph element.</Primitive.p>
+        <Primitive.div>This is a div element.</Primitive.div>
+        <Primitive.span>This is a span element.</Primitive.span>
+      </>
+    );
+  });
+  ```
+
 ## 0.4.0 (15.05.2025)
 
 ### 🚀 Features
