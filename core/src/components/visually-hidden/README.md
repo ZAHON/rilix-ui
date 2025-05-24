@@ -62,9 +62,9 @@ const VisuallyHiddenDemo = component$(() => {
 
 Anything you put inside this component will be hidden from the screen but will be announced by screen readers. This component is based on the `span` element.
 
-| Prop | Type                | Default | Description                                         |
-| ---- | ------------------- | ------- | --------------------------------------------------- |
-| `as` | `FunctionComponent` | `-`     | The component that this component should render as. |
+| Prop | Type        | Default | Description                                         |
+| ---- | ----------- | ------- | --------------------------------------------------- |
+| `as` | `Component` | `-`     | The component that this component should render as. |
 
 | Data attribute | Values              |
 | -------------- | ------------------- |
