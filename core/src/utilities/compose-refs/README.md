@@ -36,6 +36,6 @@ const Demo = component$<PropsOf<'div'>>((props) => {
 
 ### Returns
 
-| Type                | Description                                                             |
-| ------------------- | ----------------------------------------------------------------------- |
-| `(node: T) => void` | A function that accepts a DOM node and assigns it to each provided ref. |
+| Type                     | Description                                                             |
+| ------------------------ | ----------------------------------------------------------------------- |
+| `QRL<(node: T) => void>` | A function that accepts a DOM node and assigns it to each provided ref. |
