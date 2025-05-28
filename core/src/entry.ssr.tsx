@@ -1,10 +1,7 @@
-import { renderToStream, type RenderToStreamOptions } from '@builder.io/qwik/server';
-import { manifest } from '@qwik-client-manifest';
+import type { RenderToStreamOptions } from '@builder.io/qwik/server';
+import { renderToStream } from '@builder.io/qwik/server';
 import Root from './root';
 
 export default function (opts: RenderToStreamOptions) {
-  return renderToStream(<Root />, {
-    manifest,
-    ...opts,
-  });
+  return renderToStream(<Root />, { ...opts });
 }
