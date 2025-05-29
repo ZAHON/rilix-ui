@@ -57,6 +57,8 @@ The `clamp` function accepts a single parameter: an **object** with the followin
 
 ### Returns
 
+The `clamp` function returns a single numeric value that has been adjusted to fit within the specified `min` and `max` bounds.
+
 | Type     | Description                                                                                                                                                                                                          |
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `number` | The clamped value, which will be `min` if the original `value` is less than `min`, `max` if the original `value` is greater than `max`, or the original `value` itself if it falls within the `min` and `max` range. |
