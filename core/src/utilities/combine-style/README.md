@@ -48,6 +48,8 @@ The `combineStyle` function accepts two **required** parameters: `style1` and `s
 
 ### Returns
 
+The `combineStyle` function returns the merged CSS styles, which can be either an object or a string, depending on the input types.
+
 | Type            | Description                                                                                                                                                                                                                                                                                                                                                                         |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `CSSProperties` | A new object containing the merged CSS styles. If both `style1` and `style2` are strings, it returns a single string with the styles concatenated using a semicolon. In cases where one is an object and the other a string, the string is converted to an object and then merged. If one or both inputs are `undefined`, they are treated as empty styles for the merging process. |
