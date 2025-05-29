@@ -10,7 +10,9 @@ export const useUncontrolled = <T>(params: UseUncontrolledParams<T>) => {
   const { controlledSignal, uncontrolledValue, finalValue, onChange$ } = params;
 
   if (isDev && controlledSignal && !isSignal(controlledSignal)) {
-    throw new Error('Rilix UI: useUncontrolled hook controlledSignal prop must be object of type Signal.');
+    throw new Error(
+      `Rilix UI: The 'controlledSignal' parameter in 'useUncontrolled' hook must be a Signal. Received: ${typeof controlledSignal}.`
+    );
   }
 
   // If a controlled signal has been passed, we return it immediately.
