@@ -39,10 +39,12 @@ const Demo = component$<PropsOf<'div'>>((props) => {
 
 ### Parameters
 
-| Prop     | Type                                   | Default | Description                                             |
-| -------- | -------------------------------------- | ------- | ------------------------------------------------------- |
-| `style1` | `string \| CSSProperties \| undefined` | `-`     | The first set of inline CSS styles (string or object).  |
-| `style2` | `string \| CSSProperties \| undefined` | `-`     | The second set of inline CSS styles (string or object). |
+Parameters marked with an asterisk (`*`) are **required**.
+
+| Param     | Type                                   | Default | Description                                             |
+| --------- | -------------------------------------- | ------- | ------------------------------------------------------- |
+| `style1*` | `string \| CSSProperties \| undefined` | `-`     | The first set of inline CSS styles (string or object).  |
+| `style2*` | `string \| CSSProperties \| undefined` | `-`     | The second set of inline CSS styles (string or object). |
 
 ### Returns
 
