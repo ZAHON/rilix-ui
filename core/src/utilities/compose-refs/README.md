@@ -30,9 +30,11 @@ const Demo = component$<PropsOf<'div'>>((props) => {
 
 ### Parameters
 
-| Prop   | Type             | Default | Description                                                                                                                                                      |
-| ------ | ---------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `refs` | `PossibleRef<T>` | `-`     | An array of refs that can be either signals, callback refs, or undefined. Each ref will be assigned the provided DOM node when the returned function is invoked. |
+The `composeRefs` function accepts a single, **required** parameter named `refs`.
+
+| Param   | Type             | Default | Description                                                                                                                                                      |
+| ------- | ---------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `refs*` | `PossibleRef<T>` | `-`     | An array of refs that can be either signals, callback refs, or undefined. Each ref will be assigned the provided DOM node when the returned function is invoked. |
 
 ### Returns
 
