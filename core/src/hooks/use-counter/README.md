@@ -19,7 +19,7 @@ import { useCounter } from 'rilix-ui';
 const Demo = component$(() => {
   const { count, increment$, decrement$, set$, reset$ } = useCounter({
     initialValue: 0,
-    step: 0.1,
+    step: 1,
     min: 0,
     max: 10,
     onCountChange$: $((count) => console.log(`Count: ${count}`)),
