@@ -43,9 +43,11 @@ const Demo = component$(() => {
 
 ### Parameters
 
-| Prop    | Type     | Default | Description                            |
-| ------- | -------- | ------- | -------------------------------------- |
-| `style` | `string` | `-`     | A string containing inline CSS styles. |
+The `stringStyleToObject` function accepts a single **required** parameter: `style`.
+
+| Param    | Type     | Default | Description                            |
+| -------- | -------- | ------- | -------------------------------------- |
+| `style*` | `string` | `-`     | A string containing inline CSS styles. |
 
 ### Returns
 
