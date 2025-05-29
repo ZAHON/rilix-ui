@@ -49,7 +49,7 @@ The `useBoolean` hook accepts a single parameter, which is an **object** with th
 
 ### Returns
 
-| Prop        | Type                      | Description                                             |
+| Param       | Type                      | Description                                             |
 | ----------- | ------------------------- | ------------------------------------------------------- |
 | `state`     | `ReadonlySignal<boolean>` | A readonly signal containing the current boolean value. |
 | `setTrue$`  | `QRL<() => void>`         | Function to set the boolean state to `true`.            |
