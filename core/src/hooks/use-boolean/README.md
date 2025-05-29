@@ -40,7 +40,7 @@ const Demo = component$(() => {
 
 ### Parameters
 
-| Prop             | Type                            | Default | Description                                                             |
+| Param            | Type                            | Default | Description                                                             |
 | ---------------- | ------------------------------- | ------- | ----------------------------------------------------------------------- |
 | `initialState`   | `boolean`                       | `false` | The initial value for the boolean state.                                |
 | `onStateChange$` | `QRL<(state: boolean) => void>` | `-`     | Optional callback that is triggered whenever the boolean state changes. |
