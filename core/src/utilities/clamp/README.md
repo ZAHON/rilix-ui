@@ -49,7 +49,7 @@ const Demo = component$(() => {
 
 The `clamp` function accepts a single parameter: an **object** with the following properties. Properties marked with an asterisk (`*`) are **required**.
 
-| Param    | Type     | Default | Description                                                                                   |
+| Property | Type     | Default | Description                                                                                   |
 | -------- | -------- | ------- | --------------------------------------------------------------------------------------------- |
 | `value*` | `number` | `-`     | The number to be clamped. This is the value you want to ensure stays within a specific range. |
 | `min*`   | `number` | `-`     | The lower bound of the clamping range. The `value` will not be less than this.                |
