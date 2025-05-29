@@ -51,7 +51,7 @@ const Demo = component$(() => {
 
 The `useCounter` hook accepts a single parameter, an **object**, with the following properties:
 
-| Param            | Type                           | Default     | Description                                                                                                                          |
+| Property         | Type                           | Default     | Description                                                                                                                          |
 | ---------------- | ------------------------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | `initialValue`   | `number`                       | `0`         | The initial numeric value for the counter. The counter's value will be clamped between `min` and `max` at initialization.            |
 | `step`           | `number`                       | `1`         | The amount by which the counter's value will be incremented or decremented.                                                          |
