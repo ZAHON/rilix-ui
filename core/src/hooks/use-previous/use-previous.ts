@@ -13,7 +13,7 @@ export const usePrevious = <T>(params: UsePreviousParams<T>) => {
   const previousValue = useSignal<T | undefined>(undefined);
 
   if (isDev && !isSignal(value)) {
-    throw new Error('Rilix UI: usePrevious hook value param must be object of type Signal.');
+    throw new Error(`Rilix UI: The 'value' param in 'usePrevious' hook must be a Signal. Received: ${typeof value}.`);
   }
 
   useTask$(({ track }) => {
