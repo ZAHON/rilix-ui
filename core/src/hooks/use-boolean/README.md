@@ -49,6 +49,8 @@ The `useBoolean` hook accepts a single parameter, which is an **object** with th
 
 ### Returns
 
+The `useBoolean` hook returns an **object** containing the following properties:
+
 | Param       | Type                      | Description                                             |
 | ----------- | ------------------------- | ------------------------------------------------------- |
 | `state`     | `ReadonlySignal<boolean>` | A readonly signal containing the current boolean value. |
