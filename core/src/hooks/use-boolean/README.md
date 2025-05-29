@@ -42,7 +42,7 @@ const Demo = component$(() => {
 
 The `useBoolean` hook accepts a single parameter, which is an **object** with the following properties:
 
-| Param            | Type                            | Default | Description                                                             |
+| Property         | Type                            | Default | Description                                                             |
 | ---------------- | ------------------------------- | ------- | ----------------------------------------------------------------------- |
 | `initialState`   | `boolean`                       | `false` | The initial value for the boolean state.                                |
 | `onStateChange$` | `QRL<(state: boolean) => void>` | `-`     | Optional callback that is triggered whenever the boolean state changes. |
