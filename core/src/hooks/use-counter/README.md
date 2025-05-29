@@ -54,6 +54,7 @@ The `useCounter` hook accepts a single parameter, an **object**, with the follow
 | Param            | Type                           | Default     | Description                                                                                                                          |
 | ---------------- | ------------------------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | `initialValue`   | `number`                       | `0`         | The initial numeric value for the counter. The counter's value will be clamped between `min` and `max` at initialization.            |
+| `step`           | `number`                       | `1`         | The amount by which the counter's value will be incremented or decremented.                                                          |
 | `min`            | `number`                       | `-Infinity` | The minimum allowed value for the counter.The counter's value will not go below this number.                                         |
 | `max`            | `number`                       | `Infinity`  | The maximum allowed value for the counter. The counter's value will not exceed this number.                                          |
 | `onCountChange$` | `QRL<(count: number) => void>` | `-`         | A callback function that triggers whenever the counter's value changes. The current count is passed as an argument to this function. |
