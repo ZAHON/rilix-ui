@@ -39,7 +39,7 @@ const Demo = component$<PropsOf<'div'>>((props) => {
 
 ### Parameters
 
-Parameters marked with an asterisk (`*`) are **required**.
+The `combineStyle` function accepts two **required** parameters: `style1` and `style2`:
 
 | Param     | Type                                   | Default | Description                                             |
 | --------- | -------------------------------------- | ------- | ------------------------------------------------------- |
