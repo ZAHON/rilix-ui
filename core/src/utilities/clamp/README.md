@@ -47,7 +47,7 @@ const Demo = component$(() => {
 
 ### Parameters
 
-The `clamp` function accepts a single parameter: an **object** with the following properties. Parameters marked with an asterisk (`*`) are **required**.
+The `clamp` function accepts a single parameter: an **object** with the following properties. Properties marked with an asterisk (`*`) are **required**.
 
 | Param    | Type     | Default | Description                                                                                   |
 | -------- | -------- | ------- | --------------------------------------------------------------------------------------------- |
