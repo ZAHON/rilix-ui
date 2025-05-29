@@ -9,7 +9,9 @@ export const useBoolean = (params: UseBooleanParams = {}) => {
   const { initialState = true, onStateChange$ } = params;
 
   if (isDev && typeof initialState !== 'boolean') {
-    throw new Error('Rilix UI: useBoolean hook initialState must be `true` or `false`');
+    throw new Error(
+      `Rilix UI: The 'initialState' param in 'useBoolean' hook must be a boolean (true or false). Received: ${typeof initialState}.`
+    );
   }
 
   const state = useSignal(initialState);
