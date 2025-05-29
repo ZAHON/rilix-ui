@@ -38,6 +38,8 @@ The `composeRefs` function accepts a single, **required** parameter named `refs`
 
 ### Returns
 
+The `composeRefs` function returns a single callback function that efficiently manages the assignment of a DOM node to all provided refs.
+
 | Type                     | Description                                                             |
 | ------------------------ | ----------------------------------------------------------------------- |
 | `QRL<(node: T) => void>` | A function that accepts a DOM node and assigns it to each provided ref. |
