@@ -10,6 +10,8 @@ import { visuallyHiddenStyle } from 'rilix-ui';
 
 ## Usage
 
+The `visuallyHiddenStyle` object provides a set of CSS properties designed to hide content visually from the screen while keeping it accessible to assistive technologies like screen readers. This is crucial for accessibility, allowing you to include text descriptions for icons or other visual elements that would otherwise be meaningless to users who cannot see them. By applying this style, the content occupies no visual space but remains part of the document flow for screen readers.
+
 ```tsx
 import { component$ } from '@builder.io/qwik';
 import { visuallyHiddenStyle } from 'rilix-ui';
