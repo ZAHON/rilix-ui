@@ -1,18 +1,12 @@
 import type { UseBooleanParams } from './use-boolean.types';
 import type { ReadonlySignal } from '@builder.io/qwik';
-import { isDev, useSignal, useTask$, $ } from '@builder.io/qwik';
+import { useSignal, useTask$, $ } from '@builder.io/qwik';
 
 /**
  * Custom hook that handles boolean state with useful utility functions.
  */
 export const useBoolean = (params: UseBooleanParams = {}) => {
   const { initialState = true, onStateChange$ } = params;
-
-  if (isDev && typeof initialState !== 'boolean') {
-    throw new Error(
-      `Rilix UI: The 'initialState' param in 'useBoolean' hook must be a boolean (true or false). Received: ${typeof initialState}.`
-    );
-  }
 
   const state = useSignal(initialState);
 
