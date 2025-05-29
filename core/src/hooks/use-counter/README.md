@@ -63,7 +63,7 @@ The `useCounter` hook accepts a single parameter, an **object**, with the follow
 
 The `useCounter` hook returns an **object** containing the following properties:
 
-| Param        | Type                           | Description                                                                                                          |
+| Property     | Type                           | Description                                                                                                          |
 | ------------ | ------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
 | `count`      | `ReadonlySignal<number>`       | A readonly signal containing the current value of the counter. Its value is always clamped between `min` and `max`.  |
 | `increment$` | `QRL<() => void>`              | A function to increment the counter's value by the specified `step`. The value will not exceed `max`.                |
