@@ -13,7 +13,7 @@ import { useBoolean } from 'rilix-ui';
 `useBoolean` hook manages boolean state. It provides `setTrue$`, `setFalse$` and `toggle$` handlers and accepts optional `onStateChange$` callback.
 
 ```tsx
-import { component$ } from '@builder.io/qwik';
+import { component$, $ } from '@builder.io/qwik';
 import { useBoolean } from 'rilix-ui';
 
 const Demo = component$(() => {
