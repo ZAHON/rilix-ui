@@ -7,7 +7,7 @@ import { clamp } from '@/utilities';
 /**
  * A hook for managing a numeric counter with customizable minimum and maximum bounds.
  */
-export const useCounter = (params: UseCounterParams) => {
+export const useCounter = (params: UseCounterParams = {}) => {
   const { initialValue = 0, step = 1, min = -Infinity, max = Infinity, onCountChange$ } = params;
 
   if (isDev && min > max) {
