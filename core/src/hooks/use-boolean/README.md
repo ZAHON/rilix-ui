@@ -40,7 +40,7 @@ const Demo = component$(() => {
 
 ### Parameters
 
-The `useBoolean` hook accepts a single parameter, which is an **object** with the following properties:
+The useBoolean hook accepts a **single, optional object** as its parameter, with the following properties:
 
 | Property         | Type                            | Default | Description                                                             |
 | ---------------- | ------------------------------- | ------- | ----------------------------------------------------------------------- |
