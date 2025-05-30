@@ -62,6 +62,8 @@ The `useId` hook accepts an **optional** object as its single parameter, with th
 
 ### Returns
 
+The `useId` hook returns a string that serves as the unique identifier.
+
 | Type     | Description                                                                                                             |
 | -------- | ----------------------------------------------------------------------------------------------------------------------- |
 | `string` | A unique id. Either the custom `id` provided via parameters, or an auto-generated one prefixed with the given `prefix`. |
