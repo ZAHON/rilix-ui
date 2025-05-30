@@ -49,7 +49,7 @@ const Demo = component$(() => {
 
 ### Parameters
 
-The `useCounter` hook accepts a single parameter, an **object**, with the following properties:
+The `useCounter` hook accepts a **single, optional object** as its parameter, with the following properties:
 
 | Property         | Type                           | Default     | Description                                                                                                                          |
 | ---------------- | ------------------------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------ |
