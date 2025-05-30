@@ -53,6 +53,8 @@ const Demo = component$(() => {
 
 ### Parameters
 
+The `useId` hook accepts an **optional** object as its single parameter, with the following properties:
+
 | Property | Type     | Default       | Description                                                                                          |
 | -------- | -------- | ------------- | ---------------------------------------------------------------------------------------------------- |
 | `id`     | `string` | `-`           | An optional custom id. If provided, the hook will return this id as-is without generating a new one. |
