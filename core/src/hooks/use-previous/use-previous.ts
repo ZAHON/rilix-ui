@@ -1,13 +1,10 @@
-import type { UsePreviousParams } from './use-previous.types';
-import type { ReadonlySignal } from '@builder.io/qwik';
+import type { Signal, ReadonlySignal } from '@builder.io/qwik';
 import { useSignal, useTask$ } from '@builder.io/qwik';
 
 /**
  * Tracks and returns the previous value of a given signal.
  */
-export const usePrevious = <T>(params: UsePreviousParams<T>) => {
-  const { value } = params;
-
+export const usePrevious = <T>(value: Signal<T>) => {
   const currentValue = useSignal<T>(value.value);
   const previousValue = useSignal<T | undefined>(undefined);
 
