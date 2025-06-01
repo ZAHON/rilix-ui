@@ -18,7 +18,7 @@ import { usePrevious } from 'rilix-ui';
 
 const Demo = component$(() => {
   const currentValue = useSignal('');
-  const previousValue = usePrevious({ value: currentValue });
+  const previousValue = usePrevious(currentValue);
 
   return (
     <>
