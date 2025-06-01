@@ -49,6 +49,8 @@ The `usePrevious` hook accepts a **single, required parameter** named `value`, w
 
 ### Returns
 
+The `usePrevious` hook returns a **readonly signal** that provides access to the previous value of the signal you're tracking.
+
 | Type                             | Description                                                                                                                                                   |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ReadonlySignal<T \| undefined>` | A readonly signal containing the previous value of the provided signal. Initially, this signal has a value of `undefined` until the first change is detected. |
