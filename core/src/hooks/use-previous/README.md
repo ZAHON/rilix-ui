@@ -41,7 +41,7 @@ const Demo = component$(() => {
 
 ### Parameters
 
-| Prop    | Type        | Default | Description                                        |
+| Param   | Type        | Default | Description                                        |
 | ------- | ----------- | ------- | -------------------------------------------------- |
 | `value` | `Signal<T>` | `-`     | The signal whose previous value should be tracked. |
 
