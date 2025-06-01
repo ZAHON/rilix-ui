@@ -43,9 +43,9 @@ const Demo = component$(() => {
 
 The `usePrevious` hook accepts a **single, required parameter** named `value`, which should be the signal whose previous value you want to track:
 
-| Param   | Type        | Default | Description                                        |
-| ------- | ----------- | ------- | -------------------------------------------------- |
-| `value` | `Signal<T>` | `-`     | The signal whose previous value should be tracked. |
+| Param    | Type        | Default | Description                                        |
+| -------- | ----------- | ------- | -------------------------------------------------- |
+| `value*` | `Signal<T>` | `-`     | The signal whose previous value should be tracked. |
 
 ### Returns
 
