@@ -85,7 +85,7 @@ const UncontrolledDemo = component$(() => {
 The `useUncontrolled` hook accepts an object as its parameter, with the following properties. Properties marked with an asterisk (`*`) are `required`.
 
 | Property            | Type                      | Default | Description                                                                                             |
-| ------------------- | ------------------------- | ------- | ------------------------------------------------------------------------------------------------------- |
+| :------------------ | :------------------------ | :------ | :------------------------------------------------------------------------------------------------------ |
 | `finalValue*`       | `T`                       | `-`     | A fallback value that is used when neither `uncontrolledValue` nor `controlledSignal` are set.          |
 | `uncontrolledValue` | `T`                       | `-`     | Default value used when the state is uncontrolled. Ignored if `controlledSignal` is provided.           |
 | `controlledSignal`  | `Signal<T>`               | `-`     | A reactive signal that fully controls the component's state. Requires `onChange$` to propagate updates. |
@@ -96,7 +96,7 @@ The `useUncontrolled` hook accepts an object as its parameter, with the followin
 The `useUncontrolled` hook returns an object containing the following properties:
 
 | Property     | Type                      | Description                                                                                                                                                              |
-| ------------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| :----------- | :------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `state`      | `ReadonlySignal<T>`       | A readonly signal representing the current state. If `controlledSignal` is provided, it reflects the controlled state; otherwise, it holds the internal unmanaged state. |
 | `setState$`  | `QRL<(value: T) => void>` | Function to update the state. Calls `onChange$` when the state is controlled, or updates the internal state otherwise.                                                   |
 | `controlled` | `boolean`                 | Indicates whether the state is controlled or uncontrolled.                                                                                                               |
