@@ -2,7 +2,7 @@
 
 Utilities are specialized functions and objects crafted to handle specific, recurrent programming challenges. Within **Rilix UI**, these utilities provide streamlined solutions for various development needs, including numerical calculations, sophisticated style management, and precise interactions with the Document Object Model. Engineered for reusability, efficiency, and seamless integration, they empower you to develop cleaner, more organized, and easily maintainable applications.
 
-## Numerical Operations
+## Numerical operations
 
 These utilities provide convenient methods for handling and manipulating numeric values, ensuring data integrity and predictable behavior.
 
