@@ -82,7 +82,7 @@ const UncontrolledDemo = component$(() => {
 
 ### Parameters
 
-| Prop                | Type                                   | Default | Description                                                                                             |
+| Property            | Type                                   | Default | Description                                                                                             |
 | ------------------- | -------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------- |
 | `uncontrolledValue` | `T \| undefined`                       | `-`     | Default value used when the state is uncontrolled. Ignored if `controlledSignal` is provided.           |
 | `controlledSignal`  | `Signal<T> \| undefined`               | `-`     | A reactive signal that fully controls the component's state. Requires `onChange$` to propagate updates. |
