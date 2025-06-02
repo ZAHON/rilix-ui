@@ -52,7 +52,7 @@ const Demo = component$(() => {
 The `useCounter` hook accepts a **single, optional object** as its parameter, with the following properties:
 
 | Property         | Type                           | Default     | Description                                                                                                                          |
-| ---------------- | ------------------------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| :--------------- | :----------------------------- | :---------- | :----------------------------------------------------------------------------------------------------------------------------------- |
 | `initialValue`   | `number`                       | `0`         | The initial numeric value for the counter. The counter's value will be clamped between `min` and `max` at initialization.            |
 | `step`           | `number`                       | `1`         | The amount by which the counter's value will be incremented or decremented.                                                          |
 | `min`            | `number`                       | `-Infinity` | The minimum allowed value for the counter.The counter's value will not go below this number.                                         |
@@ -64,7 +64,7 @@ The `useCounter` hook accepts a **single, optional object** as its parameter, wi
 The `useCounter` hook returns an **object** containing the following properties:
 
 | Property     | Type                           | Description                                                                                                          |
-| ------------ | ------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| :----------- | :----------------------------- | :------------------------------------------------------------------------------------------------------------------- |
 | `count`      | `ReadonlySignal<number>`       | A readonly signal containing the current value of the counter. Its value is always clamped between `min` and `max`.  |
 | `increment$` | `QRL<() => void>`              | A function to increment the counter's value by the specified `step`. The value will not exceed `max`.                |
 | `decrement$` | `QRL<() => void>`              | A function to decrement the counter's value by the specified `step`. The value will not go below `min`.              |
