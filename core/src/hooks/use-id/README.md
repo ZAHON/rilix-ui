@@ -56,7 +56,7 @@ const Demo = component$(() => {
 The `useId` hook accepts an **optional** object as its single parameter, with the following properties:
 
 | Property | Type     | Default       | Description                                                                                          |
-| -------- | -------- | ------------- | ---------------------------------------------------------------------------------------------------- |
+| :------- | :------- | :------------ | :--------------------------------------------------------------------------------------------------- |
 | `id`     | `string` | `-`           | An optional custom id. If provided, the hook will return this id as-is without generating a new one. |
 | `prefix` | `string` | `"rilix-ui-"` | An optional prefix to prepend to the automatically generated id.                                     |
 
@@ -65,5 +65,5 @@ The `useId` hook accepts an **optional** object as its single parameter, with th
 The `useId` hook returns a string that serves as the unique identifier.
 
 | Type     | Description                                                                                                             |
-| -------- | ----------------------------------------------------------------------------------------------------------------------- |
+| :------- | :---------------------------------------------------------------------------------------------------------------------- |
 | `string` | A unique id. Either the custom `id` provided via parameters, or an auto-generated one prefixed with the given `prefix`. |
