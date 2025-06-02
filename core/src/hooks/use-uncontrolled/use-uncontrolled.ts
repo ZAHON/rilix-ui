@@ -6,7 +6,7 @@ import { useSignal, $ } from '@builder.io/qwik';
  * A hook for managing both controlled and uncontrolled state in a component.
  */
 export const useUncontrolled = <T>(params: UseUncontrolledParams<T>) => {
-  const { controlledSignal, uncontrolledValue, finalValue, onChange$ } = params;
+  const { finalValue, controlledSignal, uncontrolledValue, onChange$ } = params;
 
   // If a controlled signal has been passed, we return it immediately.
   if (controlledSignal !== undefined) {
