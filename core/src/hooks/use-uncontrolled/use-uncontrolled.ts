@@ -1,19 +1,12 @@
 import type { ReadonlySignal } from '@builder.io/qwik';
 import type { UseUncontrolledParams } from './use-uncontrolled.types';
 import { useSignal, $ } from '@builder.io/qwik';
-import { isDev, isSignal } from '@builder.io/qwik';
 
 /**
  * A hook for managing both controlled and uncontrolled state in a component.
  */
 export const useUncontrolled = <T>(params: UseUncontrolledParams<T>) => {
   const { controlledSignal, uncontrolledValue, finalValue, onChange$ } = params;
-
-  if (isDev && controlledSignal && !isSignal(controlledSignal)) {
-    throw new Error(
-      `Rilix UI: The 'controlledSignal' parameter in 'useUncontrolled' hook must be a Signal. Received: ${typeof controlledSignal}.`
-    );
-  }
 
   // If a controlled signal has been passed, we return it immediately.
   if (controlledSignal !== undefined) {
