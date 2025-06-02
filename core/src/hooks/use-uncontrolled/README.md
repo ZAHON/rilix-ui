@@ -93,6 +93,8 @@ The `useUncontrolled` hook accepts an object as its parameter, with the followin
 
 ### Returns
 
+The `useUncontrolled` hook returns an object containing the following properties:
+
 | Property     | Type                      | Description                                                                                                                                                              |
 | ------------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `state`      | `ReadonlySignal<T>`       | A readonly signal representing the current state. If `controlledSignal` is provided, it reflects the controlled state; otherwise, it holds the internal unmanaged state. |
