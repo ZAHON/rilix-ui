@@ -50,7 +50,7 @@ const Demo = component$(() => {
 The `clamp` function accepts a **single, required object** as its parameter, with all of the following required properties:
 
 | Property | Type     | Default | Description                                                                                   |
-| -------- | -------- | ------- | --------------------------------------------------------------------------------------------- |
+| :------- | :------- | :------ | :-------------------------------------------------------------------------------------------- |
 | `value*` | `number` | `-`     | The number to be clamped. This is the value you want to ensure stays within a specific range. |
 | `min*`   | `number` | `-`     | The lower bound of the clamping range. The `value` will not be less than this.                |
 | `max*`   | `number` | `-`     | The upper bound of the clamping range. The `value` will not be greater than this.             |
@@ -60,5 +60,5 @@ The `clamp` function accepts a **single, required object** as its parameter, wit
 The `clamp` function returns a single numeric value that has been adjusted to fit within the specified `min` and `max` bounds.
 
 | Type     | Description                                                                                                                                                                                                          |
-| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `number` | The clamped value, which will be `min` if the original `value` is less than `min`, `max` if the original `value` is greater than `max`, or the original `value` itself if it falls within the `min` and `max` range. |
