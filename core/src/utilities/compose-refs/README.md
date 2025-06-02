@@ -33,7 +33,7 @@ const Demo = component$<PropsOf<'div'>>((props) => {
 The `composeRefs` function accepts a single, **required** parameter named `refs`.
 
 | Param   | Type               | Default | Description                                                                                                                                                      |
-| ------- | ------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :------ | :----------------- | :------ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `refs*` | `PossibleRef<T>[]` | `-`     | An array of refs that can be either signals, callback refs, or undefined. Each ref will be assigned the provided DOM node when the returned function is invoked. |
 
 ### Returns
@@ -41,5 +41,5 @@ The `composeRefs` function accepts a single, **required** parameter named `refs`
 The `composeRefs` function returns a single callback function that efficiently manages the assignment of a DOM node to all provided refs.
 
 | Type                     | Description                                                             |
-| ------------------------ | ----------------------------------------------------------------------- |
+| :----------------------- | :---------------------------------------------------------------------- |
 | `QRL<(node: T) => void>` | A function that accepts a DOM node and assigns it to each provided ref. |
