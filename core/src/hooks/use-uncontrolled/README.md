@@ -91,7 +91,7 @@ const UncontrolledDemo = component$(() => {
 
 ### Returns
 
-| Prop         | Type                      | Description                                                                                                                                                              |
+| Property     | Type                      | Description                                                                                                                                                              |
 | ------------ | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `state`      | `ReadonlySignal<T>`       | A readonly signal representing the current state. If `controlledSignal` is provided, it reflects the controlled state; otherwise, it holds the internal unmanaged state. |
 | `setState$`  | `QRL<(value: T) => void>` | Function to update the state. Calls `onChange$` when the state is controlled, or updates the internal state otherwise.                                                   |
