@@ -82,12 +82,12 @@ const UncontrolledDemo = component$(() => {
 
 ### Parameters
 
-| Property            | Type                                   | Default | Description                                                                                             |
-| ------------------- | -------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------- |
-| `uncontrolledValue` | `T \| undefined`                       | `-`     | Default value used when the state is uncontrolled. Ignored if `controlledSignal` is provided.           |
-| `controlledSignal`  | `Signal<T> \| undefined`               | `-`     | A reactive signal that fully controls the component's state. Requires `onChange$` to propagate updates. |
-| `finalValue`        | `T`                                    | `-`     | A fallback value that is used when neither `uncontrolledValue` nor `controlledSignal` are set.          |
-| `onChange$`         | `QRL<(value: T) => void> \| undefined` | `-`     | Callback triggered when the state changes. Used to synchronize controlled state updates.                |
+| Property            | Type                      | Default | Description                                                                                             |
+| ------------------- | ------------------------- | ------- | ------------------------------------------------------------------------------------------------------- |
+| `finalValue*`       | `T`                       | `-`     | A fallback value that is used when neither `uncontrolledValue` nor `controlledSignal` are set.          |
+| `uncontrolledValue` | `T`                       | `-`     | Default value used when the state is uncontrolled. Ignored if `controlledSignal` is provided.           |
+| `controlledSignal`  | `Signal<T>`               | `-`     | A reactive signal that fully controls the component's state. Requires `onChange$` to propagate updates. |
+| `onChange$`         | `QRL<(value: T) => void>` | `-`     | Callback triggered when the state changes. Used to synchronize controlled state updates.                |
 
 ### Returns
 
