@@ -46,7 +46,7 @@ const Demo = component$(() => {
 The `stringStyleToObject` function accepts a single **required** parameter: `style`.
 
 | Param    | Type     | Default | Description                            |
-| -------- | -------- | ------- | -------------------------------------- |
+| :------- | :------- | :------ | :------------------------------------- |
 | `style*` | `string` | `-`     | A string containing inline CSS styles. |
 
 ### Returns
@@ -54,5 +54,5 @@ The `stringStyleToObject` function accepts a single **required** parameter: `sty
 The `stringStyleToObject` function returns an object representing the parsed CSS styles from the input string.
 
 | Type            | Description                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------- |
+| :-------------- | :------------------------------------------------------------------------------------------- |
 | `CSSProperties` | An object where keys are CSS property names and values are their corresponding style values. |
