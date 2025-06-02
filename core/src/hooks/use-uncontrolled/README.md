@@ -82,7 +82,7 @@ const UncontrolledDemo = component$(() => {
 
 ### Parameters
 
-The `useUncontrolled` hook accepts an object as its parameter, with the following properties. Properties marked with an asterisk (`*`) are `required`.
+The `useUncontrolled` hook accepts an object as its parameter, with the following properties. Properties marked with an asterisk (`*`) are **required**.
 
 | Property            | Type                      | Default | Description                                                                                             |
 | :------------------ | :------------------------ | :------ | :------------------------------------------------------------------------------------------------------ |
