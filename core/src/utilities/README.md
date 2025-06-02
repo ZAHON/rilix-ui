@@ -7,7 +7,7 @@ Utilities are specialized functions and objects crafted to handle specific, recu
 These utilities provide convenient methods for handling and manipulating numeric values, ensuring data integrity and predictable behavior.
 
 | Utility                                                                         | Description                                                                                            |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| :------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------- |
 | [`clamp`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/utilities/clamp) | Clamps a given number to a specified range, ensuring it does not exceed the minimum or maximum bounds. |
 
 ## UI and DOM
@@ -15,7 +15,7 @@ These utilities provide convenient methods for handling and manipulating numeric
 These utilities provide foundational building blocks for effectively interacting with the user interface and the Document Object Model, covering aspects from managing element references to handling and combining styles for diverse rendering and presentation needs.
 
 | Utility                                                                                                        | Description                                                                       |
-| -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| :------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
 | [`combineStyle`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/utilities/combine-style)                 | Combines two style values, whether inline CSS strings or style objects, into one. |
 | [`composeRefs`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/utilities/compose-refs)                   | A utility function that allows assigning a single DOM element to multiple refs.   |
 | [`stringStyleToObject`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/utilities/string-style-to-object) | Converts inline CSS style string into a key-value object format.                  |
