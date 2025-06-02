@@ -42,7 +42,7 @@ const Demo = component$<PropsOf<'div'>>((props) => {
 The `combineStyle` function accepts two **required** parameters: `style1` and `style2`:
 
 | Param     | Type                                   | Default | Description                                             |
-| --------- | -------------------------------------- | ------- | ------------------------------------------------------- |
+| :-------- | :------------------------------------- | :------ | :------------------------------------------------------ |
 | `style1*` | `string \| CSSProperties \| undefined` | `-`     | The first set of inline CSS styles (string or object).  |
 | `style2*` | `string \| CSSProperties \| undefined` | `-`     | The second set of inline CSS styles (string or object). |
 
@@ -51,5 +51,5 @@ The `combineStyle` function accepts two **required** parameters: `style1` and `s
 The `combineStyle` function returns the merged CSS styles, which can be either an object or a string, depending on the input types.
 
 | Type                      | Description                                                                                                                                                                                                                                                                                                                                                                         |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| :------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `string \| CSSProperties` | A new object containing the merged CSS styles. If both `style1` and `style2` are strings, it returns a single string with the styles concatenated using a semicolon. In cases where one is an object and the other a string, the string is converted to an object and then merged. If one or both inputs are `undefined`, they are treated as empty styles for the merging process. |
