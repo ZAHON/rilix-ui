@@ -1,5 +1,3 @@
-import type { PropsOf } from '@builder.io/qwik';
-import { component$ } from '@builder.io/qwik';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@noma.to/qwik-testing-library';
 import { Alert } from '.';
@@ -13,12 +11,8 @@ describe('Alert', () => {
       expect(screen.getByTestId(ALERT_ROOT_TESTID).tagName).toBe('DIV');
     });
 
-    it('should render as the element specified by the "as" prop', async () => {
-      const Primitive = component$((props: PropsOf<'span'>) => {
-        return <span {...props} />;
-      });
-
-      await render(<Alert.Root as={Primitive} data-testid={ALERT_ROOT_TESTID} />);
+    it('should render as a <span> element when `render$` prop is used', async () => {
+      await render(<Alert.Root render$={(props) => <span {...props} />} data-testid={ALERT_ROOT_TESTID} />);
       expect(screen.getByTestId(ALERT_ROOT_TESTID).tagName).not.toBe('DIV');
       expect(screen.getByTestId(ALERT_ROOT_TESTID).tagName).toBe('SPAN');
     });
