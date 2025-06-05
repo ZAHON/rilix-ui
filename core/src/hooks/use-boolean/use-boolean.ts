@@ -6,7 +6,7 @@ import { useSignal, useTask$, $ } from '@builder.io/qwik';
  * Custom hook that handles boolean state with useful utility functions.
  */
 export const useBoolean = (params: UseBooleanParams = {}) => {
-  const { initialState = true, onStateChange$ } = params;
+  const { initialState = false, onStateChange$ } = params;
 
   const state = useSignal(initialState);
 
