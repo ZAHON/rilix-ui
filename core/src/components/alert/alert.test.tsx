@@ -11,7 +11,7 @@ describe('Alert', () => {
       expect(screen.getByTestId(ALERT_ROOT_TESTID).tagName).toBe('DIV');
     });
 
-    it('should render as a <span> element when `render$` prop is used', async () => {
+    it('should render a custom element when `render$` prop is used', async () => {
       await render(<Alert.Root render$={(props) => <span {...props} />} data-testid={ALERT_ROOT_TESTID} />);
       expect(screen.getByTestId(ALERT_ROOT_TESTID).tagName).not.toBe('DIV');
       expect(screen.getByTestId(ALERT_ROOT_TESTID).tagName).toBe('SPAN');
