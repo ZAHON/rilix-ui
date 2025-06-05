@@ -20,7 +20,7 @@ Import the component.
 import { component$ } from '@builder.io/qwik';
 import { Alert } from 'rilix-ui';
 
-const AlertDemo = component$(() => {
+const Demo = component$(() => {
   return <Alert.Root />;
 });
 ```
@@ -31,7 +31,7 @@ const AlertDemo = component$(() => {
 import { component$ } from '@builder.io/qwik';
 import { Alert } from 'rilix-ui';
 
-const AlertDemo = component$(() => {
+const Demo = component$(() => {
   return <Alert.Root>Access denied. Please contact the network administrator to view this page.</Alert.Root>;
 });
 ```
@@ -42,9 +42,9 @@ const AlertDemo = component$(() => {
 
 Contains the content for the alert. This component is based on the `div` element.
 
-| Prop | Type        | Default | Description                                         |
-| ---- | ----------- | ------- | --------------------------------------------------- |
-| `as` | `Component` | `-`     | The component that this component should render as. |
+| Prop      | Type                                                       | Default | Description                                                                                                                                                                                                                                |
+| --------- | ---------------------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `render$` | `(props: Record<string, unknown>, state: {}) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
 
 | Data attribute | Values    |
 | -------------- | --------- |
