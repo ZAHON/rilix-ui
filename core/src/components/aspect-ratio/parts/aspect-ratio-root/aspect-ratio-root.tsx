@@ -1,6 +1,6 @@
 import { AspectRatioRootProps } from './aspect-ratio-root.types';
 import { component$, useComputed$, useContextProvider, Slot } from '@builder.io/qwik';
-import { Primitive } from '@/components';
+import { Render } from '@/_internal';
 import { combineStyle } from '@/utilities';
 import { AspectRatioContext } from '../../context';
 
@@ -9,7 +9,7 @@ import { AspectRatioContext } from '../../context';
  * This component is based on the `div` element.
  */
 export const AspectRatioRoot = component$<AspectRatioRootProps>((props) => {
-  const { as, ratio = 1, style, ...others } = props;
+  const { ratio = 1, style, ...others } = props;
 
   const aspect = useComputed$(() => (1 / ratio) * 100);
 
@@ -19,18 +19,21 @@ export const AspectRatioRoot = component$<AspectRatioRootProps>((props) => {
 
   useContextProvider(AspectRatioContext, { aspect });
 
-  const Component = as || (Primitive.div as unknown as 'div');
-
   return (
-    <Component
+    <Render
+      as="div"
       data-rilix-ui-aspect-ratio-root=""
       data-scope="aspect-ratio"
       data-part="root"
       data-aspect={aspect.value}
       style={combinedStyle.value}
+      state={{ aspect }}
+      defaultRender$={(props) => (
+        <div {...props}>
+          <Slot />
+        </div>
+      )}
       {...others}
-    >
-      <Slot />
-    </Component>
+    />
   );
 });
