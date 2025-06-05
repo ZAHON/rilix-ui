@@ -1,5 +1,5 @@
 import { AspectRatioContentProps } from './aspect-ratio-content.types';
-import { component$, useContext, useComputed$, Slot } from '@builder.io/qwik';
+import { component$, useContext, Slot } from '@builder.io/qwik';
 import { Render } from '@/_internal';
 import { combineStyle } from '@//utilities';
 import { AspectRatioContext } from '../../context';
@@ -13,10 +13,6 @@ export const AspectRatioContent = component$<AspectRatioContentProps>((props) =>
 
   const { aspect } = useContext(AspectRatioContext);
 
-  const combinedStyle = useComputed$(() =>
-    combineStyle({ position: 'absolute', top: 0, right: 0, bottom: 0, left: 0 }, style)
-  );
-
   return (
     <Render
       as="div"
@@ -24,7 +20,16 @@ export const AspectRatioContent = component$<AspectRatioContentProps>((props) =>
       data-scope="aspect-ratio"
       data-part="content"
       data-aspect={aspect.value}
-      style={combinedStyle.value}
+      style={combineStyle(
+        {
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+        },
+        style
+      )}
       state={{ aspect }}
       defaultRender$={(props) => (
         <div {...props}>
