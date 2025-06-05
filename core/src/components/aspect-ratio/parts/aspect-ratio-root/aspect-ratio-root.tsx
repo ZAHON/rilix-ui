@@ -13,10 +13,6 @@ export const AspectRatioRoot = component$<AspectRatioRootProps>((props) => {
 
   const aspect = useComputed$(() => (1 / ratio) * 100);
 
-  const combinedStyle = useComputed$(() =>
-    combineStyle({ position: 'relative', width: '100%', paddingBottom: `${aspect.value}%` }, style)
-  );
-
   useContextProvider(AspectRatioContext, { aspect });
 
   return (
@@ -26,7 +22,14 @@ export const AspectRatioRoot = component$<AspectRatioRootProps>((props) => {
       data-scope="aspect-ratio"
       data-part="root"
       data-aspect={aspect.value}
-      style={combinedStyle.value}
+      style={combineStyle(
+        {
+          position: 'relative',
+          width: '100%',
+          paddingBottom: `${aspect.value}%`,
+        },
+        style
+      )}
       state={{ aspect }}
       defaultRender$={(props) => (
         <div {...props}>
