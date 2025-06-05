@@ -1,6 +1,6 @@
 import type { JSXOutput, PropsOf } from '@builder.io/qwik';
 
-export type RenderAsTag = 'a' | 'button' | 'div' | 'li' | 'nav' | 'ol' | 'span';
+export type RenderAsTag = 'a' | 'button' | 'div' | 'label' | 'li' | 'nav' | 'ol' | 'span';
 
 export type RenderProps<T extends RenderAsTag, S extends Record<string, unknown> = {}> = {
   /**
