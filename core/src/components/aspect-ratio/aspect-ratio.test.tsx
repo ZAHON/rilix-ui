@@ -1,5 +1,3 @@
-import type { PropsOf } from '@builder.io/qwik';
-import { component$ } from '@builder.io/qwik';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@noma.to/qwik-testing-library';
 import { AspectRatio } from '.';
@@ -14,12 +12,10 @@ describe('AspectRatio', () => {
       expect(screen.getByTestId(ASPECT_RATIO_ROOT_TESTID).tagName).toBe('DIV');
     });
 
-    it('should render as the element specified by the "as" prop', async () => {
-      const Primitive = component$((props: PropsOf<'span'>) => {
-        return <span {...props} />;
-      });
-
-      await render(<AspectRatio.Root as={Primitive} data-testid={ASPECT_RATIO_ROOT_TESTID} />);
+    it('should render a custom element when `render$` prop is used', async () => {
+      await render(
+        <AspectRatio.Root render$={(props) => <span {...props} />} data-testid={ASPECT_RATIO_ROOT_TESTID} />
+      );
       expect(screen.getByTestId(ASPECT_RATIO_ROOT_TESTID).tagName).not.toBe('DIV');
       expect(screen.getByTestId(ASPECT_RATIO_ROOT_TESTID).tagName).toBe('SPAN');
     });
@@ -106,14 +102,10 @@ describe('AspectRatio', () => {
       expect(screen.getByTestId(ASPECT_RATIO_CONTENT_TESTID).tagName).toBe('DIV');
     });
 
-    it('should render as the element specified by the "as" prop', async () => {
-      const Primitive = component$((props: PropsOf<'span'>) => {
-        return <span {...props} />;
-      });
-
+    it('should render a custom element when `render$` prop is used', async () => {
       await render(
         <AspectRatio.Root>
-          <AspectRatio.Content as={Primitive} data-testid={ASPECT_RATIO_CONTENT_TESTID} />
+          <AspectRatio.Content render$={(props) => <span {...props} />} data-testid={ASPECT_RATIO_CONTENT_TESTID} />
         </AspectRatio.Root>
       );
       expect(screen.getByTestId(ASPECT_RATIO_CONTENT_TESTID).tagName).not.toBe('DIV');
