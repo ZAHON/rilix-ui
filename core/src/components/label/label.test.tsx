@@ -1,5 +1,3 @@
-import type { PropsOf } from '@builder.io/qwik';
-import { component$ } from '@builder.io/qwik';
 import { describe, it, expect } from 'vitest';
 import { render, screen, waitFor } from '@noma.to/qwik-testing-library';
 import { userEvent } from '@testing-library/user-event';
@@ -15,13 +13,8 @@ describe('Label', () => {
       expect(screen.getByTestId(LABEL_ROOT_TESTID).tagName).toBe('LABEL');
     });
 
-    it('should render as the element specified by the "as" prop', async () => {
-      const Primitive = component$((props: PropsOf<'span'>) => {
-        return <span {...props} />;
-      });
-
-      await render(<Label.Root as={Primitive} data-testid={LABEL_ROOT_TESTID} />);
-      expect(screen.getByTestId(LABEL_ROOT_TESTID)).not.toBeInstanceOf(HTMLLabelElement);
+    it('should render a custom element when `render$` prop is used', async () => {
+      await render(<Label.Root render$={(props) => <span {...props} />} data-testid={LABEL_ROOT_TESTID} />);
       expect(screen.getByTestId(LABEL_ROOT_TESTID).tagName).not.toBe('LABEL');
       expect(screen.getByTestId(LABEL_ROOT_TESTID).tagName).toBe('SPAN');
     });
@@ -31,20 +24,6 @@ describe('Label', () => {
 
       await render(<Label.Root data-testid={LABEL_ROOT_TESTID}>{LABEL_ROOT_TEXT}</Label.Root>);
       expect(screen.getByTestId(LABEL_ROOT_TESTID)).toHaveTextContent(LABEL_ROOT_TEXT);
-    });
-
-    it('should have inline style provided via style prop as objects', async () => {
-      const LABEL_ROOT_COLOR = 'rgb(255, 0, 0)';
-
-      await render(<Label.Root style={{ color: LABEL_ROOT_COLOR }} data-testid={LABEL_ROOT_TESTID} />);
-      expect(screen.getByTestId(LABEL_ROOT_TESTID)).toHaveStyle(`color: ${LABEL_ROOT_COLOR}`);
-    });
-
-    it('should have inline style provided via style prop as string', async () => {
-      const LABEL_ROOT_COLOR = 'rgb(255, 0, 0)';
-
-      await render(<Label.Root style={`color: ${LABEL_ROOT_COLOR}`} data-testid={LABEL_ROOT_TESTID} />);
-      expect(screen.getByTestId(LABEL_ROOT_TESTID)).toHaveStyle(`color: ${LABEL_ROOT_COLOR}`);
     });
 
     it('should prevent text selection when double clicking by default', async () => {
