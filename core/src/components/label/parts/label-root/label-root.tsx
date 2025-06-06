@@ -1,6 +1,6 @@
 import type { LabelRootProps } from './label-root.types';
 import { component$, useComputed$, sync$, useContextProvider, Slot } from '@builder.io/qwik';
-import { Primitive } from '@/components';
+import { Render } from '@/_internal';
 import { LabelContext } from '../../context';
 
 /**
@@ -8,7 +8,7 @@ import { LabelContext } from '../../context';
  * This component is based on the `label` element.
  */
 export const LabelRoot = component$<LabelRootProps>((props) => {
-  const { as, preventDblClickTextSelection: _preventDblClickTextSelection = true, onMouseDown$, ...others } = props;
+  const { preventDblClickTextSelection: _preventDblClickTextSelection = true, onMouseDown$, ...others } = props;
 
   const preventDblClickTextSelection = useComputed$(() => _preventDblClickTextSelection);
 
@@ -24,18 +24,21 @@ export const LabelRoot = component$<LabelRootProps>((props) => {
 
   useContextProvider(LabelContext, { preventDblClickTextSelection });
 
-  const Component = as || (Primitive.label as unknown as 'label');
-
   return (
-    <Component
+    <Render
+      as="label"
       data-rilix-ui-label-root=""
       data-scope="label"
       data-part="root"
       data-prevent-dbl-click-text-selection={preventDblClickTextSelection.value ? '' : undefined}
       onMouseDown$={[onMouseDown$, handleMouseDownSync$]}
+      state={{ preventDblClickTextSelection }}
+      defaultRender$={(props) => (
+        <label {...props}>
+          <Slot />
+        </label>
+      )}
       {...others}
-    >
-      <Slot />
-    </Component>
+    />
   );
 });
