@@ -1,5 +1,3 @@
-import type { PropsOf } from '@builder.io/qwik';
-import { component$ } from '@builder.io/qwik';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@noma.to/qwik-testing-library';
 import { VisuallyHidden } from '.';
@@ -13,12 +11,10 @@ describe('VisuallyHidden', () => {
       expect(screen.getByTestId(VISUALLY_HIDDEN_TESTID).tagName).toBe('SPAN');
     });
 
-    it('should render as the element specified by the "as" prop', async () => {
-      const Primitive = component$((props: PropsOf<'fiv'>) => {
-        return <div {...props} />;
-      });
-
-      await render(<VisuallyHidden.Root as={Primitive} data-testid={VISUALLY_HIDDEN_TESTID} />);
+    it('should render a custom element when `render$` prop is used', async () => {
+      await render(
+        <VisuallyHidden.Root render$={(props) => <div {...props} />} data-testid={VISUALLY_HIDDEN_TESTID} />
+      );
       expect(screen.getByTestId(VISUALLY_HIDDEN_TESTID).tagName).not.toBe('SPAN');
       expect(screen.getByTestId(VISUALLY_HIDDEN_TESTID).tagName).toBe('DIV');
     });
