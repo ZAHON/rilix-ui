@@ -20,7 +20,7 @@ Import the component.
 import { component$ } from '@builder.io/qwik';
 import { VisuallyHidden } from 'rilix-ui';
 
-const VisuallyHiddenDemo = component$(() => {
+const Demo = component$(() => {
   return <VisuallyHidden.Root />;
 });
 ```
@@ -31,7 +31,7 @@ const VisuallyHiddenDemo = component$(() => {
 import { component$ } from '@builder.io/qwik';
 import { VisuallyHidden } from 'rilix-ui';
 
-const VisuallyHiddenDemo = component$(() => {
+const Demo = component$(() => {
   return (
     <button type="button">
       <svg
@@ -62,12 +62,12 @@ const VisuallyHiddenDemo = component$(() => {
 
 Anything you put inside this component will be hidden from the screen but will be announced by screen readers. This component is based on the `span` element.
 
-| Prop | Type        | Default | Description                                         |
-| ---- | ----------- | ------- | --------------------------------------------------- |
-| `as` | `Component` | `-`     | The component that this component should render as. |
+| Prop      | Type                                                       | Default | Description                                                                                                                                                                                                                                |
+| :-------- | :--------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `render$` | `(props: Record<string, unknown>, state: {}) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
 
 | Data attribute | Values              |
-| -------------- | ------------------- |
+| :------------- | :------------------ |
 | `[data-scope]` | `"visually-hidden"` |
 | `[data-part]`  | `"root"`            |
 
