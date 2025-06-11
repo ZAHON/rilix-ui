@@ -1,5 +1,5 @@
 import type { VisuallyHiddenRootProps } from './visually-hidden-root.types';
-import { component$, useComputed$, Slot } from '@builder.io/qwik';
+import { component$, Slot } from '@builder.io/qwik';
 import { Render } from '@/_internal';
 import { combineStyle, visuallyHiddenStyle } from '@/utilities';
 
@@ -10,15 +10,13 @@ import { combineStyle, visuallyHiddenStyle } from '@/utilities';
 export const VisuallyHiddenRoot = component$<VisuallyHiddenRootProps>((props) => {
   const { style, ...others } = props;
 
-  const combinedStyle = useComputed$(() => combineStyle(visuallyHiddenStyle, style));
-
   return (
     <Render
       as="span"
       data-rilix-ui-visually-hidden-root=""
       data-scope="visually-hidden"
       data-part="root"
-      style={combinedStyle.value}
+      style={combineStyle(visuallyHiddenStyle, style)}
       defaultRender$={(props) => (
         <span {...props}>
           <Slot />
