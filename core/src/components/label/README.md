@@ -22,7 +22,7 @@ Import the component.
 import { component$ } from '@builder.io/qwik';
 import { Label } from 'rilix-ui';
 
-const LabelDemo = component$(() => {
+const Demo = component$(() => {
   return <Label.Root />;
 });
 ```
@@ -33,7 +33,7 @@ const LabelDemo = component$(() => {
 import { component$ } from '@builder.io/qwik';
 import { Label } from 'rilix-ui';
 
-const LabelDemo = component$(() => {
+const Demo = component$(() => {
   return (
     <>
       <Label.Root for="first-name">First name</Label.Root>
@@ -49,17 +49,25 @@ const LabelDemo = component$(() => {
 
 Contains the content for the label. This component is based on the `label` element.
 
-| Prop                           | Type        | Default | Description                                                                                                                                    |
-| ------------------------------ | ----------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `as`                           | `Component` | `-`     | The component that this component should render as.                                                                                            |
-| `for`                          | `string`    | `-`     | The id of the element the label is associated with. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label#for). |
-| `preventDblClickTextSelection` | `boolean`   | `true`  | When `true`, text selection is prevented when double clicking label.                                                                           |
+| Prop                           | Type                                                                                                              | Default | Description                                                                                                                                                                                                                                |
+| :----------------------------- | :---------------------------------------------------------------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `for`                          | `string`                                                                                                          | `-`     | The id of the element the label is associated with. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label#for).                                                                                             |
+| `preventDblClickTextSelection` | `boolean`                                                                                                         | `true`  | When `true`, text selection is prevented when double clicking label.                                                                                                                                                                       |
+| `render$`                      | `(props: Record<string, unknown>, state: { preventDblClickTextSelection: ReadonlySignal<boolean> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
 
 | Data attribute                            | Values                                                               |
-| ----------------------------------------- | -------------------------------------------------------------------- |
+| :---------------------------------------- | :------------------------------------------------------------------- |
 | `[data-scope]`                            | `"label"`                                                            |
 | `[data-part]`                             | `"root"`                                                             |
 | `[data-prevent-dbl-click-text-selection]` | Present when text selection is prevented when double clicking label. |
+
+### useLabelContext
+
+A hook that gives access to a context object containing properties to interact with the label.
+
+| Property                       | Type                      | Description                                                          |
+| :----------------------------- | :------------------------ | :------------------------------------------------------------------- |
+| `preventDblClickTextSelection` | `ReadonlySignal<boolean>` | When `true`, text selection is prevented when double clicking label. |
 
 ## Examples
 
@@ -71,7 +79,7 @@ By default text selection is prevented when double clicking label. If you want t
 import { component$ } from '@builder.io/qwik';
 import { Label } from 'rilix-ui';
 
-const LabelDemo = component$(() => {
+const Demo = component$(() => {
   return (
     <>
       <Label.Root preventDblClickTextSelection={false} for="first-name">
@@ -91,7 +99,7 @@ You can add the label to the control implicitly by wrapping the control inside t
 import { component$ } from '@builder.io/qwik';
 import { Label } from 'rilix-ui';
 
-const LabelDemo = component$(() => {
+const Demo = component$(() => {
   return (
     <Label.Root>
       First name
@@ -109,7 +117,7 @@ You can add a label to control explicitly by referencing control. To do this, gi
 import { component$ } from '@builder.io/qwik';
 import { Label } from 'rilix-ui';
 
-const LabelDemo = component$(() => {
+const Demo = component$(() => {
   return (
     <>
       <Label.Root for="first-name">First name</Label.Root>
