@@ -1,6 +1,6 @@
 import type { VisuallyHiddenRootProps } from './visually-hidden-root.types';
 import { component$, useComputed$, Slot } from '@builder.io/qwik';
-import { Primitive } from '@/components';
+import { Render } from '@/_internal';
 import { combineStyle, visuallyHiddenStyle } from '@/utilities';
 
 /**
@@ -8,21 +8,23 @@ import { combineStyle, visuallyHiddenStyle } from '@/utilities';
  * This component is based on the `span` element.
  */
 export const VisuallyHiddenRoot = component$<VisuallyHiddenRootProps>((props) => {
-  const { as, style, ...others } = props;
+  const { style, ...others } = props;
 
   const combinedStyle = useComputed$(() => combineStyle(visuallyHiddenStyle, style));
 
-  const Component = as || (Primitive.span as unknown as 'span');
-
   return (
-    <Component
+    <Render
+      as="span"
       data-rilix-ui-visually-hidden-root=""
       data-scope="visually-hidden"
       data-part="root"
       style={combinedStyle.value}
+      defaultRender$={(props) => (
+        <span {...props}>
+          <Slot />
+        </span>
+      )}
       {...others}
-    >
-      <Slot />
-    </Component>
+    />
   );
 });
