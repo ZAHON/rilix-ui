@@ -87,7 +87,7 @@ Contains the content you want to constrain to a given ratio. This component is b
 
 A hook that gives access to a context object containing properties to interact with the aspect ratio.
 
-| Prop     | Type                     | Description                      |
+| Property | Type                     | Description                      |
 | :------- | :----------------------- | :------------------------------- |
 | `aspect` | `ReadonlySignal<number>` | The current aspect ratio (in %). |
 
