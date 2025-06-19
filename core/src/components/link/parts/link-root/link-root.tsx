@@ -1,40 +1,18 @@
 import type { LinkRootProps } from './link-root.types';
-import { component$, useSignal, useTask$, Slot } from '@builder.io/qwik';
-import { isBrowser } from '@builder.io/qwik/build';
+import { component$, Slot } from '@builder.io/qwik';
 import { Primitive } from '@/components';
-import { composeRefs } from '@/utilities';
 
 /**
  * Contains the content for the link.
  * This component is based on the `a` element.
  */
 export const LinkRoot = component$<LinkRootProps>((props) => {
-  const { as, ref: _ref, href, disabled, ...others } = props;
-
-  const ref = useSignal<HTMLElement | undefined>(undefined);
-
-  useTask$(({ track }) => {
-    track(() => disabled);
-
-    if (isBrowser && ref.value && ref.value.tagName === 'A') {
-      if (disabled) {
-        ref.value.setAttribute('role', 'link');
-        ref.value.removeAttribute('href');
-      } else {
-        ref.value.removeAttribute('role');
-
-        if (href) {
-          ref.value.setAttribute('href', href);
-        }
-      }
-    }
-  });
+  const { as, href, disabled, ...others } = props;
 
   const Component = as || (Primitive.a as unknown as 'a');
 
   return (
     <Component
-      ref={composeRefs([_ref, ref])}
       role={disabled ? 'link' : undefined}
       href={disabled ? undefined : href}
       aria-disabled={disabled ? 'true' : undefined}
