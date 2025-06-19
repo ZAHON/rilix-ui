@@ -13,12 +13,6 @@ export interface LinkRootProps extends PropsOf<'a'> {
   href?: string;
 
   /**
-   * Used to identify the link as the currently active page.
-   * See [MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current#page).
-   */
-  active?: boolean;
-
-  /**
    * Whether the link is disabled.
    * Native navigation will be disabled, and the link will be exposed as disabled to assistive technology.
    */

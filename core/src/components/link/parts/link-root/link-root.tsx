@@ -9,7 +9,7 @@ import { composeRefs } from '@/utilities';
  * This component is based on the `a` element.
  */
 export const LinkRoot = component$<LinkRootProps>((props) => {
-  const { as, ref: _ref, href, active, disabled, ...others } = props;
+  const { as, ref: _ref, href, disabled, ...others } = props;
 
   const ref = useSignal<HTMLElement | undefined>(undefined);
 
@@ -37,12 +37,10 @@ export const LinkRoot = component$<LinkRootProps>((props) => {
       ref={composeRefs([_ref, ref])}
       role={disabled ? 'link' : undefined}
       href={disabled ? undefined : href}
-      aria-current={active ? 'page' : undefined}
       aria-disabled={disabled ? 'true' : undefined}
       data-rilix-ui-link-root=""
       data-scope="link"
       data-part="root"
-      data-active={active ? '' : undefined}
       data-disabled={disabled ? '' : undefined}
       {...others}
     >
