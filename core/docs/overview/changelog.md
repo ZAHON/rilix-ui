@@ -1,5 +1,40 @@
 # Changelog
 
+## 0.6.0 (19.06.2025)
+
+### 🚨 Breaking Changes
+
+- **Replace `as` prop with `render$` prop for enhanced component composition.**
+  The `as` prop, previously used for polymorphic rendering, has been replaced with a more flexible `render$` prop across relevant components. The `render$` prop offers a more powerful and explicit way to control the rendered HTML element or compose with another component. Instead of just defining the element type, `render$` accepts a function that provides the component's internal props and state, allowing for highly customizable and robust rendering logic. For more in-depth information, refer to our [Composition guide](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md).
+
+- **Remove `Primitive` component.**
+  The `Primitive` component, its associated documentation, and its tests have been entirely removed. This simplification reduces the library's API surface and bundle size,
+
+- **`usePrevious` hook now directly accepts a `Signal` as its parameter.**
+  The API for the `usePrevious` hook has been simplified for better ergonomics.
+  Previously, it required an object with a `value` property (`{ value: mySignal }`).
+  It now directly accepts the `Signal` instance.
+
+- **`useUncontrolled` hook parameters made optional**
+  The `useUncontrolled` hook's parameter interface (`UseUncontrolledParams`) has been updated. The `uncontrolledValue`, `controlledSignal`, and `onChange$` properties are now explicitly marked as optional. This change offers greater flexibility when configuring the hook, allowing you to omit these properties if they are not needed.
+
+- **`useBoolean` hook's default `initialState` is now `false`**
+  The `useBoolean` hook's default `initialState` has been corrected to `false`. Previously, it was inadvertently set to `true` in the code, despite documentation indicating `false`.
+
+### 🚀 Features
+
+- **Introduce new `Link` component.**
+  A new `Link` component has been added, providing a semantic and accessible way to handle navigation. It's built on the native `a` element and offers enhanced control over its behavior, especially for disabled states.
+
+- **Add `useLabelContext` hook.**
+  This new hook is introduced to streamline accessing context-provided properties within the `Label` component's subtree. It simplifies how you retrieve shared label settings and behaviors, improving component reusability and maintainability.
+
+- **Add `useCounter` hook for managing numeric counters.**
+  The `useCounter` hook has been added to simplify the management of numeric counter states. This hook provides a robust way to create and control counters with customizable parameters.
+
+- **Add `clamp` utility function.**
+  A new `clamp` utility function has been introduced to easily restrict a numeric value within a specified minimum and maximum range. This is useful for ensuring numbers stay within desired bounds, preventing unexpected behavior in various calculations or UI elements.
+
 ## 0.5.0 (24.05.2025)
 
 ### 🚀 Features
