@@ -1,6 +1,7 @@
 import type { LinkRootProps } from './link-root.types';
-import { component$, useComputed$, Slot } from '@builder.io/qwik';
+import { component$, useComputed$, useContextProvider, Slot } from '@builder.io/qwik';
 import { Primitive } from '@/components';
+import { LinkContext } from '../../context';
 
 /**
  * Contains the content for the link.
@@ -10,6 +11,8 @@ export const LinkRoot = component$<LinkRootProps>((props) => {
   const { as, href, disabled: _disabled, ...others } = props;
 
   const disabled = useComputed$(() => _disabled);
+
+  useContextProvider(LinkContext, { disabled });
 
   const Component = as || (Primitive.a as unknown as 'a');
 
