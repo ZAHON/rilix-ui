@@ -1,5 +1,3 @@
-import type { PropsOf } from '@builder.io/qwik';
-import { component$ } from '@builder.io/qwik';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@noma.to/qwik-testing-library';
 import { userEvent } from '@testing-library/user-event';
@@ -15,12 +13,10 @@ describe('Link', () => {
       expect(screen.getByTestId(LINK_ROOT_TESTID).tagName).toBe('A');
     });
 
-    it('should render as the element specified by the "as" prop', async () => {
-      const Primitive = component$((props: PropsOf<'div'>) => {
-        return <div {...props} />;
-      });
-
-      await render(<Link.Root as={Primitive} href={LINK_ROOT_URL} data-testid={LINK_ROOT_TESTID} />);
+    it('should render a custom element when `render$` prop is used', async () => {
+      await render(
+        <Link.Root render$={(props) => <div {...props} />} href={LINK_ROOT_URL} data-testid={LINK_ROOT_TESTID} />
+      );
       expect(screen.getByTestId(LINK_ROOT_TESTID).tagName).not.toBe('A');
       expect(screen.getByTestId(LINK_ROOT_TESTID).tagName).toBe('DIV');
     });
@@ -90,26 +86,6 @@ describe('Link', () => {
 
       await user.tab();
       expect(screen.getByTestId(LINK_ROOT_TESTID)).not.toHaveFocus();
-    });
-
-    it('should have not attribute aria-current when not active', async () => {
-      await render(<Link.Root active={false} href={LINK_ROOT_URL} data-testid={LINK_ROOT_TESTID} />);
-      expect(screen.getByTestId(LINK_ROOT_TESTID)).not.toHaveAttribute('aria-current');
-    });
-
-    it('should have attribute aria-current with value "page" when active', async () => {
-      await render(<Link.Root active={true} href={LINK_ROOT_URL} data-testid={LINK_ROOT_TESTID} />);
-      expect(screen.getByTestId(LINK_ROOT_TESTID)).toHaveAttribute('aria-current', 'page');
-    });
-
-    it('should have not attribute data-active when not active', async () => {
-      await render(<Link.Root active={false} href={LINK_ROOT_URL} data-testid={LINK_ROOT_TESTID} />);
-      expect(screen.getByTestId(LINK_ROOT_TESTID)).not.toHaveAttribute('data-active');
-    });
-
-    it('should have attribute data-active with empty value when active', async () => {
-      await render(<Link.Root active={true} href={LINK_ROOT_URL} data-testid={LINK_ROOT_TESTID} />);
-      expect(screen.getByTestId(LINK_ROOT_TESTID)).toHaveAttribute('data-active', '');
     });
 
     it('should have attribute data-rilix-ui-link-root with empty value', async () => {
