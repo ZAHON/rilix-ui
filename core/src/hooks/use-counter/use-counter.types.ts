@@ -1,5 +1,3 @@
-import type { QRL } from '@builder.io/qwik';
-
 export interface UseCounterParams {
   /**
    * The initial numeric value for the counter.
@@ -27,10 +25,4 @@ export interface UseCounterParams {
    * @default Infinity
    */
   max?: number;
-
-  /**
-   * A callback function that triggers whenever the counter's value changes.
-   * The current count is passed as an argument to this function.
-   */
-  onCountChange$?: QRL<(count: number) => void>;
 }

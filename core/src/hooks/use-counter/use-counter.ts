@@ -1,6 +1,6 @@
 import type { UseCounterParams } from './use-counter.types';
 import type { ReadonlySignal } from '@builder.io/qwik';
-import { useSignal, useTask$, $ } from '@builder.io/qwik';
+import { useSignal, $ } from '@builder.io/qwik';
 import { isDev } from '@builder.io/qwik/build';
 import { clamp } from '@/utilities';
 
@@ -8,7 +8,7 @@ import { clamp } from '@/utilities';
  * A hook for managing a numeric counter with customizable minimum and maximum bounds.
  */
 export const useCounter = (params: UseCounterParams = {}) => {
-  const { initialValue = 0, step = 1, min = -Infinity, max = Infinity, onCountChange$ } = params;
+  const { initialValue = 0, step = 1, min = -Infinity, max = Infinity } = params;
 
   if (isDev && min > max) {
     throw new Error(
@@ -17,14 +17,6 @@ export const useCounter = (params: UseCounterParams = {}) => {
   }
 
   const count = useSignal(clamp({ value: initialValue, min, max }));
-
-  useTask$(({ track }) => {
-    track(() => count.value);
-
-    if (onCountChange$) {
-      onCountChange$(count.value);
-    }
-  });
 
   const increment$ = $(() => {
     count.value = clamp({ value: count.value + step, min, max });
