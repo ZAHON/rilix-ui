@@ -10,20 +10,14 @@ import { useCounter } from 'rilix-ui';
 
 ## Usage
 
-The `useCounter` hook manages a numeric state, providing methods to increment, decrement, set, and reset its value. You can define an `initialValue`, set `min` and `max` bounds, and react to changes with an optional `onCountChange$` callback.
+The `useCounter` hook manages a numeric state, providing methods to increment, decrement, set, and reset its value. You can define an `initialValue`, set `min` and `max` bounds.
 
 ```tsx
 import { component$, $ } from '@builder.io/qwik';
 import { useCounter } from 'rilix-ui';
 
 const Demo = component$(() => {
-  const { count, increment$, decrement$, set$, reset$ } = useCounter({
-    initialValue: 0,
-    step: 1,
-    min: 0,
-    max: 10,
-    onCountChange$: $((count) => console.log(`Count: ${count}`)),
-  });
+  const { count, increment$, decrement$, set$, reset$ } = useCounter();
 
   return (
     <>
@@ -51,13 +45,12 @@ const Demo = component$(() => {
 
 The `useCounter` hook accepts a **single, optional object** as its parameter, with the following properties:
 
-| Property         | Type                           | Default     | Description                                                                                                                          |
-| :--------------- | :----------------------------- | :---------- | :----------------------------------------------------------------------------------------------------------------------------------- |
-| `initialValue`   | `number`                       | `0`         | The initial numeric value for the counter. The counter's value will be clamped between `min` and `max` at initialization.            |
-| `step`           | `number`                       | `1`         | The amount by which the counter's value will be incremented or decremented.                                                          |
-| `min`            | `number`                       | `-Infinity` | The minimum allowed value for the counter.The counter's value will not go below this number.                                         |
-| `max`            | `number`                       | `Infinity`  | The maximum allowed value for the counter. The counter's value will not exceed this number.                                          |
-| `onCountChange$` | `QRL<(count: number) => void>` | `-`         | A callback function that triggers whenever the counter's value changes. The current count is passed as an argument to this function. |
+| Property       | Type     | Default     | Description                                                                                                               |
+| :------------- | :------- | :---------- | :------------------------------------------------------------------------------------------------------------------------ |
+| `initialValue` | `number` | `0`         | The initial numeric value for the counter. The counter's value will be clamped between `min` and `max` at initialization. |
+| `step`         | `number` | `1`         | The amount by which the counter's value will be incremented or decremented.                                               |
+| `min`          | `number` | `-Infinity` | The minimum allowed value for the counter.The counter's value will not go below this number.                              |
+| `max`          | `number` | `Infinity`  | The maximum allowed value for the counter. The counter's value will not exceed this number.                               |
 
 ### Returns
 
