@@ -10,17 +10,14 @@ import { useBoolean } from 'rilix-ui';
 
 ## Usage
 
-`useBoolean` hook manages boolean state. It provides `setTrue$`, `setFalse$` and `toggle$` handlers and accepts optional `onStateChange$` callback.
+`useBoolean` hook manages boolean state. It provides `setTrue$`, `setFalse$` and `toggle$` handlers.
 
 ```tsx
 import { component$, $ } from '@builder.io/qwik';
 import { useBoolean } from 'rilix-ui';
 
 const Demo = component$(() => {
-  const { state, setTrue$, setFalse$, toggle$ } = useBoolean({
-    initialState: false,
-    onStateChange$: $((state) => console.log(`State is: ${state}`)),
-  });
+  const { state, setTrue$, setFalse$, toggle$ } = useBoolean();
 
   return (
     <>
@@ -40,12 +37,11 @@ const Demo = component$(() => {
 
 ### Parameters
 
-The useBoolean hook accepts a **single, optional object** as its parameter, with the following properties:
+The `useBoolean` hook accepts a **single, optional boolean** parameter:
 
-| Property         | Type                            | Default | Description                                                             |
-| :--------------- | :------------------------------ | :------ | :---------------------------------------------------------------------- |
-| `initialState`   | `boolean`                       | `false` | The initial value for the boolean state.                                |
-| `onStateChange$` | `QRL<(state: boolean) => void>` | `-`     | Optional callback that is triggered whenever the boolean state changes. |
+| Param          | Type      | Default | Description                              |
+| :------------- | :-------- | :------ | :--------------------------------------- |
+| `initialState` | `boolean` | `false` | The initial value for the boolean state. |
 
 ### Returns
 
