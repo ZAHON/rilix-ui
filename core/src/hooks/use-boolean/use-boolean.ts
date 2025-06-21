@@ -1,22 +1,14 @@
 import type { UseBooleanParams } from './use-boolean.types';
 import type { ReadonlySignal } from '@builder.io/qwik';
-import { useSignal, useTask$, $ } from '@builder.io/qwik';
+import { useSignal, $ } from '@builder.io/qwik';
 
 /**
  * Custom hook that handles boolean state with useful utility functions.
  */
 export const useBoolean = (params: UseBooleanParams = {}) => {
-  const { initialState = false, onStateChange$ } = params;
+  const { initialState = false } = params;
 
   const state = useSignal(initialState);
-
-  useTask$(({ track }) => {
-    track(() => state.value);
-
-    if (onStateChange$) {
-      onStateChange$(state.value);
-    }
-  });
 
   const setTrue$ = $(() => {
     if (!state.value) state.value = true;
