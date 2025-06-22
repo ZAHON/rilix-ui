@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.7.0 (22.06.2025)
+
+### 🚨 Breaking Changes
+
+- **Remove `onCountChange$` callback from `useCounter` hook.**
+  The `onCountChange$` callback has been removed from the `useCounter` hook.
+
+- **Remove `onStateChange$` callback from `useBoolean` hook.**
+  The `onStateChange$` callback has been removed from the `useBoolean` hook.
+
+- **Simplify `useBoolean` hook by removing `UseBooleanParams` interface.**
+  The `useBoolean` hook no longer accepts a `params` object. Instead, provide the `initialState` directly as the first argument, like `useBoolean(initialState)`. The `UseBooleanParams` interface has been removed.
+
+### 🚀 Features
+
+- **Introduce `Separator` component for visual and semantic content separation.**
+  Adds a new `Separator` component for visually and semantically separating content. It supports both `horizontal` and `vertical` orientations, adheres to accessibility standards, and offers styling customization.
+
+- **Add `useToggle` hook for managing cyclical state.**
+  Introduces a new `useToggle` hook that provides a flexible way to manage state which cycles through a predefined list of values. It includes `toggle$` for sequential changes and `set$` for direct value assignment.
+
 ## 0.6.0 (19.06.2025)
 
 ### 🚨 Breaking Changes
