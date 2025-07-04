@@ -45,6 +45,8 @@ const Demo = component$(() => {
 });
 ```
 
+## API reference
+
 ### Parameters
 
 The `clamp` function accepts a **single, required object** as its parameter, with all of the following required properties:
