@@ -1,6 +1,6 @@
 # getScrollDimensions
 
-This utility function provides a convenient way to retrieve various scroll-related dimensions for a given HTML element along a specified axis.
+Retrieves various scroll-related dimensions for a given HTML element along a specified axis.
 
 ## Import
 
