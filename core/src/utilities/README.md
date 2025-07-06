@@ -26,6 +26,7 @@ These utilities provide foundational building blocks for effectively interacting
 | :------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------- |
 | [`combineStyle`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/utilities/combine-style)                 | Combines two style values, whether inline CSS strings or style objects, into one.            |
 | [`composeRefs`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/utilities/compose-refs)                   | A utility function that allows assigning a single DOM element to multiple refs.              |
+| [`getScrollDimensions`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/utilities/get-scroll-dimensions)  | Retrieves various scroll-related dimensions for a given HTML element along a specified axis. |
 | [`setStyle`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/utilities/set-style)                         | Applies a set of inline CSS styles to an HTML element and returns a function to revert them. |
 | [`setStyleProperty`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/utilities/set-style-property)        | Sets an inline CSS property on an HTML element and returns a function to revert it.          |
 | [`stringStyleToObject`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/utilities/string-style-to-object) | Converts inline CSS style string into a key-value object format.                             |
