@@ -10,6 +10,14 @@ These utilities provide convenient methods for handling and manipulating numeric
 | :------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------- |
 | [`clamp`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/utilities/clamp) | Clamps a given number to a specified range, ensuring it does not exceed the minimum or maximum bounds. |
 
+## Reactive data
+
+These utilities simplify interactions with Qwik's reactive system, providing straightforward ways to access and manage signal values.
+
+| Utility                                                                                        | Description                                                                                                 |
+| :--------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- |
+| [`unwrapSignal`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/utilities/unwrap-signal) | Unwraps a signal, returning its current value. If the provided value is not a signal, it is returned as is. |
+
 ## UI and DOM
 
 These utilities provide foundational building blocks for effectively interacting with the user interface and the Document Object Model, covering aspects from managing element references to handling and combining styles for diverse rendering and presentation needs.
