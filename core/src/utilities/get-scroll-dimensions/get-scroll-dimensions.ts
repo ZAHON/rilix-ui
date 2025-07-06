@@ -2,7 +2,7 @@ import type { GetScrollDimensionsParams } from './get-scroll-dimensions.types';
 import { isDev, isServer } from '@builder.io/qwik/build';
 
 /**
- * This utility function provides a convenient way to retrieve various scroll-related dimensions for a given HTML element along a specified axis.
+ * Retrieves various scroll-related dimensions for a given HTML element along a specified axis.
  */
 export const getScrollDimensions = (params: GetScrollDimensionsParams) => {
   const { element, axis } = params;
