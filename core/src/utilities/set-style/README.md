@@ -10,7 +10,7 @@ import { setStyle } from 'rilix-ui';
 
 ## Usage
 
-The `setStyle` utility is a powerful tool for dynamically applying CSS styles to any HTML element and easily reverting them to their original state. It instantly applies the given styles and returns a function that, when called, precisely removes those applied styles, restoring any overwritten originals.
+The `setStyle` utility is a powerful tool for dynamically applying CSS styles to any HTML element and easily reverting them to their original state. It instantly applies the given styles and returns a function that, when called, precisely removes those applied styles, restoring any overwritten originals. This function is designed for client-side use only.
 
 ```tsx
 import { component$, useSignal, useTask$ } from '@builder.io/qwik';
