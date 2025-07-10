@@ -2,14 +2,6 @@
 
 Utilities are specialized functions and objects crafted to handle specific, recurrent programming challenges. Within **Rilix UI**, these utilities provide streamlined solutions for various development needs, including numerical calculations, sophisticated style management, and precise interactions with the Document Object Model. Engineered for reusability, efficiency, and seamless integration, they empower you to develop cleaner, more organized, and easily maintainable applications.
 
-## Numerical operations
-
-These utilities provide convenient methods for handling and manipulating numeric values, ensuring data integrity and predictable behavior.
-
-| Utility                                                                         | Description                                                                                            |
-| :------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------- |
-| [`clamp`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/utilities/clamp) | Clamps a given number to a specified range, ensuring it does not exceed the minimum or maximum bounds. |
-
 ## UI and DOM
 
 These utilities provide foundational building blocks for effectively interacting with the user interface and the Document Object Model, covering aspects from managing element references to handling and combining styles for diverse rendering and presentation needs.
