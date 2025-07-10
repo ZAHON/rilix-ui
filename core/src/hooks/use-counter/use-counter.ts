@@ -2,7 +2,7 @@ import type { UseCounterParams } from './use-counter.types';
 import type { ReadonlySignal } from '@builder.io/qwik';
 import { useSignal, $ } from '@builder.io/qwik';
 import { isDev } from '@builder.io/qwik/build';
-import { clamp } from '@/utilities';
+import { clamp } from '@/_internal';
 
 /**
  * A hook for managing a numeric counter with customizable minimum and maximum bounds.
