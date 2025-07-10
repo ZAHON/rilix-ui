@@ -4,5 +4,4 @@ export * from './compose-refs';
 export * from './set-style';
 export * from './set-style-property';
 export * from './string-style-to-object';
-export * from './unwrap-signal';
 export * from './visually-hidden-style';
