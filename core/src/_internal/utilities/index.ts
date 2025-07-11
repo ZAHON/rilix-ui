@@ -1,5 +1,6 @@
 export * from './array-remove';
 export * from './clamp';
+export * from './contains';
 export * from './get-platform';
 export * from './is-ios';
 export * from './set-style';
