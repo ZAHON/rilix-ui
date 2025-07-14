@@ -3,6 +3,7 @@ export * from './clamp';
 export * from './contains';
 export * from './get-platform';
 export * from './is-element-in-dom';
+export * from './is-element-visible';
 export * from './is-ios';
 export * from './set-style';
 export * from './set-style-property';
