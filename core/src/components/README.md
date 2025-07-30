@@ -39,6 +39,7 @@ Dedicated to enabling intuitive and efficient movement throughout your applicati
 
 Comprising components that offer foundational, non-visual, or assistive functionalities. While not always directly visible, they enhance accessibility, structure, or behavior of other UI elements, being highly versatile for a well-structured and inclusive UI.
 
-| Component                                                                                            | Description                                         |
-| :--------------------------------------------------------------------------------------------------- | :-------------------------------------------------- |
-| [`Visually Hidden`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/visually-hidden) | Hides content from the screen in an accessible way. |
+| Component                                                                                            | Description                                                                 |
+| :--------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------- |
+| [`Portal`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/portal)                   | Lifts content to the browser's top layer, utilizing the native Popover API. |
+| [`Visually Hidden`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/visually-hidden) | Hides content from the screen in an accessible way.                         |
