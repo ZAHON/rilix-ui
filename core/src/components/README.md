@@ -6,10 +6,11 @@ Components are the fundamental building blocks of your application's user interf
 
 Engineered for clear and structured presentation of various content types. These components ensure information is rendered effectively, with precise control over layout and visual relationships for an optimal viewing experience.
 
-| Component                                                                                      | Description                                 |
-| :--------------------------------------------------------------------------------------------- | :------------------------------------------ |
-| [`Aspect Ratio`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/aspect-ratio) | Displays content within a desired ratio.    |
-| [`Separator`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/separator)       | Visually or semantically separates content. |
+| Component                                                                                      | Description                                               |
+| :--------------------------------------------------------------------------------------------- | :-------------------------------------------------------- |
+| [`Aspect Ratio`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/aspect-ratio) | Displays content within a desired ratio.                  |
+| [`Collapsible`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/collapsible)   | An interactive component which expands/collapses a panel. |
+| [`Separator`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/separator)       | Visually or semantically separates content.               |
 
 ## Feedback
 
