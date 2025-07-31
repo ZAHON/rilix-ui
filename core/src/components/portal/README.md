@@ -54,7 +54,7 @@ A robust component that leverages the native Popover API to display its children
 
 ### usePortalContext
 
-A hook that provides access to the internal portal state, allowing descendant components to interact with it.
+A hook that provides access to the `Portal` component's internal state, allowing descendant components to interact with it.
 
 | Property   | Type                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | :--------- | :----------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
