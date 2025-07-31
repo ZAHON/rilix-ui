@@ -103,7 +103,7 @@ const Demo = component$(() => {
 });
 ```
 
-### Initially Open
+### Initially open
 
 This example demonstrates how to set the `Portal` to open automatically when the component loads. This is required if the portal needs to be initially open, as it cannot be opened during Server-Side Rendering (SSR) because the portal utilizes the [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API), which is only available in a browser environment. This can be achieved by updating the `Portal.Root` component's `open` boolean signal within a `useOnDocument` hook (specifically listening for the `DOMContentLoaded` event) or by using a `useVisibleTask$` hook with a `strategy` like `"document-ready"` or `"document-idle"`. In both cases, the portal will be visible from the moment the page's content is fully loaded.
 
