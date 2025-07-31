@@ -2,7 +2,7 @@ import { useContext } from '@builder.io/qwik';
 import { PortalContext } from '../../contexts';
 
 /**
- * A hook that provides access to the internal portal state, allowing descendant components to interact with it.
+ * A hook that provides access to the `Portal` component's internal state, allowing descendant components to interact with it.
  */
 export const usePortalContext = () => {
   const { open, setOpen$ } = useContext(PortalContext);
