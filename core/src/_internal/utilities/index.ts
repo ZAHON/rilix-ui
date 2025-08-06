@@ -2,6 +2,7 @@ export * from './add-event-listener-once';
 export * from './array-remove';
 export * from './clamp';
 export * from './contains';
+export * from './error';
 export * from './get-platform';
 export * from './is-element-focusable';
 export * from './is-element-in-dom';
