@@ -36,6 +36,17 @@ export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
       if (_open) {
         hidden.value = false;
 
+        const { transitionDuration } = getComputedStyle(_ref);
+
+        if (transitionDuration !== '0s') {
+          _ref.style.setProperty('display', 'grid');
+          _ref.style.setProperty('grid-template-rows', '0fr');
+
+          setTimeout(() => {
+            _ref.style.setProperty('grid-template-rows', '1fr');
+          }, 0);
+        }
+
         _ref.setAttribute('data-presence', 'showing');
       } else {
         isContentOverflowHidden.value = true;
@@ -94,8 +105,8 @@ export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
       data-disabled={disabled.value ? '' : undefined}
       style={combineStyle(
         {
-          display: 'grid',
-          gridTemplateRows: open.value ? '1fr' : '0fr',
+          display: hidden.value ? 'none' : 'grid',
+          gridTemplateRows: hidden.value ? undefined : open.value ? '1fr' : '0fr',
           animationDuration: preventInitialAnimation.value ? '0s' : undefined,
           transitionDuration: preventInitialAnimation.value ? '0s' : undefined,
         },
