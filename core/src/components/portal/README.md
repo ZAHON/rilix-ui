@@ -150,7 +150,7 @@ const Demo = component$(() => {
 
 ### Rendering different elements
 
-By default, `Portal`'s subcomponents (specifically `Portal.Root`) render a sensible HTML element. For a complete overview of these default elements, refer to the Rendered elements section.
+By default, `Portal`'s subcomponents (specifically `Portal.Root`) render a sensible HTML element. For a complete overview of these default elements, refer to the [Rendered elements](#rendered-elements) section.
 
 You can customize the underlying HTML element rendered by these subcomponents, or even compose them with your own custom Qwik components, by using the `render$` prop. This provides immense flexibility, allowing you to:
 
