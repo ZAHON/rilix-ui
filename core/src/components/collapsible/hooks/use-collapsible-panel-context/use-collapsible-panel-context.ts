@@ -11,13 +11,13 @@ export const useCollapsiblePanelContext = () => {
   return {
     /**
      * A readonly signal whose value indicates the collapsible panel's current presence state.
-     * This signal reflects the different phases of the panel's visibility, especially during animations.
+     * This signal reflects the different phases of the panel's lifecycle, especially during
+     * animations. It can be one of the following:
      *
-     * - `"showing"`: The panel is currently animating open.
-     * - `"shown"`: The panel is fully open and not animating.
-     * - `"hiding"`: The panel is currently animating closed.
-     * - `"hidden"`: The panel is fully closed and not animating.
-     * - `undefined`: Initial state or no animation is configured/running.
+     * - `"showing"`: The panel is currently animating to an open state.
+     * - `"shown"`: The panel is fully open and visible.
+     * - `"hiding"`: The panel is currently animating to a closed state.
+     * - `"hidden"`: The panel is fully closed and not visible.
      */
     presence: presence,
   };
