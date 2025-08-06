@@ -2,7 +2,7 @@ import type { CollapsiblePanelProps } from './collapsible-panel.types';
 import { component$, useSignal, useTask$, useContextProvider, Slot } from '@builder.io/qwik';
 import { isBrowser, isDev } from '@builder.io/qwik/build';
 import { composeRefs, combineStyle } from '@/utilities';
-import { Render } from '@/_internal';
+import { warn, Render } from '@/_internal';
 import { useCollapsibleContext, CollapsiblePanelContext } from '../../contexts';
 
 /**
@@ -74,8 +74,9 @@ export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
       const { animationDuration, transitionDuration } = getComputedStyle(_ref);
 
       if (isDev && animationDuration !== '0s' && transitionDuration !== '0s') {
-        console.warn(
-          `Rilix UI: CSS transitions and CSS animations both detected on 'Collapsible.Panel' component. Only one of either animation type should be used.`
+        warn(
+          `CSS transitions and CSS animations both detected on 'Collapsible.Panel' component.`,
+          `Only one of either animation type should be used.`
         );
       } else if (animationDuration !== '0s') {
         _ref.addEventListener('animationend', applyFinalState, { once: true });
