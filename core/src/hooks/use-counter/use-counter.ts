@@ -2,7 +2,7 @@ import type { UseCounterParams } from './use-counter.types';
 import type { ReadonlySignal } from '@builder.io/qwik';
 import { useSignal, $ } from '@builder.io/qwik';
 import { isDev } from '@builder.io/qwik/build';
-import { clamp } from '@/_internal';
+import { error, clamp } from '@/_internal';
 
 /**
  * A hook for managing a numeric counter with customizable minimum and maximum bounds.
@@ -11,8 +11,8 @@ export const useCounter = (params: UseCounterParams = {}) => {
   const { initialValue = 0, step = 1, min = -Infinity, max = Infinity } = params;
 
   if (isDev && min > max) {
-    throw new Error(
-      `Rilix UI: For the 'useCounter' hook, the 'min' parameter (${min}) cannot be greater than the 'max' parameter (${max}).`
+    error(
+      `For the 'useCounter' hook, the 'min' parameter (${min}) cannot be greater than the 'max' parameter (${max}).`
     );
   }
 
