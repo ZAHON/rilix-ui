@@ -3,7 +3,7 @@ import type { ReadonlySignal, QRL } from '@builder.io/qwik';
 export interface CollapsibleContextValue {
   /**
    * A readonly signal whose value indicates the collapsible's current open state.
-   * It is `true` when the collapsible panel is open, and `false` when closed.
+   * It is `true` when the collapsible is open, and `false` when closed.
    */
   open: ReadonlySignal<boolean>;
 
