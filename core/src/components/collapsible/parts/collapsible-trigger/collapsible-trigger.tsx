@@ -4,7 +4,7 @@ import { Render } from '@/_internal';
 import { useCollapsibleContext } from '../../contexts';
 
 /**
- * The button that toggles the collapsible panel.
+ * The button that toggles the collapsible.
  * Renders a `<button>` element.
  */
 export const CollapsibleTrigger = component$<CollapsibleTriggerProps>((props) => {
