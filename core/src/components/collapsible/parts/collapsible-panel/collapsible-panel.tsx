@@ -16,7 +16,7 @@ export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
 
   const ref = useSignal<HTMLElement | undefined>(undefined);
   const hidden = useSignal(!open.value);
-  const presence = useSignal<'showing' | 'shown' | 'hiding' | 'hidden' | undefined>(undefined);
+  const presence = useSignal<'showing' | 'shown' | 'hiding' | 'hidden'>(open.value ? 'shown' : 'hidden');
   const isContentOverflowHidden = useSignal(!open.value);
   const preventInitialAnimation = useSignal(true);
 
@@ -101,6 +101,7 @@ export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
       hidden={hidden.value}
       data-rilix-ui-collapsible-panel
       data-state={open.value ? 'open' : 'closed'}
+      data-presence={presence.value}
       data-disabled={disabled.value ? '' : undefined}
       style={combineStyle(
         {
