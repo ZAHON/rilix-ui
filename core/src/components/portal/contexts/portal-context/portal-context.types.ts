@@ -3,7 +3,7 @@ import type { ReadonlySignal, QRL } from '@builder.io/qwik';
 /**
  * This context is used to provide the `open` state and the `setOpen$` function
  * from the `Portal.Root` component down to its descendant components.
- * Consumers can use this context to imperatively control the portal's visibility
+ * Consumers can use this context to programmatically control the portal's visibility
  * or react to its current open state without prop drilling.
  */
 export interface PortalContextValue {
@@ -16,7 +16,7 @@ export interface PortalContextValue {
   open: ReadonlySignal<boolean>;
 
   /**
-   * A `QRL` function used to imperatively control the open state of the portal.
+   * A `QRL` function used to programmatically control the open state of the portal.
    * Calling this function with `true` will attempt to open the portal, while calling it with `false` will hide it.
    * This action directly changes the `value` of the signal passed via the `open` prop to the `Portal.Root` component,
    * but only if the `open` prop was actually provided to `Portal.Root`. Otherwise, calling this function with any value will have no effect.
