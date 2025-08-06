@@ -132,7 +132,7 @@ A hook that provides access to the `Collapsible` component internal context, exp
 
 | Property   | Type                           | Description                                                                                                                                                        |
 | :--------- | :----------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `open`     | `ReadonlySignal<boolean>`      | A readonly signal whose value indicates the collapsible's current open state. It is `true` when the collapsible panel is open, and `false` when closed.            |
+| `open`     | `ReadonlySignal<boolean>`      | A readonly signal whose value indicates the collapsible's current open state. It is `true` when the collapsible is open, and `false` when closed.                  |
 | `setOpen$` | `QRL<(open: boolean) => void>` | A `QRL` function used to programmatically set the open state of the collapsible. When invoked with `true`, the collapsible will open; with `false`, it will close. |
 | `disabled` | `ReadonlySignal<boolean>`      | A readonly signal whose value indicates the collapsible's current disabled state. It is `true` when the collapsible is prevented from user interaction.            |
 
