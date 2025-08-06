@@ -2,7 +2,7 @@ import type { PortalRootProps } from './portal-root.types';
 import { component$, useSignal, useComputed$, useTask$, $, useContextProvider, Slot } from '@builder.io/qwik';
 import { isDev, isServer, isBrowser } from '@builder.io/qwik/build';
 import { composeRefs, combineStyle } from '@/utilities';
-import { Render } from '@/_internal';
+import { error, Render } from '@/_internal';
 import { PortalContext } from '../../contexts';
 
 /**
@@ -16,14 +16,16 @@ export const PortalRoot = component$<PortalRootProps>((props) => {
   const open = useComputed$(() => _open?.value ?? false);
 
   if (isDev && isServer && open.value) {
-    throw Error(
-      `Rilix UI: The 'Portal' component cannot be open on the server because the 'Portal' component utilizes the Popover API, which is only available in a browser environment. Ensure the value of the signal passed to the 'open' prop for the 'Portal.Root' component is false during SSR.`
+    error(
+      `The 'Portal' component cannot be open on the server because the 'Portal' component utilizes the Popover API, which is only available in a browser environment.`,
+      `Ensure the value of the signal passed to the 'open' prop for the 'Portal.Root' component is false during SSR.`
     );
   }
 
   if (isDev && isBrowser && open.value && !('popover' in HTMLElement.prototype)) {
-    throw Error(
-      `Rilix UI: The 'Portal' component cannot be opened because the browser does not support the native Popover API. Ensure you are using a browser with Popover API support.`
+    error(
+      `The 'Portal' component cannot be opened because the browser does not support the native Popover API.`,
+      `Ensure you are using a browser with Popover API support.`
     );
   }
 
