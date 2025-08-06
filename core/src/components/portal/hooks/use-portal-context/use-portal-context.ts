@@ -17,7 +17,7 @@ export const usePortalContext = () => {
     open: open,
 
     /**
-     * A `QRL` function used to imperatively control the open state of the portal.
+     * A `QRL` function used to programmatically control the open state of the portal.
      * Calling this function with `true` will attempt to open the portal, while calling it with `false` will hide it.
      * This action directly changes the `value` of the signal passed via the `open` prop to the `Portal.Root` component,
      * but only if the `open` prop was actually provided to `Portal.Root`. Otherwise, calling this function with any value will have no effect.
