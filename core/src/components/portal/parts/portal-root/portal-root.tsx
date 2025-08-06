@@ -15,22 +15,22 @@ export const PortalRoot = component$<PortalRootProps>((props) => {
   const ref = useSignal<HTMLElement | undefined>(undefined);
   const open = useComputed$(() => _open?.value ?? false);
 
+  if (isDev && isServer && open.value) {
+    throw Error(
+      `Rilix UI: The 'Portal' component cannot be open on the server because the 'Portal' component utilizes the Popover API, which is only available in a browser environment. Ensure the value of the signal passed to the 'open' prop for the 'Portal.Root' component is false during SSR.`
+    );
+  }
+
+  if (isDev && isBrowser && open.value && !('popover' in HTMLElement.prototype)) {
+    throw Error(
+      `Rilix UI: The 'Portal' component cannot be opened because the browser does not support the native Popover API. Ensure you are using a browser with Popover API support.`
+    );
+  }
+
   useTask$(({ track, cleanup }) => {
     const _open = track(() => open.value);
 
     const _ref = ref.value;
-
-    if (isDev && isServer && _open) {
-      throw Error(
-        `Rilix UI: The 'Portal' component cannot be open on the server because the 'Portal' component utilizes the Popover API, which is only available in a browser environment. Ensure the value of the signal passed to the 'open' prop for the 'Portal.Root' component is false during SSR.`
-      );
-    }
-
-    if (isDev && isBrowser && _open && !('popover' in HTMLElement.prototype)) {
-      throw Error(
-        `Rilix UI: The 'Portal' component cannot be opened because the browser does not support the native Popover API. Ensure you are using a browser with Popover API support.`
-      );
-    }
 
     if (isBrowser && _open && _ref) {
       _ref.showPopover();
