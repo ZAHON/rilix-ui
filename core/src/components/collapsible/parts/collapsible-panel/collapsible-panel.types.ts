@@ -2,14 +2,6 @@ import type { PropsOf, QRL, ReadonlySignal, JSXOutput } from '@builder.io/qwik';
 
 export interface CollapsiblePanelProps extends PropsOf<'div'> {
   /**
-   * When `true`, the panel content will be hidden using the `hidden="until-found"` attribute.
-   * This is a browser feature that defers rendering of content until it is scrolled into view
-   * or a find-in-page operation matches content within it. It can improve initial page load performance.
-   * @default false
-   */
-  hiddenUntilFound?: boolean;
-
-  /**
    * A `QRL` callback function invoked after the collapsible panel's expansion or collapse animation/transition has fully completed.
    * Use this to react once the panel has settled in its final open or closed state, regardless of whether it was animated
    * with CSS `animation` or `transition` properties.

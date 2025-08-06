@@ -20,12 +20,4 @@ export interface CollapsiblePanelContextValue {
    * When `true`, content outside the visible area of the panel will be clipped.
    */
   isContentOverflowHidden: ReadonlySignal<boolean>;
-
-  /**
-   * A readonly signal indicating whether the `hidden="until-found"` attribute is applied to the collapsible panel.
-   * When `true`, the collapsible panel remains hidden from view and rendering until a find-in-page operation
-   * or scroll action reveals it. This helps improve initial page load performance by deferring rendering
-   * of offscreen content.
-   */
-  hiddenUntilFound: ReadonlySignal<boolean>;
 }

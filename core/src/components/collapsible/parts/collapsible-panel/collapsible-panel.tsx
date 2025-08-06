@@ -1,5 +1,5 @@
 import type { CollapsiblePanelProps } from './collapsible-panel.types';
-import { component$, useSignal, useComputed$, useTask$, useContextProvider, Slot } from '@builder.io/qwik';
+import { component$, useSignal, useTask$, useContextProvider, Slot } from '@builder.io/qwik';
 import { isBrowser } from '@builder.io/qwik/build';
 import { composeRefs, combineStyle } from '@/utilities';
 import { Render } from '@/_internal';
@@ -10,7 +10,7 @@ import { useCollapsibleContext, CollapsiblePanelContext } from '../../contexts';
  * Renders a `<div>` element.
  */
 export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
-  const { ref: _ref, hiddenUntilFound: _hiddenUntilFound, onOpenChangeComplete$, style, ...others } = props;
+  const { ref: _ref, onOpenChangeComplete$, style, ...others } = props;
 
   const { open, disabled, ids } = useCollapsibleContext();
 
@@ -19,7 +19,6 @@ export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
   const presence = useSignal<'showing' | 'shown' | 'hiding' | 'hidden' | undefined>(undefined);
   const isContentOverflowHidden = useSignal(!open.value);
   const preventInitialAnimation = useSignal(true);
-  const hiddenUntilFound = useComputed$(() => _hiddenUntilFound ?? false);
 
   useTask$(({ track, cleanup }) => {
     const _open = track(() => open.value);
@@ -92,14 +91,14 @@ export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
     }
   });
 
-  useContextProvider(CollapsiblePanelContext, { presence, isContentOverflowHidden, hiddenUntilFound });
+  useContextProvider(CollapsiblePanelContext, { presence, isContentOverflowHidden });
 
   return (
     <Render
       as="div"
       ref={composeRefs([_ref, ref])}
       id={ids.panel}
-      hidden={hidden.value ? (hiddenUntilFound.value ? 'until-found' : true) : false}
+      hidden={hidden.value}
       data-rilix-ui-collapsible-panel
       data-state={open.value ? 'open' : 'closed'}
       data-disabled={disabled.value ? '' : undefined}
