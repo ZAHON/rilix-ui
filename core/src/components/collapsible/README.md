@@ -67,10 +67,10 @@ Contains all the parts of a collapsible. Renders a `<div>` element.
 | `ids`           | `Partial<{ panel: string }>`                                                                                                 | `-`     | An optional object to override the default generated IDs for internal elements. This is useful when you need to ensure specific, predictable IDs for integration with external tools, testing frameworks, or for more fine-grained control over accessibility attributes. |
 | `render$`       | `(props: Record<string, unknown>, state: { open: ReadonlySignal<boolean>; disabled: ReadonlySignal<boolean> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details.                                |
 
-| Data attribute    | Values               | Description                                                                                   |
-| :---------------- | :------------------- | :-------------------------------------------------------------------------------------------- |
-| `[data-state]`    | `"open" \| "closed"` | Indicates whether the collapsible is currently expanded (`"open"`) or collapsed (`"closed"`). |
-| `[data-disabled]` | `-`                  | Present when the collapsible is disabled and cannot be interacted with.                       |
+| Data attribute  | Values               | Description                                                                                   |
+| :-------------- | :------------------- | :-------------------------------------------------------------------------------------------- |
+| `data-state`    | `"open" \| "closed"` | Indicates whether the collapsible is currently expanded (`"open"`) or collapsed (`"closed"`). |
+| `data-disabled` | `-`                  | Present when the collapsible is disabled and cannot be interacted with.                       |
 
 ### Trigger
 
@@ -80,10 +80,10 @@ The button that toggles the collapsible. Renders a `<button>` element.
 | :-------- | :--------------------------------------------------------------------------------------------------------------------------- | :------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `render$` | `(props: Record<string, unknown>, state: { open: ReadonlySignal<boolean>; disabled: ReadonlySignal<boolean> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details |
 
-| Data attribute    | Values               | Description                                                                                   |
-| :---------------- | :------------------- | :-------------------------------------------------------------------------------------------- |
-| `[data-state]`    | `"open" \| "closed"` | Indicates whether the collapsible is currently expanded (`"open"`) or collapsed (`"closed"`). |
-| `[data-disabled]` | `-`                  | Present when the collapsible is disabled and cannot be interacted with.                       |
+| Data attribute  | Values               | Description                                                                                   |
+| :-------------- | :------------------- | :-------------------------------------------------------------------------------------------- |
+| `data-state`    | `"open" \| "closed"` | Indicates whether the collapsible is currently expanded (`"open"`) or collapsed (`"closed"`). |
+| `data-disabled` | `-`                  | Present when the collapsible is disabled and cannot be interacted with.                       |
 
 ### Panel
 
@@ -94,11 +94,11 @@ The expandable and collapsible wrapper for the actual content. Renders a `<div>`
 | `onOpenChangeComplete$` | `QRL<(open: boolean) => void>`                                                                                                                                                                       | `-`     | A `QRL` callback function invoked after the collapsible panel's expansion or collapse animation/transition has fully completed. Use this to react once the panel has settled in its final open or closed state, regardless of whether it was animated with CSS `animation` or `transition` properties. |
 | `render$`               | `(props: Record<string, unknown>, state: { open: ReadonlySignal<boolean>; disabled: ReadonlySignal<boolean>; presence: ReadonlySignal<"showing" \| "shown" \| "hiding" \| "hidden"> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details.                                                             |
 
-| Data attribute    | Values                                         | Description                                                                                                                                                                                                              |
-| :---------------- | :--------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `[data-state]`    | `"open" \| "closed"`                           | Indicates whether the collapsible is currently expanded (`"open"`) or collapsed (`"closed"`).                                                                                                                            |
-| `[data-presence]` | `"showing" \| "shown" \| "hiding" \| "hidden"` | Indicates the panel’s current presence state. Useful for managing animations, as `"showing"` and `"hiding"` are active during the animation, while `"shown"` and `"hidden"` are active once the animation has completed. |
-| `[data-disabled]` | `-`                                            | Present when the collapsible is disabled and cannot be interacted with.                                                                                                                                                  |
+| Data attribute  | Values                                         | Description                                                                                                                                                                                                              |
+| :-------------- | :--------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `data-state`    | `"open" \| "closed"`                           | Indicates whether the collapsible is currently expanded (`"open"`) or collapsed (`"closed"`).                                                                                                                            |
+| `data-presence` | `"showing" \| "shown" \| "hiding" \| "hidden"` | Indicates the panel’s current presence state. Useful for managing animations, as `"showing"` and `"hiding"` are active during the animation, while `"shown"` and `"hidden"` are active once the animation has completed. |
+| `data-disabled` | `-`                                            | Present when the collapsible is disabled and cannot be interacted with.                                                                                                                                                  |
 
 ### Content
 
@@ -108,10 +108,10 @@ The component that contains the collapsible content. Must be nested inside `Coll
 | :-------- | :--------------------------------------------------------------------------------------------------------------------------- | :------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `render$` | `(props: Record<string, unknown>, state: { open: ReadonlySignal<boolean>; disabled: ReadonlySignal<boolean> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details |
 
-| Data attribute    | Values               | Description                                                                                   |
-| :---------------- | :------------------- | :-------------------------------------------------------------------------------------------- |
-| `[data-state]`    | `"open" \| "closed"` | Indicates whether the collapsible is currently expanded (`"open"`) or collapsed (`"closed"`). |
-| `[data-disabled]` | `-`                  | Present when the collapsible is disabled and cannot be interacted with.                       |
+| Data attribute  | Values               | Description                                                                                   |
+| :-------------- | :------------------- | :-------------------------------------------------------------------------------------------- |
+| `data-state`    | `"open" \| "closed"` | Indicates whether the collapsible is currently expanded (`"open"`) or collapsed (`"closed"`). |
+| `data-disabled` | `-`                  | Present when the collapsible is disabled and cannot be interacted with.                       |
 
 ### Indicator
 
@@ -121,10 +121,10 @@ An optional visual indicator that reflects the collapsible's open or closed stat
 | :-------- | :--------------------------------------------------------------------------------------------------------------------------- | :------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `render$` | `(props: Record<string, unknown>, state: { open: ReadonlySignal<boolean>; disabled: ReadonlySignal<boolean> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details |
 
-| Data attribute    | Values               | Description                                                                                   |
-| :---------------- | :------------------- | :-------------------------------------------------------------------------------------------- |
-| `[data-state]`    | `"open" \| "closed"` | Indicates whether the collapsible is currently expanded (`"open"`) or collapsed (`"closed"`). |
-| `[data-disabled]` | `-`                  | Present when the collapsible is disabled and cannot be interacted with.                       |
+| Data attribute  | Values               | Description                                                                                   |
+| :-------------- | :------------------- | :-------------------------------------------------------------------------------------------- |
+| `data-state`    | `"open" \| "closed"` | Indicates whether the collapsible is currently expanded (`"open"`) or collapsed (`"closed"`). |
+| `data-disabled` | `-`                  | Present when the collapsible is disabled and cannot be interacted with.                       |
 
 ### useCollapsibleContext
 
