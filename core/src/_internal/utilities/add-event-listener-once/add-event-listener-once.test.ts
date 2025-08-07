@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
-import { addEventListenerOnce } from './add-event-listener-once';
+import { addEventListenerOnce } from '.';
 
-describe('addEventListenerOnce', () => {
+describe('addEventListenerOnce functionality', () => {
   it('should add an event listener that fires only once on an HTMLElement', () => {
     const div = document.createElement('div');
     const listener = vi.fn();
@@ -168,5 +168,79 @@ describe('addEventListenerOnce', () => {
     expect(listener).toHaveBeenCalledTimes(1);
 
     div.removeEventListener = originalRemoveEventListener;
+  });
+
+  it('should return a cleanup function', () => {
+    const div = document.createElement('div');
+    const cleanup = addEventListenerOnce({ target: div, type: 'click', listener: vi.fn() });
+    expect(typeof cleanup).toBe('function');
+  });
+
+  it('should remove the listener when cleanup is called before the event fires', () => {
+    const div = document.createElement('div');
+    const listener = vi.fn();
+    const cleanup = addEventListenerOnce({ target: div, type: 'click', listener });
+
+    cleanup();
+    div.dispatchEvent(new MouseEvent('click'));
+
+    expect(listener).not.toHaveBeenCalled();
+  });
+
+  it('should not throw an error if cleanup is called multiple times', () => {
+    const div = document.createElement('div');
+    const listener = vi.fn();
+    const cleanup = addEventListenerOnce({ target: div, type: 'click', listener });
+
+    cleanup();
+    expect(() => cleanup()).not.toThrow();
+  });
+
+  it('should not remove the listener if cleanup is called after the event has already fired', () => {
+    const div = document.createElement('div');
+    const listener = vi.fn();
+    const cleanup = addEventListenerOnce({ target: div, type: 'click', listener });
+
+    div.dispatchEvent(new MouseEvent('click'));
+    expect(listener).toHaveBeenCalledTimes(1);
+
+    cleanup();
+    div.dispatchEvent(new MouseEvent('click'));
+    expect(listener).toHaveBeenCalledTimes(1);
+  });
+
+  it('should remove the listener on the Document when cleanup is called', () => {
+    const listener = vi.fn();
+    const cleanup = addEventListenerOnce({ target: document, type: 'DOMContentLoaded', listener });
+
+    cleanup();
+    document.dispatchEvent(new Event('DOMContentLoaded'));
+
+    expect(listener).not.toHaveBeenCalled();
+  });
+
+  it('should remove the listener on the Window when cleanup is called', () => {
+    const listener = vi.fn();
+    const cleanup = addEventListenerOnce({ target: window, type: 'load', listener });
+
+    cleanup();
+    window.dispatchEvent(new Event('load'));
+
+    expect(listener).not.toHaveBeenCalled();
+  });
+
+  it('should clean up the `once` listener without affecting other listeners on the same target', () => {
+    const div = document.createElement('div');
+    const onceListener = vi.fn();
+    const regularListener = vi.fn();
+
+    const cleanup = addEventListenerOnce({ target: div, type: 'click', listener: onceListener });
+    div.addEventListener('click', regularListener);
+
+    cleanup();
+    div.dispatchEvent(new MouseEvent('click'));
+
+    expect(onceListener).not.toHaveBeenCalled();
+    expect(regularListener).toHaveBeenCalledTimes(1);
   });
 });
