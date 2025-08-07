@@ -35,9 +35,9 @@ export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
       if (_open) {
         hidden.value = false;
 
-        const { transitionDuration } = getComputedStyle(_ref);
+        const { animationDuration, transitionDuration } = getComputedStyle(_ref);
 
-        if (transitionDuration !== '0s') {
+        if (animationDuration === '0s' && transitionDuration !== '0s') {
           _ref.style.setProperty('display', 'grid');
           _ref.style.setProperty('grid-template-rows', '0fr');
 
@@ -78,6 +78,8 @@ export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
           `CSS transitions and CSS animations both detected on 'Collapsible.Panel' component.`,
           `Only one of either animation type should be used.`
         );
+
+        applyFinalState();
       } else if (animationDuration !== '0s') {
         _ref.addEventListener('animationend', applyFinalState, { once: true });
 
