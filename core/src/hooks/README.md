@@ -14,3 +14,11 @@ These hooks provide effective solutions for managing your component's internal d
 | [`usePrevious`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/hooks/use-previous)         | Tracks and returns the previous value of a given signal.                                                                            |
 | [`useToggle`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/hooks/use-toggle)             | An intuitive hook to manage cyclical state transitions, allowing you to define and switch between any sequence of values with ease. |
 | [`useUncontrolled`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/hooks/use-uncontrolled) | A hook for managing both controlled and uncontrolled state in a component.                                                          |
+
+## UI and DOM
+
+These hooks offer solutions for managing UI interactions and DOM manipulation, providing tools to create more interactive and accessible components.
+
+| Hook                                                                                                    | Description                                                                                       |
+| :------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------ |
+| [`useArrowNavigation`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/hooks/use-arrow-navigation) | A hook for enabling keyboard arrow navigation between focusable items within a specified element. |
