@@ -85,7 +85,7 @@ const Demo = component$(() => {
 
 This component is based on the native `a` element.
 
-### Keyboard Interactions
+### Keyboard interactions
 
 | Key              | Description         |
 | :--------------- | :------------------ |
