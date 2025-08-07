@@ -393,7 +393,7 @@ const Demo = component$(() => {
 
 The `Collapsible` component is built with accessibility in mind, strictly adhering to the [Disclosure WAI-ARIA design pattern](https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/). This ensures the component is usable and understandable for everyone, including users relying on assistive technologies like screen readers. By following this pattern, it automatically handles crucial ARIA attributes and keyboard interactions, providing a robust and inclusive user experience.
 
-### Keyboard Interactions
+### Keyboard interactions
 
 Users can interact with the `Collapsible` component efficiently using only a keyboard. The following overview outlines the primary keyboard shortcuts and their actions:
 
