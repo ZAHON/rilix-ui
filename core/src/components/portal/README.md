@@ -50,7 +50,7 @@ A robust component that leverages the native Popover API to display its children
 
 | Data attribute | Values               | Description                                               |
 | :------------- | :------------------- | :-------------------------------------------------------- |
-| `[data-state]` | `"open" \| "closed"` | Indicates whether the portal is currently open or closed. |
+| `data-state`   | `"open" \| "closed"` | Indicates whether the portal is currently open or closed. |
 
 ### usePortalContext
 
