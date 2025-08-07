@@ -2,7 +2,7 @@ import type { AccordionItemPanelProps } from './accordion-item-panel.types';
 import { component$, useSignal, useTask$, useContextProvider, Slot } from '@builder.io/qwik';
 import { isBrowser, isDev } from '@builder.io/qwik/build';
 import { composeRefs, combineStyle } from '@/utilities';
-import { warn, Render } from '@/_internal';
+import { warn, addEventListenerOnce, Render } from '@/_internal';
 import { useAccordionContext, useAccordionItemContext, AccordionItemPanelContext } from '../../contexts';
 
 /**
@@ -36,9 +36,9 @@ export const AccordionItemPanel = component$<AccordionItemPanelProps>((props) =>
       if (_open) {
         hidden.value = false;
 
-        const { transitionDuration } = getComputedStyle(_ref);
+        const { animationDuration, transitionDuration } = getComputedStyle(_ref);
 
-        if (transitionDuration !== '0s') {
+        if (animationDuration === '0s' && transitionDuration !== '0s') {
           _ref.style.setProperty('display', 'grid');
           _ref.style.setProperty('grid-template-rows', '0fr');
 
@@ -79,17 +79,27 @@ export const AccordionItemPanel = component$<AccordionItemPanelProps>((props) =>
           `CSS transitions and CSS animations both detected on 'Accordion.ItemPanel' component.`,
           `Only one of either animation type should be used.`
         );
+
+        applyFinalState();
       } else if (animationDuration !== '0s') {
-        _ref.addEventListener('animationend', applyFinalState, { once: true });
+        const removeAnimationEndListener = addEventListenerOnce({
+          target: _ref,
+          type: 'animationend',
+          listener: applyFinalState,
+        });
 
         cleanup(() => {
-          _ref.removeEventListener('animationend', applyFinalState);
+          removeAnimationEndListener();
         });
       } else if (transitionDuration !== '0s') {
-        _ref.addEventListener('transitionend', applyFinalState, { once: true });
+        const removeTransitionEndListener = addEventListenerOnce({
+          target: _ref,
+          type: 'transitionend',
+          listener: applyFinalState,
+        });
 
         cleanup(() => {
-          _ref.removeEventListener('transitionend', applyFinalState);
+          removeTransitionEndListener();
         });
       } else {
         applyFinalState();
