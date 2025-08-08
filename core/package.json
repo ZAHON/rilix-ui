@@ -43,9 +43,6 @@
     "test": "vitest run",
     "test:watch": "vitest --reporter verbose"
   },
-  "dependencies": {
-    "@floating-ui/dom": "^1.7.2"
-  },
   "devDependencies": {
     "@builder.io/qwik": "^1.14.1",
     "@noma.to/qwik-mock": "^1.0.0",
