@@ -1,6 +1,6 @@
 import type { ClampParams } from './clamp.types';
 import { isDev } from '@builder.io/qwik/build';
-import { error } from '@/_internal';
+import { error } from '../error';
 
 /**
  * Clamps a given number to a specified range, ensuring it does not exceed the minimum or maximum bounds.
