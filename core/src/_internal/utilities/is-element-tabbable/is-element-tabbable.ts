@@ -1,4 +1,4 @@
-import { isElementFocusable } from '@/_internal';
+import { isElementFocusable } from '../is-element-focusable';
 
 /**
  * Checks if a given HTML element is "tabbable" by a user, meaning it can be reached
