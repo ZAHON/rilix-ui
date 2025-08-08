@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.8.0 (08.08.2025)
+
+### 🚨 Breaking Changes
+
+- **Remove `clamp` utility function.**
+  The `clamp` utility function has been removed.
+
+### 🚀 Features
+
+- **Introduce `Accordion` component.** The new `Accordion` component has been added, providing a vertically stacked set of interactive headings that each reveal an associated section of content.
+
+- **Introduce `Collapsible` component.**
+  The new `Collapsible` component has been added, providing an interactive, accessible, and unstyled solution for expanding and collapsing content.
+
+- **Introduce `Portal` component.**
+  The new `Portal` component has been added, leveraging the native Popover API to lift content to the browser's top layer. It provides simplified control for non-modal overlays, with full SSR compatibility considerations.
+
+- **Introduce `useArrowNavigation` hook.**
+  A new `useArrowNavigation` hook has been added, providing an accessible way to navigate between focusable elements within a container using keyboard arrow keys.
+
+- **Introduce `SignalOrReadonlySignal` utility type.**
+  A new utility type `SignalOrReadonlySignal` has been added, allowing component props and function arguments to accept either a mutable `Signal` or a `ReadonlySignal`. This enhances flexibility and improves type safety for components that don't need to modify the state of a signal.
+
 ## 0.7.0 (22.06.2025)
 
 ### 🚨 Breaking Changes
