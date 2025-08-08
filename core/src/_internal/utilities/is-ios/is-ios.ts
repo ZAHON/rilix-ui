@@ -1,4 +1,4 @@
-import { getPlatform } from '@/_internal';
+import { getPlatform } from '../get-platform';
 
 /**
  * Determines if the current Browse environment is an iOS device (iPhone, iPad, or Mac with touchscreen acting like an iPad).
