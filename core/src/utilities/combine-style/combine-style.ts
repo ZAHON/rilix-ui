@@ -1,5 +1,5 @@
 import type { PossibleStyle } from './combine-style.types';
-import { stringStyleToObject } from '@/utilities';
+import { stringStyleToObject } from '../string-style-to-object';
 
 /**
  * Combines two style values, whether inline CSS strings or style objects, into one.
