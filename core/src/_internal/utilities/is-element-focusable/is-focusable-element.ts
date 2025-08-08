@@ -1,4 +1,4 @@
-import { isElementVisible } from '@/_internal';
+import { isElementVisible } from '../is-element-visible';
 
 const focusableSelector =
   "input:not([type='hidden']):not([disabled]), select:not([disabled]), " +
