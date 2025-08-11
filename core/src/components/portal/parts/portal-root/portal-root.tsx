@@ -30,15 +30,15 @@ export const PortalRoot = component$<PortalRootProps>((props) => {
   }
 
   useTask$(({ track, cleanup }) => {
-    const _open = track(() => open.value);
+    const isOpen = track(() => open.value);
 
-    const _ref = ref.value;
+    const rootRef = ref.value;
 
-    if (isBrowser && _open && _ref) {
-      _ref.showPopover();
+    if (isBrowser && isOpen && rootRef) {
+      rootRef.showPopover();
 
       cleanup(() => {
-        _ref.hidePopover();
+        rootRef.hidePopover();
       });
     }
   });
