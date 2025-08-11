@@ -21,57 +21,57 @@ export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
   const preventInitialAnimation = useSignal(true);
 
   useTask$(({ track, cleanup }) => {
-    const _open = track(() => open.value);
-    const _ref = track(() => ref.value);
+    const isOpen = track(() => open.value);
+    const panelRef = track(() => ref.value);
 
-    if (isBrowser && _ref) {
+    if (isBrowser && panelRef) {
       if (preventInitialAnimation.value) {
         preventInitialAnimation.value = false;
 
-        _ref.style.removeProperty('animation-duration');
-        _ref.style.removeProperty('transition-duration');
+        panelRef.style.removeProperty('animation-duration');
+        panelRef.style.removeProperty('transition-duration');
       }
 
-      if (_open) {
+      if (isOpen) {
         hidden.value = false;
 
-        const { animationDuration, transitionDuration } = getComputedStyle(_ref);
+        const { animationDuration, transitionDuration } = getComputedStyle(panelRef);
 
         if (animationDuration === '0s' && transitionDuration !== '0s') {
-          _ref.style.setProperty('display', 'grid');
-          _ref.style.setProperty('grid-template-rows', '0fr');
+          panelRef.style.setProperty('display', 'grid');
+          panelRef.style.setProperty('grid-template-rows', '0fr');
 
           setTimeout(() => {
-            _ref.style.setProperty('grid-template-rows', '1fr');
+            panelRef.style.setProperty('grid-template-rows', '1fr');
           }, 0);
         }
 
-        _ref.setAttribute('data-presence', 'showing');
+        panelRef.setAttribute('data-presence', 'showing');
       } else {
         isContentOverflowHidden.value = true;
 
-        _ref.setAttribute('data-presence', 'hiding');
+        panelRef.setAttribute('data-presence', 'hiding');
       }
 
       const applyFinalState = () => {
-        if (_open) {
+        if (isOpen) {
           presence.value = 'shown';
           isContentOverflowHidden.value = false;
 
-          _ref.setAttribute('data-presence', 'shown');
+          panelRef.setAttribute('data-presence', 'shown');
         } else {
           hidden.value = true;
           presence.value = 'hidden';
 
-          _ref.setAttribute('data-presence', 'hidden');
+          panelRef.setAttribute('data-presence', 'hidden');
         }
 
         if (onOpenChangeComplete$) {
-          onOpenChangeComplete$(_open);
+          onOpenChangeComplete$(isOpen);
         }
       };
 
-      const { animationDuration, transitionDuration } = getComputedStyle(_ref);
+      const { animationDuration, transitionDuration } = getComputedStyle(panelRef);
 
       if (isDev && animationDuration !== '0s' && transitionDuration !== '0s') {
         warn(
@@ -82,7 +82,7 @@ export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
         applyFinalState();
       } else if (animationDuration !== '0s') {
         const removeAnimationEndListener = addEventListenerOnce({
-          target: _ref,
+          target: panelRef,
           type: 'animationend',
           listener: applyFinalState,
         });
@@ -92,7 +92,7 @@ export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
         });
       } else if (transitionDuration !== '0s') {
         const removeTransitionEndListener = addEventListenerOnce({
-          target: _ref,
+          target: panelRef,
           type: 'transitionend',
           listener: applyFinalState,
         });
