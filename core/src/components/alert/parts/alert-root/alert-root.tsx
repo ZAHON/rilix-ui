@@ -4,7 +4,7 @@ import { Render } from '@/_internal';
 
 /**
  * Contains the content for the alert.
- * This component is based on the `div` element.
+ * Renders a `<div>` element.
  */
 export const AlertRoot = component$<AlertRootProps>((props) => {
   return (
