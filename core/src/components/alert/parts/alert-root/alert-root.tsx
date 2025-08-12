@@ -12,8 +12,6 @@ export const AlertRoot = component$<AlertRootProps>((props) => {
       as="div"
       role="alert"
       data-rilix-ui-alert-root=""
-      data-scope="alert"
-      data-part="root"
       defaultRender$={(props) => (
         <div {...props}>
           <Slot />
