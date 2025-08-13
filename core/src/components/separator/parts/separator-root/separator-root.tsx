@@ -20,7 +20,7 @@ export const SeparatorRoot = component$<SeparatorRootProps>((props) => {
       as="div"
       role={decorative.value ? 'none' : 'separator'}
       aria-orientation={decorative.value ? undefined : orientation.value === 'vertical' ? 'vertical' : undefined}
-      data-rilix-ui-separator-root=""
+      data-rilix-ui-separator-root
       data-orientation={orientation.value}
       state={{ orientation }}
       defaultRender$={(props) => (
