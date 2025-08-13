@@ -1,7 +1,7 @@
 import type { SeparatorRootProps } from './separator-root.types';
 import { component$, useComputed$, useContextProvider, Slot } from '@builder.io/qwik';
 import { Render } from '@/_internal';
-import { SeparatorContext } from '../../context';
+import { SeparatorContext } from '../../contexts';
 
 /**
  * The separator.
