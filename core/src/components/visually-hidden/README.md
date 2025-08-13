@@ -29,8 +29,6 @@ const Demo = component$(() => {
 
 Each of `VisuallyHidden`'s subcomponents renders a default HTML element that makes sense for its role. This overview outlines the default element rendered by each part of the component. You can customize this element using the `render$` prop, as shown in the [Rendering different elements](#rendering-different-elements) example.
 
-You can customize the underlying HTML element rendered by this subcomponent, or even compose it with your own custom Qwik components, by using the `render$` prop. This provides immense flexibility, allowing you to:
-
 | Component             | Default rendered element |
 | :-------------------- | :----------------------- |
 | `VisuallyHidden.Root` | `<span>`                 |
