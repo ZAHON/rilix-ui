@@ -2,7 +2,8 @@ import { useContext } from '@builder.io/qwik';
 import { SeparatorContext } from '../../contexts';
 
 /**
- * A hook that gives access to a context object containing properties to interact with the separator.
+ * A hook that provides access to the `Separator` component's internal context, exposing readonly
+ * signals to interact with and react to the component's state, such as its orientation and decorative status.
  */
 export const useSeparatorContext = () => {
   const { orientation, decorative } = useContext(SeparatorContext);
