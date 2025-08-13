@@ -1,5 +1,5 @@
 import { useContext } from '@builder.io/qwik';
-import { SeparatorContext } from '../../context';
+import { SeparatorContext } from '../../contexts';
 
 /**
  * A hook that gives access to a context object containing properties to interact with the separator.
