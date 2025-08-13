@@ -86,6 +86,8 @@ const Demo = component$(() => {
 
 By default, the `VisuallyHidden.Root` component renders a `<span>` element. For a complete overview of the default elements, refer to the [Rendered elements](#rendered-elements) section.
 
+You can customize the underlying HTML element rendered by this component, or even compose it with your own custom Qwik components, by using the `render$` prop. This provides immense flexibility, allowing you to:
+
 - Replace the default HTML tag with any other valid HTML element that fits your design and semantic needs.
 
 - Integrate your own Qwik components, wrapping them with custom styles or behaviors while ensuring the component's core logic and accessibility features remain intact.
