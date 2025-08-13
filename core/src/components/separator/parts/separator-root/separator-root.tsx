@@ -5,7 +5,7 @@ import { SeparatorContext } from '../../contexts';
 
 /**
  * The separator.
- * This component is based on the `div` element.
+ * Renders a `<div>` element.
  */
 export const SeparatorRoot = component$<SeparatorRootProps>((props) => {
   const { orientation: _orientation, decorative: _decorative, ...others } = props;
