@@ -10,6 +10,7 @@ export interface SeparatorRootProps extends PropsOf<'div'> {
   /**
    * Whether or not the component is purely decorative.
    * When `true`, accessibility-related attributes are updated so that that the rendered element is removed from the accessibility tree.
+   * @default false
    */
   decorative?: boolean;
 
