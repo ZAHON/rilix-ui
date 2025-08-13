@@ -162,7 +162,7 @@ const Demo = component$(() => {
       <Collapsible.Trigger>What is Rilix UI?</Collapsible.Trigger>
       <Collapsible.Panel>
         <Collapsible.Content>
-          A collection of accessible and unstyled components, hooks and utilities for Qwik applications.
+          A collection of accessible, unstyled components, hooks and utilities for Qwik applications.
         </Collapsible.Content>
       </Collapsible.Panel>
     </Collapsible.Root>
@@ -186,7 +186,7 @@ const Demo = component$(() => {
       <Collapsible.Trigger>What is Rilix UI?</Collapsible.Trigger>
       <Collapsible.Panel>
         <Collapsible.Content>
-          A collection of accessible and unstyled components, hooks and utilities for Qwik applications.
+          A collection of accessible, unstyled components, hooks and utilities for Qwik applications.
         </Collapsible.Content>
       </Collapsible.Panel>
     </Collapsible.Root>
@@ -213,7 +213,7 @@ const Demo = component$(() => {
       <Collapsible.Trigger>What is Rilix UI?</Collapsible.Trigger>
       <Collapsible.Panel class="collapsible-panel">
         <Collapsible.Content>
-          A collection of accessible and unstyled components, hooks and utilities for Qwik applications.
+          A collection of accessible, unstyled components, hooks and utilities for Qwik applications.
         </Collapsible.Content>
       </Collapsible.Panel>
     </Collapsible.Root>
@@ -268,7 +268,7 @@ const Demo = component$(() => {
       <Collapsible.Trigger>What is Rilix UI?</Collapsible.Trigger>
       <Collapsible.Panel class="collapsible-panel">
         <Collapsible.Content>
-          A collection of accessible and unstyled components, hooks and utilities for Qwik applications.
+          A collection of accessible, unstyled components, hooks and utilities for Qwik applications.
         </Collapsible.Content>
       </Collapsible.Panel>
     </Collapsible.Root>
@@ -320,7 +320,7 @@ const Demo = component$(() => {
       </Collapsible.Trigger>
       <Collapsible.Panel>
         <Collapsible.Content>
-          A collection of accessible and unstyled components, hooks and utilities for Qwik applications.
+          A collection of accessible, unstyled components, hooks and utilities for Qwik applications.
         </Collapsible.Content>
       </Collapsible.Panel>
     </Collapsible.Root>
