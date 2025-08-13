@@ -8,9 +8,9 @@ import { SeparatorContext } from '../../contexts';
  * This component is based on the `div` element.
  */
 export const SeparatorRoot = component$<SeparatorRootProps>((props) => {
-  const { orientation: _orientation = 'horizontal', decorative: _decorative, ...others } = props;
+  const { orientation: _orientation, decorative: _decorative, ...others } = props;
 
-  const orientation = useComputed$(() => _orientation);
+  const orientation = useComputed$(() => _orientation ?? 'horizontal');
   const decorative = useComputed$(() => _decorative);
 
   useContextProvider(SeparatorContext, { orientation, decorative });
