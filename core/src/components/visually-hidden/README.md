@@ -25,7 +25,35 @@ const Demo = component$(() => {
 });
 ```
 
-## Usage
+## Rendered elements
+
+Each of `VisuallyHidden`'s subcomponents renders a default HTML element that makes sense for its role. This overview outlines the default element rendered by each part of the component. You can customize this element using the `render$` prop, as shown in the [Rendering different elements](#rendering-different-elements) example.
+
+You can customize the underlying HTML element rendered by this subcomponent, or even compose it with your own custom Qwik components, by using the `render$` prop. This provides immense flexibility, allowing you to:
+
+| Component             | Default rendered element |
+| :-------------------- | :----------------------- |
+| `VisuallyHidden.Root` | `<span>`                 |
+
+## API Reference
+
+`VisuallyHidden` is a utility component. This section outlines the available props for its `Root` subcomponent, enabling you to customize its behavior and appearance.
+
+### Root
+
+Anything you put inside this component will be hidden from the screen but will be announced by screen readers. Renders a `<span>` element.
+
+| Prop      | Type                                                       | Default | Description                                                                                                                                                                                                                                |
+| :-------- | :--------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `render$` | `(props: Record<string, unknown>, state: {}) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
+
+## Examples
+
+The examples below illustrate practical use cases for the `VisuallyHidden` component. They demonstrate how to improve accessibility by providing screen reader-only text, as well as how to customize the component's rendered element for different semantic needs.
+
+### Basic example
+
+The basic example demonstrates how to use the `VisuallyHidden` component to provide a text label for a button containing only an SVG icon. This ensures that the button remains accessible to screen reader users, who will hear the text "Settings" read aloud, while the icon is visually displayed to other users.
 
 ```tsx
 import { component$ } from '@builder.io/qwik';
@@ -56,21 +84,44 @@ const Demo = component$(() => {
 });
 ```
 
-## API Reference
+### Rendering different elements
 
-### Root
+By default, the `VisuallyHidden.Root` component renders a `<span>` element. For a complete overview of the default elements, refer to the [Rendered elements](#rendered-elements) section.
 
-Anything you put inside this component will be hidden from the screen but will be announced by screen readers. This component is based on the `span` element.
+- Replace the default HTML tag with any other valid HTML element that fits your design and semantic needs.
 
-| Prop      | Type                                                       | Default | Description                                                                                                                                                                                                                                |
-| :-------- | :--------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `render$` | `(props: Record<string, unknown>, state: {}) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
+- Integrate your own Qwik components, wrapping them with custom styles or behaviors while ensuring the component's core logic and accessibility features remain intact.
 
-| Data attribute | Values              |
-| :------------- | :------------------ |
-| `[data-scope]` | `"visually-hidden"` |
-| `[data-part]`  | `"root"`            |
+When using the `render$` prop, always spread the provided `props` object onto your custom element or component. This ensures that all essential attributes are correctly applied, maintaining the component's intended behavior and accessibility.
+
+```tsx
+import { component$, Slot } from '@builder.io/qwik';
+import { VisuallyHidden } from 'rilix-ui';
+
+const Demo = component$(() => {
+  return (
+    <section aria-labelledby="section-title">
+      <VisuallyHidden.Root
+        id="section-title"
+        render$={(props) => (
+          <h2 {...props}>
+            <Slot />
+          </h2>
+        )}
+      >
+        Section title
+      </VisuallyHidden.Root>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At dolorem omnis ipsum laborum, illo similique pariatur
+        ducimus molestiae perferendis, aperiam iure libero magnam blanditiis neque alias delectus. Asperiores, a
+        possimus.
+      </p>
+    </section>
+  );
+});
+```
 
 ## Accessibility
 
-This is useful in certain scenarios as an alternative to traditional labelling with `aria-label` or `aria-labelledby`.
+This component is a crucial tool for web accessibility, providing an alternative to traditional labeling methods like `aria-label` or `aria-labelledby`. It should be used when an element is visually represented by a non-textual item, such as an icon, but still requires a descriptive text label for screen reader users.
