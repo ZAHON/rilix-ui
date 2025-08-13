@@ -24,7 +24,7 @@ export const SeparatorRoot = component$<SeparatorRootProps>((props) => {
       data-scope="separator"
       data-part="root"
       data-orientation={orientation.value}
-      state={{ orientation, decorative }}
+      state={{ orientation }}
       defaultRender$={(props) => (
         <div {...props}>
           <Slot />

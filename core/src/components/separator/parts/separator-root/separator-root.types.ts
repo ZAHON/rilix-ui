@@ -33,12 +33,6 @@ export interface SeparatorRootProps extends PropsOf<'div'> {
        * A readonly signal whose value is the orientation of the component.
        */
       orientation: ReadonlySignal<'horizontal' | 'vertical'>;
-
-      /**
-       * Whether or not the component is purely decorative.
-       * When `true`, accessibility-related attributes are updated so that that the rendered element is removed from the accessibility tree.
-       */
-      decorative: ReadonlySignal<boolean | undefined>;
     }
   ) => JSXOutput;
 }
