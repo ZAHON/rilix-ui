@@ -7,6 +7,18 @@ import { CollapsibleContext } from '../../contexts';
 /**
  * Contains all the parts of a collapsible.
  * Renders a `<div>` element.
+ *
+ * @example
+ * ```tsx
+ * <Collapsible.Root>
+ * 	<Collapsible.Trigger>
+ * 		<Collapsible.Indicator />
+ * 	</Collapsible.Trigger>
+ * 	<Collapsible.Panel>
+ * 		<Collapsible.Content />
+ * 	</Collapsible.Panel>
+ * </Collapsible.Root>
+ * ```
  */
 export const CollapsibleRoot = component$<CollapsibleRootProps>((props) => {
   const { defaultOpen, open: _open, onOpenChange$, disabled: _disabled, ids: _ids, ...others } = props;
