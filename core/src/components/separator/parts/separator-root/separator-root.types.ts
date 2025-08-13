@@ -30,7 +30,7 @@ export interface SeparatorRootProps extends PropsOf<'div'> {
      */
     state: {
       /**
-       * The orientation of the component.
+       * A readonly signal whose value is the orientation of the component.
        */
       orientation: ReadonlySignal<'horizontal' | 'vertical'>;
 
