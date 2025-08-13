@@ -9,6 +9,22 @@ import { AccordionContext } from '../../contexts';
 /**
  * Contains all the parts of an accordion.
  * Renders a `<div>` element.
+ *
+ * @example
+ * ```tsx
+ * <Accordion.Root>
+ * 	<Accordion.Item>
+ * 		<Accordion.ItemHeader>
+ * 			<Accordion.ItemTrigger>
+ * 				<Accordion.ItemIndicator />
+ * 			</Accordion.ItemTrigger>
+ * 		</Accordion.ItemHeader>
+ * 		<Accordion.ItemPanel>
+ * 			<Accordion.ItemContent />
+ * 		</Accordion.ItemPanel>
+ * 	</Accordion.Item>
+ * </Accordion.Root>
+ * ```
  */
 export const AccordionRoot = component$<AccordionRootProps>((props) => {
   const {
