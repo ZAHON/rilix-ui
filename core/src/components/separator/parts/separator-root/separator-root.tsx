@@ -11,7 +11,7 @@ export const SeparatorRoot = component$<SeparatorRootProps>((props) => {
   const { orientation: _orientation, decorative: _decorative, ...others } = props;
 
   const orientation = useComputed$(() => _orientation ?? 'horizontal');
-  const decorative = useComputed$(() => _decorative);
+  const decorative = useComputed$(() => _decorative ?? false);
 
   useContextProvider(SeparatorContext, { orientation, decorative });
 
