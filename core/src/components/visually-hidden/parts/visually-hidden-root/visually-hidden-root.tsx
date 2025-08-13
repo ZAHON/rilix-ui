@@ -13,7 +13,7 @@ export const VisuallyHiddenRoot = component$<VisuallyHiddenRootProps>((props) =>
   return (
     <Render
       as="span"
-      data-rilix-ui-visually-hidden-root=""
+      data-rilix-ui-visually-hidden-root
       style={combineStyle(visuallyHiddenStyle, style)}
       defaultRender$={(props) => (
         <span {...props}>
