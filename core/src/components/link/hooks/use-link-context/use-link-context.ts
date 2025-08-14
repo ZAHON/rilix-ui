@@ -9,7 +9,7 @@ export const useLinkContext = () => {
 
   return {
     /**
-     * Whether the link is disabled.
+     * A readonly signal whose value indicates whether the link is disabled.
      */
     disabled: disabled,
   };
