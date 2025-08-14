@@ -13,7 +13,7 @@ export const LinkRoot = component$<LinkRootProps>((props) => {
   const { ref: _ref, href, disabled: _disabled, ...others } = props;
 
   const ref = useSignal<HTMLElement | undefined>(undefined);
-  const disabled = useComputed$(() => _disabled);
+  const disabled = useComputed$(() => _disabled ?? false);
 
   useTask$(({ track }) => {
     track(() => disabled.value);
