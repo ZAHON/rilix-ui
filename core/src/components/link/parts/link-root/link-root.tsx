@@ -15,6 +15,23 @@ export const LinkRoot = component$<LinkRootProps>((props) => {
   const ref = useSignal<HTMLElement | undefined>(undefined);
   const disabled = useComputed$(() => _disabled ?? false);
 
+  /**
+   * This task is responsible for dynamically managing HTML attributes on the root element
+   * to handle the disabled state. Attributes like `href`, `role`, `aria-disabled`, and
+   * `data-disabled` are managed here instead of directly in the JSX. This is necessary
+   * because this behavior is likely caused by a bug in the implementation of Qwik's
+   * component properties. While not 100% certain, this seems to be the most probable
+   * reason. These attributes need to be completely removed or added based on the state,
+   * which can be problematic to manage dynamically for `<a>` elements directly in JSX.
+   *
+   * When `disabled.value` is true:
+   * - The `role` attribute is set to `link` to ensure accessibility.
+   * - The `href` attribute is removed to prevent navigation.
+   * - The `aria-disabled` and `data-disabled` attributes are added to reflect the state.
+   *
+   * When `disabled.value` is false:
+   * - These attributes are explicitly removed, and the `href` is restored if it exists.
+   */
   useTask$(({ track }) => {
     const isDisabled = track(() => disabled.value);
 
