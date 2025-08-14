@@ -1,8 +1,8 @@
 import type { LinkRootProps } from './link-root.types';
 import { component$, useSignal, useComputed$, useTask$, useContextProvider, Slot } from '@builder.io/qwik';
 import { isBrowser } from '@builder.io/qwik/build';
-import { Render } from '@/_internal';
 import { composeRefs } from '@/utilities';
+import { Render } from '@/_internal';
 import { LinkContext } from '../../contexts';
 
 /**
