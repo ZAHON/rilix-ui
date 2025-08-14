@@ -32,7 +32,7 @@ export interface LinkRootProps extends PropsOf<'a'> {
       /**
        * A readonly signal whose value indicates whether the link is disabled.
        */
-      disabled: ReadonlySignal<boolean | undefined>;
+      disabled: ReadonlySignal<boolean>;
     }
   ) => JSXOutput;
 }
