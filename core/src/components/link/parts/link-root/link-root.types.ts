@@ -2,8 +2,8 @@ import type { PropsOf, ReadonlySignal, JSXOutput } from '@builder.io/qwik';
 
 export interface LinkRootProps extends PropsOf<'a'> {
   /**
-   * The URL that the hyperlink points to.
-   * See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#href).
+   * Specifies the URL or URL fragment that the hyperlink points to.
+   * See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a#href) for more details.
    */
   href?: string;
 
