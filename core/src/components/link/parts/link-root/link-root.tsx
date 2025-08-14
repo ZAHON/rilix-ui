@@ -1,8 +1,8 @@
 import type { LinkRootProps } from './link-root.types';
 import { component$, useSignal, useComputed$, useTask$, useContextProvider, Slot } from '@builder.io/qwik';
-import { isBrowser } from '@builder.io/qwik/build';
+import { isDev, isBrowser } from '@builder.io/qwik/build';
 import { composeRefs } from '@/utilities';
-import { Render } from '@/_internal';
+import { warn, Render } from '@/_internal';
 import { LinkContext } from '../../contexts';
 
 /**
@@ -11,6 +11,10 @@ import { LinkContext } from '../../contexts';
  */
 export const LinkRoot = component$<LinkRootProps>((props) => {
   const { ref: _ref, href, disabled: _disabled, ...others } = props;
+
+  if (isDev && !href) {
+    warn(`The 'Link.Root' component is being used without an 'href' prop. This may cause unexpected behavior.`);
+  }
 
   const ref = useSignal<HTMLElement | undefined>(undefined);
   const disabled = useComputed$(() => _disabled ?? false);
