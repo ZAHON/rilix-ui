@@ -3,7 +3,7 @@ import { component$, useSignal, useComputed$, useTask$, useContextProvider, Slot
 import { isBrowser } from '@builder.io/qwik/build';
 import { Render } from '@/_internal';
 import { composeRefs } from '@/utilities';
-import { LinkContext } from '../../context';
+import { LinkContext } from '../../contexts';
 
 /**
  * Contains the content for the link.
