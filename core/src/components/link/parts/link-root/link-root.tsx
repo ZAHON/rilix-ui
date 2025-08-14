@@ -42,8 +42,6 @@ export const LinkRoot = component$<LinkRootProps>((props) => {
       href={disabled.value ? undefined : href}
       aria-disabled={disabled.value ? 'true' : undefined}
       data-rilix-ui-link-root=""
-      data-scope="link"
-      data-part="root"
       data-disabled={disabled.value ? '' : undefined}
       state={{ disabled }}
       defaultRender$={(props) => (
