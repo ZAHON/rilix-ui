@@ -16,17 +16,23 @@ export const LinkRoot = component$<LinkRootProps>((props) => {
   const disabled = useComputed$(() => _disabled ?? false);
 
   useTask$(({ track }) => {
-    track(() => disabled.value);
+    const isDisabled = track(() => disabled.value);
 
-    if (isBrowser && ref.value && ref.value.tagName === 'A') {
-      if (disabled.value) {
-        ref.value.setAttribute('role', 'link');
-        ref.value.removeAttribute('href');
+    const rootRef = ref.value;
+
+    if (isBrowser && rootRef && rootRef.tagName === 'A') {
+      if (isDisabled) {
+        rootRef.setAttribute('role', 'link');
+        rootRef.removeAttribute('href');
+        rootRef.setAttribute('aria-disabled', 'true');
+        rootRef.setAttribute('data-disabled', '');
       } else {
-        ref.value.removeAttribute('role');
+        rootRef.removeAttribute('role');
+        rootRef.removeAttribute('aria-disabled');
+        rootRef.removeAttribute('data-disabled');
 
         if (href) {
-          ref.value.setAttribute('href', href);
+          rootRef.setAttribute('href', href);
         }
       }
     }
