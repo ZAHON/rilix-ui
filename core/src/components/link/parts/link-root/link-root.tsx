@@ -7,7 +7,7 @@ import { LinkContext } from '../../contexts';
 
 /**
  * Contains the content for the link.
- * This component is based on the `a` element.
+ * Renders an `<a>` element.
  */
 export const LinkRoot = component$<LinkRootProps>((props) => {
   const { ref: _ref, href, disabled: _disabled, ...others } = props;
