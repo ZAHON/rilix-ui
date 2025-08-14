@@ -10,6 +10,7 @@ export interface LinkRootProps extends PropsOf<'a'> {
   /**
    * Whether the link is disabled.
    * Native navigation will be disabled, and the link will be exposed as disabled to assistive technology.
+   * @default false
    */
   disabled?: boolean;
 
