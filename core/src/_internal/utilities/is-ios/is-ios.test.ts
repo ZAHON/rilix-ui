@@ -1,14 +1,13 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { getPlatform } from '../get-platform';
 import { isIOS } from '.';
-
-vi.mock('@/_internal', () => ({
-  getPlatform: vi.fn(),
-}));
-
-import { getPlatform } from '@/_internal';
 
 const originalNavigator = global.navigator;
 const originalWindow = global.window;
+
+vi.mock('../get-platform', () => ({
+  getPlatform: vi.fn(),
+}));
 
 describe('isIOS', () => {
   beforeEach(() => {
