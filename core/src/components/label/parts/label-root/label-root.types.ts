@@ -8,7 +8,8 @@ export interface LabelRootProps extends PropsOf<'label'> {
   for?: string;
 
   /**
-   * When `true`, text selection is prevented when double clicking label.
+   * When `true`, text selection is prevented when the user double-clicks the label.
+   * This enhances the user experience by avoiding unintended text highlighting when interacting with the label.
    * @default true
    */
   preventDblClickTextSelection?: boolean;
