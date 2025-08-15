@@ -21,22 +21,22 @@ export const useBoolean = (initialState = false) => {
 
   return {
     /**
-     * A readonly signal containing the current boolean value.
+     * A readonly signal whose value indicates the current boolean state.
      */
     state: state as ReadonlySignal<typeof state.value>,
 
     /**
-     * Function to set the boolean state to `true`.
+     * A `QRL` function to set the boolean state to `true`.
      */
     setTrue$: setTrue$,
 
     /**
-     * Function to set the boolean state to `false`.
+     * A `QRL` function to set the boolean state to `false`.
      */
     setFalse$: setFalse$,
 
     /**
-     * Function to toggle the boolean `state`.
+     * A `QRL` function to toggle the boolean `state`.
      */
     toggle$: toggle$,
   };
