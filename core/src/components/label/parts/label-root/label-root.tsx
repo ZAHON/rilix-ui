@@ -1,7 +1,7 @@
 import type { LabelRootProps } from './label-root.types';
 import { component$, useComputed$, sync$, useContextProvider, Slot } from '@builder.io/qwik';
 import { Render } from '@/_internal';
-import { LabelContext } from '../../context';
+import { LabelContext } from '../../contexts';
 
 /**
  * Contains the content for the label.
