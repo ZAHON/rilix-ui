@@ -5,7 +5,7 @@ import { LabelContext } from '../../contexts';
 
 /**
  * Contains the content for the label.
- * This component is based on the `label` element.
+ * Renders a <label> element.
  */
 export const LabelRoot = component$<LabelRootProps>((props) => {
   const { preventDblClickTextSelection: _preventDblClickTextSelection = true, onMouseDown$, ...others } = props;
