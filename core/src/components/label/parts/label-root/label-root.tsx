@@ -8,9 +8,9 @@ import { LabelContext } from '../../contexts';
  * Renders a <label> element.
  */
 export const LabelRoot = component$<LabelRootProps>((props) => {
-  const { preventDblClickTextSelection: _preventDblClickTextSelection = true, onMouseDown$, ...others } = props;
+  const { preventDblClickTextSelection: _preventDblClickTextSelection, onMouseDown$, ...others } = props;
 
-  const preventDblClickTextSelection = useComputed$(() => _preventDblClickTextSelection);
+  const preventDblClickTextSelection = useComputed$(() => _preventDblClickTextSelection ?? true);
 
   const handleMouseDownSync$ = sync$((event: MouseEvent, currentTarget: HTMLElement) => {
     // Only prevent text selection if clicking inside the label itself.
