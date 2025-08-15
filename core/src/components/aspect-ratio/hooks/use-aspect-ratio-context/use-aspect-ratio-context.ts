@@ -1,5 +1,5 @@
 import { useContext } from '@builder.io/qwik';
-import { AspectRatioContext } from '../../context';
+import { AspectRatioContext } from '../../contexts';
 
 /**
  * A hook that gives access to a context object containing properties to interact with the aspect ratio.
