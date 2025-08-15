@@ -27,53 +27,43 @@ const Demo = component$(() => {
 });
 ```
 
-## Usage
+## Rendered elements
 
-```tsx
-import { component$ } from '@builder.io/qwik';
-import { Label } from 'rilix-ui';
+Each of `Label`'s subcomponents renders a default HTML element that makes sense for its role. This overview outlines the default element rendered by each part of the component. You can customize these elements using the `render$` prop, as shown in the [Rendering different elements](#rendering-different-elements) example.
 
-const Demo = component$(() => {
-  return (
-    <>
-      <Label.Root for="first-name">First name</Label.Root>
-      <input id="first-name" type="text" />
-    </>
-  );
-});
-```
+**While it's possible to change the element rendered by `Label.Root`, for accessibility and correct component functionality, it should always render a `<label>` element.**
+
+| Component    | Default rendered element |
+| :----------- | :----------------------- |
+| `Label.Root` | `<label>`                |
 
 ## API Reference
 
+This section provides a detailed overview of the `Label` component's public API, including its props, hooks, and their corresponding types, default values, and descriptions, enabling you to customize their behavior and appearance.
+
 ### Root
 
-Contains the content for the label. This component is based on the `label` element.
+Contains the content for the label. Renders a `<label>` element.
 
-| Prop                           | Type                                                                                                              | Default | Description                                                                                                                                                                                                                                |
-| :----------------------------- | :---------------------------------------------------------------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `for`                          | `string`                                                                                                          | `-`     | The id of the element the label is associated with. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label#for).                                                                                             |
-| `preventDblClickTextSelection` | `boolean`                                                                                                         | `true`  | When `true`, text selection is prevented when double clicking label.                                                                                                                                                                       |
-| `render$`                      | `(props: Record<string, unknown>, state: { preventDblClickTextSelection: ReadonlySignal<boolean> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
-
-| Data attribute                            | Values                                                               |
-| :---------------------------------------- | :------------------------------------------------------------------- |
-| `[data-scope]`                            | `"label"`                                                            |
-| `[data-part]`                             | `"root"`                                                             |
-| `[data-prevent-dbl-click-text-selection]` | Present when text selection is prevented when double clicking label. |
+| Prop                           | Type                                                       | Default | Description                                                                                                                                                                                                                                                                                           |
+| :----------------------------- | :--------------------------------------------------------- | :------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `for`                          | `string`                                                   | `-`     | The ID of the form-related element (e.g., an `<input>`, `<textarea>`, or `<select>`) that the label is associated with. Clicking the label will focus or activate the associated element. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label#for) for more details. |
+| `preventDblClickTextSelection` | `boolean`                                                  | `true`  | When `true`, text selection is prevented when the user double-clicks the label. This enhances the user experience by avoiding unintended text highlighting when interacting with the label.                                                                                                           |
+| `render$`                      | `(props: Record<string, unknown>, state: {}) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details.                                                            |
 
 ### useLabelContext
 
-A hook that gives access to a context object containing properties to interact with the label.
+A hook that provides access to the `Label` component's internal context, exposing a readonly signals to interact with and react to the component's state.
 
-| Property                       | Type                      | Description                                                          |
-| :----------------------------- | :------------------------ | :------------------------------------------------------------------- |
-| `preventDblClickTextSelection` | `ReadonlySignal<boolean>` | When `true`, text selection is prevented when double clicking label. |
+| Property                       | Type                      | Description                                                                                                 |
+| :----------------------------- | :------------------------ | :---------------------------------------------------------------------------------------------------------- |
+| `preventDblClickTextSelection` | `ReadonlySignal<boolean>` | A readonly signal whose value indicates whether text selection is prevented when double-clicking the label. |
 
 ## Examples
 
 ### Text selection when double clicking
 
-By default text selection is prevented when double clicking label. If you want to remove this functionality pass `preventDblClickTextSelection={false}` on `Label.Root` component.
+The `Label` component automatically prevents text highlighting when a user double-clicks it, a feature designed to enhance the overall user experience. If you need to disable this default behavior, pass the `preventDblClickTextSelection` prop with a value of `false` to the `Label.Root` component.
 
 ```tsx
 import { component$ } from '@builder.io/qwik';
@@ -91,9 +81,27 @@ const Demo = component$(() => {
 });
 ```
 
+## Explicit label
+
+To explicitly link a label to a form control, use the `for` prop on the `Label.Root` component. The value of the `for` prop must match the unique `id` of the corresponding form control (e.g., an `<input>`). This is the standard HTML practice for creating an explicit association, which allows users to focus the control by clicking the label.
+
+```tsx
+import { component$ } from '@builder.io/qwik';
+import { Label } from 'rilix-ui';
+
+const Demo = component$(() => {
+  return (
+    <>
+      <Label.Root for="first-name">First name</Label.Root>
+      <input id="first-name" type="text" />
+    </>
+  );
+});
+```
+
 ## Implicit label
 
-You can add the label to the control implicitly by wrapping the control inside the `Label.Root` component.
+An implicit label is created by nesting a form control (e.g., an `<input>`) directly within the `Label.Root` component. This is a convenient and accessible alternative to using the `for` prop.
 
 ```tsx
 import { component$ } from '@builder.io/qwik';
@@ -109,18 +117,46 @@ const Demo = component$(() => {
 });
 ```
 
-## Explicit label
+### Rendering different elements
 
-You can add a label to control explicitly by referencing control. To do this, give the `id` prop and `Label.Root` component `for` prop controls the same unique value.
+By default, the `Label` component (specifically `Label.Root`) renders a `<label>` element. For a complete overview of the default elements, refer to the [Rendered elements](#rendered-elements) section.
+
+You can customize the underlying HTML element rendered by these subcomponents, or even compose them with your own custom Qwik components, by using the `render$` prop. This provides immense flexibility, allowing you to:
+
+- Replace the default HTML tag with any other valid HTML element that fits your design and semantic needs.
+
+- Integrate your own Qwik components, wrapping them with custom styles or behaviors while ensuring the component's core logic and accessibility features remain intact.
+
+**While it's possible to change the element rendered by `Label.Root`, for accessibility and correct component functionality, it should always render a `<label>` element.**
+
+When using the `render$` prop, always spread the provided `props` object onto your custom element or component. This ensures that all essential attributes (like ARIA roles, IDs, and event handlers) are correctly applied, maintaining the component's intended behavior and accessibility.
 
 ```tsx
-import { component$ } from '@builder.io/qwik';
+import type { PropsOf } from '@builder.io/qwik';
+import { component$, Slot } from '@builder.io/qwik';
 import { Label } from 'rilix-ui';
+
+const MyCustomLabel = component$<PropsOf<'label'>>((props) => {
+  return (
+    <label style={{ color: 'purple' }} {...props}>
+      <Slot />
+    </label>
+  );
+});
 
 const Demo = component$(() => {
   return (
     <>
-      <Label.Root for="first-name">First name</Label.Root>
+      <Label.Root
+        for="first-name"
+        render$={(props) => (
+          <MyCustomLabel {...props}>
+            <Slot />
+          </MyCustomLabel>
+        )}
+      >
+        First name
+      </Label.Root>
       <input id="first-name" type="text" />
     </>
   );
