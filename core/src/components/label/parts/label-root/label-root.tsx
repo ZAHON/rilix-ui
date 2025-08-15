@@ -27,7 +27,7 @@ export const LabelRoot = component$<LabelRootProps>((props) => {
   return (
     <Render
       as="label"
-      data-rilix-ui-label-root=""
+      data-rilix-ui-label-root
       onMouseDown$={[onMouseDown$, handleMouseDownSync$]}
       defaultRender$={(props) => (
         <label {...props}>
