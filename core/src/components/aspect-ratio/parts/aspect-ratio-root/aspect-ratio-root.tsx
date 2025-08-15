@@ -25,7 +25,7 @@ export const AspectRatioRoot = component$<AspectRatioRootProps>((props) => {
   return (
     <Render
       as="div"
-      data-rilix-ui-aspect-ratio-root=""
+      data-rilix-ui-aspect-ratio-root
       style={combineStyle(
         {
           position: 'relative',
