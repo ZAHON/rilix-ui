@@ -10,7 +10,7 @@ import { useCounter } from 'rilix-ui';
 
 ## Usage
 
-The `useCounter` hook manages a numeric state, providing methods to increment, decrement, set, and reset its value. You can define an `initialValue`, set `min` and `max` bounds.
+The `useCounter` hook simplifies managing a numeric state, providing a robust solution for use cases such as quantity selectors, sliders, or pagination controls. It offers a clean and declarative way to handle a number that needs to stay within specific boundaries.
 
 ```tsx
 import { component$, $ } from '@builder.io/qwik';
@@ -41,9 +41,11 @@ const Demo = component$(() => {
 
 ## API reference
 
+This section provides a detailed overview of the `useCounter` hook's API, including its optional configuration parameters and the properties it returns.
+
 ### Parameters
 
-The `useCounter` hook accepts a **single, optional object** as its parameter, with the following properties:
+The `useCounter` hook accepts a single, optional object as its parameter, with the following properties:
 
 | Property       | Type     | Default     | Description                                                                                                               |
 | :------------- | :------- | :---------- | :------------------------------------------------------------------------------------------------------------------------ |
@@ -54,12 +56,12 @@ The `useCounter` hook accepts a **single, optional object** as its parameter, wi
 
 ### Returns
 
-The `useCounter` hook returns an **object** containing the following properties:
+The `useCounter` hook returns an object containing the following properties:
 
-| Property     | Type                           | Description                                                                                                          |
-| :----------- | :----------------------------- | :------------------------------------------------------------------------------------------------------------------- |
-| `count`      | `ReadonlySignal<number>`       | A readonly signal containing the current value of the counter. Its value is always clamped between `min` and `max`.  |
-| `increment$` | `QRL<() => void>`              | A function to increment the counter's value by the specified `step`. The value will not exceed `max`.                |
-| `decrement$` | `QRL<() => void>`              | A function to decrement the counter's value by the specified `step`. The value will not go below `min`.              |
-| `set$`       | `QRL<(value: number) => void>` | A function to set the counter to a specific `value`. The provided `value` will be clamped between `min` and `max`.   |
-| `reset$`     | `QRL<() => void>`              | A function to reset the counter to its `initialValue`. The `initialValue` itself is clamped between `min` and `max`. |
+| Property     | Type                           | Description                                                                                                                    |
+| :----------- | :----------------------------- | :----------------------------------------------------------------------------------------------------------------------------- |
+| `count`      | `ReadonlySignal<number>`       | A readonly signal whose value indicates the current state of the counter. Its value is always clamped between `min` and `max`. |
+| `increment$` | `QRL<() => void>`              | A `QRL` function to increment the counter's value by the specified `step`.                                                     |
+| `decrement$` | `QRL<() => void>`              | A `QRL` function to decrement the counter's value by the specified `step`.                                                     |
+| `set$`       | `QRL<(value: number) => void>` | A `QRL` function to set the counter to a specific `value`. The provided `value` will be clamped between `min` and `max`.       |
+| `reset$`     | `QRL<() => void>`              | A `QRL` function to reset the counter to its `initialValue`. The `initialValue` itself is clamped between `min` and `max`.     |
