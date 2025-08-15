@@ -16,9 +16,9 @@ import { AspectRatioContext } from '../../contexts';
  * ```
  */
 export const AspectRatioRoot = component$<AspectRatioRootProps>((props) => {
-  const { ratio = 1, style, ...others } = props;
+  const { ratio, style, ...others } = props;
 
-  const aspect = useComputed$(() => (1 / ratio) * 100);
+  const aspect = useComputed$(() => (1 / (ratio ?? 1)) * 100);
 
   useContextProvider(AspectRatioContext, { aspect });
 
