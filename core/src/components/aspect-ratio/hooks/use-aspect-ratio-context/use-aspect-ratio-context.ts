@@ -2,7 +2,8 @@ import { useContext } from '@builder.io/qwik';
 import { AspectRatioContext } from '../../contexts';
 
 /**
- * A hook that gives access to a context object containing properties to interact with the aspect ratio.
+ * A hook that provides access to the `AspectRatio` component's internal context,
+ * exposing a readonly signals to interact with and react to the component's state.
  */
 export const useAspectRatioContext = () => {
   const { aspect } = useContext(AspectRatioContext);
