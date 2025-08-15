@@ -44,6 +44,8 @@ const Demo = component$(() => {
 
 ## API reference
 
+This section provides a detailed breakdown of the `useArrowNavigation` hook's API, including its parameters and what it returns.
+
 ### Parameters
 
 The `useArrowNavigation` hook accepts an object as its parameter, with the following properties:
