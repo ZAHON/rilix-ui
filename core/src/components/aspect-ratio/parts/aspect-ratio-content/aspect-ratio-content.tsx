@@ -1,8 +1,7 @@
 import { AspectRatioContentProps } from './aspect-ratio-content.types';
-import { component$, useContext, Slot } from '@builder.io/qwik';
+import { component$, Slot } from '@builder.io/qwik';
 import { Render } from '@/_internal';
 import { combineStyle } from '@//utilities';
-import { AspectRatioContext } from '../../contexts';
 
 /**
  * Contains the content you want to constrain to a given ratio.
@@ -11,15 +10,12 @@ import { AspectRatioContext } from '../../contexts';
 export const AspectRatioContent = component$<AspectRatioContentProps>((props) => {
   const { style, ...others } = props;
 
-  const { aspect } = useContext(AspectRatioContext);
-
   return (
     <Render
       as="div"
       data-rilix-ui-aspect-ratio-content=""
       data-scope="aspect-ratio"
       data-part="content"
-      data-aspect={aspect.value}
       style={combineStyle(
         {
           position: 'absolute',
