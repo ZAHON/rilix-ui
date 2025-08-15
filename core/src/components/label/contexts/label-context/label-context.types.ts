@@ -2,7 +2,7 @@ import type { ReadonlySignal } from '@builder.io/qwik';
 
 export interface LabelContextValue {
   /**
-   * When `true`, text selection is prevented when double clicking label.
+   * A readonly signal whose value indicates whether text selection is prevented when double-clicking the label.
    */
   preventDblClickTextSelection: ReadonlySignal<boolean>;
 }
