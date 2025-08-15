@@ -9,7 +9,7 @@ export const useLabelContext = () => {
 
   return {
     /**
-     * When `true`, text selection is prevented when double clicking label.
+     * A readonly signal whose value indicates whether text selection is prevented when double-clicking the label.
      */
     preventDblClickTextSelection: preventDblClickTextSelection,
   };
