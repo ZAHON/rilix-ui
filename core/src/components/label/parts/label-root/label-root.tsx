@@ -30,7 +30,6 @@ export const LabelRoot = component$<LabelRootProps>((props) => {
       data-rilix-ui-label-root=""
       data-scope="label"
       data-part="root"
-      data-prevent-dbl-click-text-selection={preventDblClickTextSelection.value ? '' : undefined}
       onMouseDown$={[onMouseDown$, handleMouseDownSync$]}
       defaultRender$={(props) => (
         <label {...props}>
