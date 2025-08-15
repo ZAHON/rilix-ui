@@ -2,8 +2,9 @@ import type { PropsOf, ReadonlySignal, JSXOutput } from '@builder.io/qwik';
 
 export interface LabelRootProps extends PropsOf<'label'> {
   /**
-   * The id of the element the label is associated with.
-   * See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label#for).
+   * The ID of the form-related element (e.g., an input, textarea, or select) that the label is associated with.
+   * Clicking the label will focus or activate the associated element.
+   * See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label#for) for more details.
    */
   for?: string;
 
