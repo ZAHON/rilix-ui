@@ -6,7 +6,7 @@ import { AspectRatioContext } from '../../contexts';
 
 /**
  * Contains the content you want to constrain to a given ratio.
- * This component is based on the `div` element.
+ * Renders a `<div>` element.
  */
 export const AspectRatioContent = component$<AspectRatioContentProps>((props) => {
   const { style, ...others } = props;
