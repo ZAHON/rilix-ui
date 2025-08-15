@@ -10,7 +10,9 @@ import { useBoolean } from 'rilix-ui';
 
 ## Usage
 
-`useBoolean` hook manages boolean state. It provides `setTrue$`, `setFalse$` and `toggle$` handlers.
+The `useBoolean` hook provides a simple yet powerful way to manage boolean state within your Qwik components. It's designed to simplify common UI patterns where a component's state can be either `true` or `false`, such as controlling visibility of an element, managing a toggle, or handling a loading state.
+
+The hook takes an optional `initialState` parameter to set the starting value of the state. By default, this value is `false`.
 
 ```tsx
 import { component$, $ } from '@builder.io/qwik';
@@ -35,9 +37,11 @@ const Demo = component$(() => {
 
 ## API reference
 
+This section provides a detailed overview of the `useBoolean` hook's API, including its optional configuration parameter and the properties it returns.
+
 ### Parameters
 
-The `useBoolean` hook accepts a **single, optional boolean** parameter:
+The `useBoolean` hook accepts a single, optional boolean parameter:
 
 | Param          | Type      | Default | Description                              |
 | :------------- | :-------- | :------ | :--------------------------------------- |
@@ -45,11 +49,11 @@ The `useBoolean` hook accepts a **single, optional boolean** parameter:
 
 ### Returns
 
-The `useBoolean` hook returns an **object** containing the following properties:
+The `useBoolean` hook returns an object containing the following properties:
 
-| Property    | Type                      | Description                                             |
-| :---------- | :------------------------ | :------------------------------------------------------ |
-| `state`     | `ReadonlySignal<boolean>` | A readonly signal containing the current boolean value. |
-| `setTrue$`  | `QRL<() => void>`         | Function to set the boolean state to `true`.            |
-| `setFalse$` | `QRL<() => void>`         | Function to set the boolean state to `false`.           |
-| `toggle$`   | `QRL<() => void>`         | Function to toggle the boolean `state`.                 |
+| Property    | Type                      | Description                                                        |
+| :---------- | :------------------------ | :----------------------------------------------------------------- |
+| `state`     | `ReadonlySignal<boolean>` | A readonly signal whose value indicates the current boolean state. |
+| `setTrue$`  | `QRL<() => void>`         | A `QRL` function to set the boolean state to `true`.               |
+| `setFalse$` | `QRL<() => void>`         | A `QRL` function to set the boolean state to `false`.              |
+| `toggle$`   | `QRL<() => void>`         | A `QRL` function to toggle the boolean `state`.                    |
