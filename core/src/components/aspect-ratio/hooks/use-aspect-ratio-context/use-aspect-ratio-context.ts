@@ -9,7 +9,7 @@ export const useAspectRatioContext = () => {
 
   return {
     /**
-     * The current aspect ratio (in %).
+     * A readonly signal whose value represents the current aspect ratio (in %).
      */
     aspect: aspect,
   };
