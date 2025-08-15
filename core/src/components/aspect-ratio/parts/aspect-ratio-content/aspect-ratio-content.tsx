@@ -14,8 +14,6 @@ export const AspectRatioContent = component$<AspectRatioContentProps>((props) =>
     <Render
       as="div"
       data-rilix-ui-aspect-ratio-content=""
-      data-scope="aspect-ratio"
-      data-part="content"
       style={combineStyle(
         {
           position: 'absolute',
