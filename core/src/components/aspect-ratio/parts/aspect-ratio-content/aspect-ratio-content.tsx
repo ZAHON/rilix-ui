@@ -2,7 +2,7 @@ import { AspectRatioContentProps } from './aspect-ratio-content.types';
 import { component$, useContext, Slot } from '@builder.io/qwik';
 import { Render } from '@/_internal';
 import { combineStyle } from '@//utilities';
-import { AspectRatioContext } from '../../context';
+import { AspectRatioContext } from '../../contexts';
 
 /**
  * Contains the content you want to constrain to a given ratio.
