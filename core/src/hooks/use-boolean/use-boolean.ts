@@ -15,7 +15,9 @@ export const useBoolean = (initialState = false) => {
     if (state.value) state.value = false;
   });
 
-  const toggle$ = $(() => (state.value = !state.value));
+  const toggle$ = $(() => {
+    state.value = !state.value;
+  });
 
   return {
     /**
