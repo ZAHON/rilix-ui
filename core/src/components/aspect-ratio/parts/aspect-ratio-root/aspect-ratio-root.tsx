@@ -2,7 +2,7 @@ import { AspectRatioRootProps } from './aspect-ratio-root.types';
 import { component$, useComputed$, useContextProvider, Slot } from '@builder.io/qwik';
 import { Render } from '@/_internal';
 import { combineStyle } from '@/utilities';
-import { AspectRatioContext } from '../../context';
+import { AspectRatioContext } from '../../contexts';
 
 /**
  * Contains all the parts of an aspect ratio.
