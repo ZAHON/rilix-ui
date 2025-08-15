@@ -706,7 +706,7 @@ You can customize the underlying HTML element rendered by these subcomponents, o
 
 - Replace the default HTML tag with any other valid HTML element that fits your design and semantic needs (e.g., changing `<h3>` to `<h2>` for `Accordion.ItemHeader`).
 
-- Integrate your own Qwik components, wrapping them with custom styles or behaviors while ensuring the `Accordion`'s core logic and accessibility features remain intact.
+- Integrate your own Qwik components, wrapping them with custom styles or behaviors while ensuring the component's core logic and accessibility features remain intact.
 
 When using the `render$` prop, always spread the provided `props` object onto your custom element or component. This ensures that all essential attributes (like ARIA roles, IDs, and event handlers) are correctly applied, maintaining the component's intended behavior and accessibility.
 
