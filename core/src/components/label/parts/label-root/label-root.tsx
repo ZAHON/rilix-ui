@@ -32,7 +32,6 @@ export const LabelRoot = component$<LabelRootProps>((props) => {
       data-part="root"
       data-prevent-dbl-click-text-selection={preventDblClickTextSelection.value ? '' : undefined}
       onMouseDown$={[onMouseDown$, handleMouseDownSync$]}
-      state={{ preventDblClickTextSelection }}
       defaultRender$={(props) => (
         <label {...props}>
           <Slot />

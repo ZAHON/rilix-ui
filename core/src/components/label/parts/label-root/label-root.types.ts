@@ -1,4 +1,4 @@
-import type { PropsOf, ReadonlySignal, JSXOutput } from '@builder.io/qwik';
+import type { PropsOf, JSXOutput } from '@builder.io/qwik';
 
 export interface LabelRootProps extends PropsOf<'label'> {
   /**
@@ -29,11 +29,6 @@ export interface LabelRootProps extends PropsOf<'label'> {
     /**
      * An object that provides access to the internal state of the component.
      */
-    state: {
-      /**
-       * When `true`, text selection is prevented when double clicking label.
-       */
-      preventDblClickTextSelection: ReadonlySignal<boolean>;
-    }
+    state: {}
   ) => JSXOutput;
 }
