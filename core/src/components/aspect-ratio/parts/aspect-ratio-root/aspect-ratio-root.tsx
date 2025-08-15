@@ -6,7 +6,14 @@ import { AspectRatioContext } from '../../contexts';
 
 /**
  * Contains all the parts of an aspect ratio.
- * This component is based on the `div` element.
+ * Renders a `<div>` element.
+ *
+ * @example
+ * ```tsx
+ * <AspectRatio.Root>
+ * 	<AspectRatio.Content />
+ * </AspectRatio.Root>
+ * ```
  */
 export const AspectRatioRoot = component$<AspectRatioRootProps>((props) => {
   const { ratio = 1, style, ...others } = props;
