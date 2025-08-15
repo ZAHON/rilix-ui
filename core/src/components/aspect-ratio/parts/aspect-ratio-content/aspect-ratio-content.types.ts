@@ -1,4 +1,4 @@
-import type { PropsOf, ReadonlySignal, JSXOutput } from '@builder.io/qwik';
+import type { PropsOf, JSXOutput } from '@builder.io/qwik';
 
 export interface AspectRatioContentProps extends PropsOf<'div'> {
   /**
@@ -15,11 +15,6 @@ export interface AspectRatioContentProps extends PropsOf<'div'> {
     /**
      * An object that provides access to the internal state of the component.
      */
-    state: {
-      /**
-       * The current aspect ratio (in %).
-       */
-      aspect: ReadonlySignal<number>;
-    }
+    state: {}
   ) => JSXOutput;
 }

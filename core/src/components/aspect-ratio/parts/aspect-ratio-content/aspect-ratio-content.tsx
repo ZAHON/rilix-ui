@@ -30,7 +30,6 @@ export const AspectRatioContent = component$<AspectRatioContentProps>((props) =>
         },
         style
       )}
-      state={{ aspect }}
       defaultRender$={(props) => (
         <div {...props}>
           <Slot />
