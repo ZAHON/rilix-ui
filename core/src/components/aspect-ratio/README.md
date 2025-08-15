@@ -29,7 +29,57 @@ const Demo = component$(() => {
 });
 ```
 
-## Usage
+## Rendered elements
+
+Each of `AspectRatio`'s subcomponents renders a default HTML element that makes sense for its role. This overview outlines the default element rendered by each part of the component. You can customize this element using the `render$` prop, as shown in the [Rendering different elements](#rendering-different-elements) example.
+
+| Component             | Default rendered element |
+| :-------------------- | :----------------------- |
+| `AspectRatio.Root`    | `<div>`                  |
+| `AspectRatio.Content` | `<div>`                  |
+
+## API Reference
+
+The `AspectRatio` component consists of two subcomponents (`Root` and `Content`). This section outlines the props available for each subcomponent and the properties returned by the `useAspectRatioContext` hook, enabling you to customize the component's behavior and access its internal state.
+
+### Root
+
+Contains all the parts of an aspect ratio. Renders a `<div>` element.
+
+| Prop      | Type                                                       | Default | Description                                                                                                                                                                                                                                |
+| :-------- | :--------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ratio`   | `number`                                                   | `1`     | The desired ratio, e.g. `16 / 9`.                                                                                                                                                                                                          |
+| `render$` | `(props: Record<string, unknown>, state: {}) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
+
+### Content
+
+Contains the content you want to constrain to a given ratio. Renders a `<div>` element.
+
+| Prop      | Type                                                       | Default | Description                                                                                                                                                                                                                                |
+| :-------- | :--------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `render$` | `(props: Record<string, unknown>, state: {}) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
+
+### useAspectRatioContext
+
+A hook that provides access to the `AspectRatio` component's internal context, exposing a readonly signals to interact with and react to the component's state.
+
+| Property | Type                     | Description                                                               |
+| :------- | :----------------------- | :------------------------------------------------------------------------ |
+| `aspect` | `ReadonlySignal<number>` | A readonly signal whose value represents the current aspect ratio (in %). |
+
+## Examples
+
+These examples illustrate the different ways you can use the `AspectRatio` component to control content proportions and customize its rendered elements to fit your specific design and semantic needs.
+
+### Basic example
+
+This example demonstrates how to use the `AspectRatio` component to wrap content and maintain a `16:9` aspect ratio. The component's intrinsic sizing ensures its container is always sized correctly, regardless of the content placed inside.
+
+For the content you want to constrain to a given ratio (e.g., the `<img>` element in this example), it is highly recommended to use the following styles to ensure it fills the container correctly:
+
+- `object-fit: cover`: Ensures the content fills the entire space while maintaining its aspect ratio, cropping the excess.
+
+- `width: 100%` and `height: 100%`: Guarantees that the content spans the full width and height of the container, preventing any empty space.
 
 ```tsx
 import { component$ } from '@builder.io/qwik';
@@ -37,7 +87,7 @@ import { AspectRatio } from 'rilix-ui';
 
 const Demo = component$(() => {
   return (
-    <div style={{ width: '18.75rem', overflow: 'hidden' }}>
+    <div style={{ width: '300px', overflow: 'hidden' }}>
       <AspectRatio.Root ratio={16 / 9}>
         <AspectRatio.Content>
           <img
@@ -52,50 +102,17 @@ const Demo = component$(() => {
 });
 ```
 
-## API Reference
+### Rendering different elements
 
-### Root
+By default, `AspectRatio`'s subcomponents each render a sensible HTML element. For a complete overview of these default elements, refer to the [Rendered elements](#rendered-elements) section.
 
-Contains all the parts of an aspect ratio. This component is based on the `div` element.
+You can customize the underlying HTML element rendered by these subcomponents, or even compose them with your own custom Qwik components, by using the `render$` prop. This provides immense flexibility, allowing you to:
 
-| Prop      | Type                                                                                       | Default | Description                                                                                                                                                                                                                                |
-| :-------- | :----------------------------------------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ratio`   | `number`                                                                                   | `1`     | The desired ratio, e.g. `16 / 9`.                                                                                                                                                                                                          |
-| `render$` | `(props: Record<string, unknown>, state: { aspect: ReadonlySignal<number> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
+- Replace the default HTML tag with any other valid HTML element that fits your design and semantic needs (e.g., using `<article>` or `<figure>`).
 
-| Data attribute  | Values                           |
-| :-------------- | :------------------------------- |
-| `[data-scope]`  | `"aspect-ratio"`                 |
-| `[data-part]`   | `"root"`                         |
-| `[data-aspect]` | The current aspect ratio (in %). |
+- Integrate your own Qwik components, wrapping them with custom styles or behaviors while ensuring the component's core logic and accessibility features remain intact.
 
-### Content
-
-Contains the content you want to constrain to a given ratio. This component is based on the `div` element.
-
-| Prop      | Type                                                                                       | Default | Description                                                                                                                                                                                                                                |
-| :-------- | :----------------------------------------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `render$` | `(props: Record<string, unknown>, state: { aspect: ReadonlySignal<number> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
-
-| Data attribute  | Values                           |
-| --------------- | -------------------------------- |
-| `[data-scope]`  | `"aspect-ratio"`                 |
-| `[data-part]`   | `"content"`                      |
-| `[data-aspect]` | The current aspect ratio (in %). |
-
-### useAspectRatioContext
-
-A hook that gives access to a context object containing properties to interact with the aspect ratio.
-
-| Property | Type                     | Description                      |
-| :------- | :----------------------- | :------------------------------- |
-| `aspect` | `ReadonlySignal<number>` | The current aspect ratio (in %). |
-
-## Examples
-
-### Iframe embed
-
-You can limit to a certain ratio any content, for example, image or inline frame element.
+When using the `render$` prop, always spread the provided `props` object onto your custom element or component. This ensures that all essential attributes are correctly applied, maintaining the component's intended behavior and accessibility.
 
 ```tsx
 import { component$ } from '@builder.io/qwik';
@@ -103,16 +120,33 @@ import { AspectRatio } from 'rilix-ui';
 
 const Demo = component$(() => {
   return (
-    <div style={{ width: '18.75rem', overflow: 'hidden' }}>
+    <div style={{ width: '300px', overflow: 'hidden' }}>
       <AspectRatio.Root ratio={16 / 9}>
-        <AspectRatio.Content>
-          <iframe
-            src="https://www.youtube.com/embed/2yJgwwDcgV8?si=KwBAFYZpeWUf3EOA"
-            title="YouTube video player"
-            style={{ objectFit: 'cover', height: '100%', width: '100%', border: 'none' }}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          />
-        </AspectRatio.Content>
+        <AspectRatio.Content
+          style={{ margin: 0 }}
+          render$={(props) => (
+            <figure {...props}>
+              <img
+                src="https://images.unsplash.com/photo-1615705252098-b5dc19c80433?w=300&dpr=2&q=80"
+                alt="Elephant at sunset"
+                style={{ objectFit: 'cover', height: '100%', width: '100%' }}
+              />
+              <figcaption
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  right: 0,
+                  left: 0,
+                  padding: '4px',
+                  color: 'white',
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                }}
+              >
+                An elephant at sunset
+              </figcaption>
+            </figure>
+          )}
+        />
       </AspectRatio.Root>
     </div>
   );
