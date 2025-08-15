@@ -36,31 +36,29 @@ export const useCounter = (params: UseCounterParams = {}) => {
 
   return {
     /**
-     * A readonly signal containing the current value of the counter.
+     * A readonly signal whose value indicates the current state of the counter.
      * Its value is always clamped between `min` and `max`.
      */
     count: count as ReadonlySignal<typeof count.value>,
 
     /**
-     * A function to increment the counter's value by the specified `step`.
-     * The value will not exceed `max`.
+     * A `QRL` function to increment the counter's value by the specified `step`.
      */
     increment$,
 
     /**
-     * A function to decrement the counter's value by the specified `step`.
-     * The value will not go below `min`.
+     * A `QRL` function to decrement the counter's value by the specified `step`.
      */
     decrement$,
 
     /**
-     * A function to set the counter to a specific `value`.
+     * A `QRL` function to set the counter to a specific `value`.
      * The provided `value` will be clamped between `min` and `max`.
      */
     set$,
 
     /**
-     * A function to reset the counter to its `initialValue`.
+     * A `QRL` function to reset the counter to its `initialValue`.
      * The `initialValue` itself is clamped between `min` and `max`.
      */
     reset$: reset$,
