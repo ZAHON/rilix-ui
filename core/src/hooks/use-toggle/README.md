@@ -10,7 +10,7 @@ import { useToggle } from 'rilix-ui';
 
 ## Usage
 
-The `useToggle` hook manages a cyclical state across a custom array of values. It provides the `toggle$` method to effortlessly cycle through a predefined sequence and the `set$` method to directly set the current value
+The `useToggle` hook helps you manage a state that cycles through a custom array of values. It's especially useful for implementing cyclical UI states, such as a theme switcher or a multi-step form. The hook gives you a `toggle$` method to effortlessly move to the next value in the sequence, and a `set$` method to jump directly to a specific value.
 
 ```tsx
 import { component$ } from '@builder.io/qwik';
@@ -25,7 +25,7 @@ const Demo = component$(() => {
         Value: <code>{value.value}</code>
       </p>
 
-      <button type="button" onClick$={toggle$}>
+      <button type="button" onClick$={toggle$} style={{ backgroundColor: value.value }}>
         Toggle
       </button>
       <button type="button" onClick$={() => set$('cyan')}>
@@ -38,23 +38,25 @@ const Demo = component$(() => {
 
 ## API reference
 
+This section provides a comprehensive breakdown of the `useToggle` hook's parameters and return values, including their types and detailed descriptions. Use this reference to understand how to correctly configure and interact with the hook.
+
 ### Parameters
 
-The `useToggle` hook accepts a **single, optional parameter** called `options`. This parameter is an array of values that the hook will cycle through, and its first element will be the initial value.
+The `useToggle` hook accepts a single, optional parameter called `options`. This array of values defines the sequence that the hook will cycle through. The first element of this array is also used as the initial value for the returned `value` readonly signal.
 
-| Param     | Type           | Default         | Description                                                                                                     |
-| :-------- | :------------- | :-------------- | :-------------------------------------------------------------------------------------------------------------- |
-| `options` | `readonly T[]` | `[false, true]` | An array of values that the hook will cycle through. The first element in this array will be the initial value. |
+| Param     | Type           | Default         | Description                                                                                                                                      |
+| :-------- | :------------- | :-------------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `options` | `readonly T[]` | `[false, true]` | An array of values that the hook will cycle through. The first element of this array is used to initialize the returned `value` readonly signal. |
 
 ### Returns
 
-The `useToggle` hook returns an **object** containing the following properties:
+The `useToggle` hook returns an object containing the following properties:
 
-| Property  | Type                         | Description                                                                                                                                                                                                                                                      |
-| :-------- | :--------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `value`   | `ReadonlySignal<T[]>`        | A `ReadonlySignal` containing the current active value from the `options` array. This signal is read-only, meaning its value can only be changed by calling `toggle$` or `set$`.                                                                                 |
-| `toggle$` | `QRL<() => void>`            | A function that, when called, advances the `value` to the next item in the `options` array. If the current value is the last one in the array, it cycles back to the first item.                                                                                 |
-| `set$`    | `QRL<(newValue: T) => void>` | A function that takes a `newValue` as an argument. It sets the `value` directly to this `newValue`, but only if `newValue` is present in the `options` array provided to the hook. If `newValue` is not one of the valid options, the `value` remains unchanged. |
+| Property  | Type                         | Description                                                                                                                                                                                                                                             |
+| :-------- | :--------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `value`   | `ReadonlySignal<T[]>`        | A readonly signal whose value represents the currently active option from the provided array. This signal is read-only, which means its value can only be changed by calling the `toggle$` or `set$` functions, ensuring predictable state transitions. |
+| `toggle$` | `QRL<() => void>`            | A `QRL` function that advances the value to the next option in the sequence. Once the end of the `options` array is reached, it automatically cycles back to the first item, creating a loop.                                                           |
+| `set$`    | `QRL<(newValue: T) => void>` | A `QRL` function that directly sets the `value` to a new option. This function includes a built-in validation check, and the value will only be updated if the `newValue` argument is present in the original `options` array provided to the hook.     |
 
 ## Type inference and assertions
 
