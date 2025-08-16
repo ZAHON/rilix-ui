@@ -1,5 +1,43 @@
 # Changelog
 
+## 0.9.0 (16.08.2025)
+
+### 🚨 Breaking Changes
+
+- **Remove `data-scope` and `data-part` attributes from all components.** These attributes were removed to simplify the component structure and reduce unnecessary DOM output. This change may require updates to any custom styling or logic that relied on these attributes.
+
+- **Remove the `aspect` property from the `state` object passed to the `render$` prop in the `AspectRatio.Root` component.** This change simplifies the component's API. Components using the `render$` prop will need to be updated to no longer rely on the `aspect` property from the state object.
+
+- **Remove `data-scope` attribute from the `AspectRatio.Root` component.** This change simplifies the DOM output and reduces unnecessary attributes, but may require updates to any custom CSS or JavaScript that relied on this attribute for styling or logic.
+
+- **Remove the `aspect` property from the `state` object passed to the `render$` prop in the `AspectRatio.Content` component.** This change simplifies the component's API. Components using the `render$` prop will need to be updated to no longer rely on the `aspect` property from the state object.
+
+- **Remove the `data-aspect` attribute from the `AspectRatio.Content` component.** This change simplifies the DOM output and reduces unnecessary attributes, but may require updates to any custom CSS or JavaScript that relied on this attribute for styling or logic.
+
+- **Remove the `preventDblClickTextSelection` property from the `state` object passed to the `render$` prop in the `Label.Root` component.** This change simplifies the component's API. Components using the `render$` prop will need to be updated to no longer rely on the `preventDblClickTextSelection` property from the `state` object.
+
+- **Remove `data-prevent-dbl-click-text-selection` attribute from `Label.Root` component.** This change simplifies the DOM output and reduces unnecessary attributes, but may require updates to any custom CSS or JavaScript that relied on this attribute for styling or logic.
+
+- **Remove the `decorative` property from the `state` object passed to the `render$` prop in the `Separator.Root` component.** This change simplifies the component's API. Components using the `render$` prop will need to be updated to no longer rely on the `decorative` property from the `state` object.
+
+- **Remove `useId` hook.** This hook has been removed as it is now redundant. Its functionality is handled more efficiently by the underlying framework. Any components that used `useId` will need to be updated.
+
+### 🐞 Bug Fixes
+
+- **`Link.Root` component now correctly removes `aria-disabled` and `data-disabled` attributes.** Previously, these attributes were not being removed when the `disabled` prop was dynamically changed from `true` to `false`. This led to incorrect behavior and accessibility issues.
+
+- **`Separator.Root` component now correctly renders the `data-orientation` attribute.** Previously, the attribute was not rendering the correct value. This led to incorrect styling and behavior.
+
+### 🚀 Features
+
+- **Add developer warning for missing `href` prop in `Link.Root`.** A warning is now displayed in the developer console when the `Link.Root` component is used without an `href` prop. This helps to prevent unexpected behavior and improves the developer experience.
+
+- **Change type for `disabled` property in the `state` object of `Link.Root`'s `render$` prop to `ReadonlySignal<boolean>`.** Previously, the type was `ReadonlySignal<boolean | undefined>`. This change improves type safety and predictability by ensuring the signal always returns a boolean value.
+
+- **Change type for `disabled` property returned by `useLinkContext` hook to `ReadonlySignal<boolean>`.** Previously, the type was `ReadonlySignal<boolean | undefined>`. This change improves type safety and predictability by ensuring the signal always returns a boolean value.
+
+- **Change type for `decorative` property returned by `useSeparatorContext` hook to `ReadonlySignal<boolean>`.** Previously, the type was `ReadonlySignal<boolean | undefined>`. This change improves type safety and predictability by ensuring the signal always returns a boolean value.
+
 ## 0.8.0 (08.08.2025)
 
 ### 🚨 Breaking Changes
