@@ -10,7 +10,7 @@ import { usePrevious } from 'rilix-ui';
 
 ## Usage
 
-This hook is useful when you need to compare the current state with its previous state.
+This hook is great for when you need to compare a signal's current value against its last one. It gives you a clean way to track changes and build logic based on past and present state.
 
 ```tsx
 import { component$, useSignal } from '@builder.io/qwik';
@@ -39,9 +39,11 @@ const Demo = component$(() => {
 
 ## API reference
 
+This section provides detailed information on the `usePrevious` hook's parameters and return value, helping you understand how to use it effectively.
+
 ### Parameters
 
-The `usePrevious` hook accepts a **single, required parameter** named `value`, which should be the signal whose previous value you want to track:
+The `usePrevious` hook accepts a single, required parameter named `value`, which should be the signal whose previous value you want to track:
 
 | Param    | Type        | Default | Description                                        |
 | :------- | :---------- | :------ | :------------------------------------------------- |
@@ -49,8 +51,8 @@ The `usePrevious` hook accepts a **single, required parameter** named `value`, w
 
 ### Returns
 
-The `usePrevious` hook returns a **readonly signal** that provides access to the previous value of the signal you're tracking.
+The `usePrevious` hook returns a readonly signal that provides access to the previous value of the signal you're tracking.
 
-| Type                             | Description                                                                                                                                                   |
-| :------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `ReadonlySignal<T \| undefined>` | A readonly signal containing the previous value of the provided signal. Initially, this signal has a value of `undefined` until the first change is detected. |
+| Type                             | Description                                                                                                                                  |
+| :------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ReadonlySignal<T \| undefined>` | A readonly signal whose value is the previous value of the tracked signal. Initially, it is `undefined` until the first value change occurs. |
