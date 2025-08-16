@@ -22,21 +22,20 @@ export const useToggle = <T>(options: readonly T[] = [false, true] as any) => {
 
   return {
     /**
-     * A `ReadonlySignal` containing the current active value from the `options` array.
-     * This signal is read-only, meaning its value can only be changed by calling `toggle$` or `set$`.
+     * A readonly signal whose value represents the currently active option from the provided array.
+     * This signal is read-only, which means its value can only be changed by calling the `toggle$` or `set$` functions, ensuring predictable state transitions.
      */
     value: value as ReadonlySignal<typeof value.value>,
 
     /**
-     * A function that, when called, advances the `value` to the next item in the `options` array.
-     * If the current value is the last one in the array, it cycles back to the first item.
+     * A `QRL` function that advances the value to the next option in the sequence.
+     * Once the end of the `options` array is reached, it automatically cycles back to the first item, creating a loop.
      */
     toggle$,
 
     /**
-     * A function that takes a `newValue` as an argument.
-     * It sets the `value` directly to this `newValue`, but only if `newValue` is present in the `options` array provided to the hook.
-     * If `newValue` is not one of the valid options, the `value` remains unchanged.
+     * A `QRL` function that directly sets the `value` to a new option.
+     * This function includes a built-in validation check, and the value will only be updated if the `newValue` argument is present in the original `options` array provided to the hook.
      */
     set$,
   };
