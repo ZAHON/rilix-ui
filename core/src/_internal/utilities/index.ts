@@ -9,6 +9,7 @@ export * from './is-element-in-dom';
 export * from './is-element-tabbable';
 export * from './is-element-visible';
 export * from './is-ios';
+export * from './set-attribute';
 export * from './set-style';
 export * from './set-style-property';
 export * from './unwrap-signal';
