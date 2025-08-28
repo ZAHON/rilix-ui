@@ -18,6 +18,7 @@ These hooks provide effective solutions for managing your component's internal d
 
 These hooks offer solutions for managing UI interactions and DOM manipulation, providing tools to create more interactive and accessible components.
 
-| Hook                                                                                                    | Description                                                                                       |
-| :------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------ |
-| [`useArrowNavigation`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/hooks/use-arrow-navigation) | A hook for enabling keyboard arrow navigation between focusable items within a specified element. |
+| Hook                                                                                                    | Description                                                                                                               |
+| :------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------ |
+| [`useArrowNavigation`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/hooks/use-arrow-navigation) | A hook for enabling keyboard arrow navigation between focusable items within a specified element.                         |
+| [`useBodyScrollLock`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/hooks/use-body-scroll-lock)  | A hook to enable and disable `<body>` element scrolling, preventing the content behind a modal or overlay from scrolling. |
