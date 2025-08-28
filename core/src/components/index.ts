@@ -2,6 +2,7 @@ export * from './accordion';
 export * from './alert';
 export * from './aspect-ratio';
 export * from './collapsible';
+export * from './dialog';
 export * from './label';
 export * from './link';
 export * from './portal';
