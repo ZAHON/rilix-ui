@@ -18,7 +18,8 @@ These hooks provide effective solutions for managing your component's internal d
 
 These hooks offer solutions for managing UI interactions and DOM manipulation, providing tools to create more interactive and accessible components.
 
-| Hook                                                                                                    | Description                                                                                                               |
-| :------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------ |
-| [`useArrowNavigation`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/hooks/use-arrow-navigation) | A hook for enabling keyboard arrow navigation between focusable items within a specified element.                         |
-| [`useBodyScrollLock`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/hooks/use-body-scroll-lock)  | A hook to enable and disable `<body>` element scrolling, preventing the content behind a modal or overlay from scrolling. |
+| Hook                                                                                                    | Description                                                                                                                    |
+| :------------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------------------------------------------------------------- |
+| [`useArrowNavigation`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/hooks/use-arrow-navigation) | A hook for enabling keyboard arrow navigation between focusable items within a specified element.                              |
+| [`useBodyScrollLock`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/hooks/use-body-scroll-lock)  | A hook to enable and disable `<body>` element scrolling, preventing the content behind a modal or overlay from scrolling.      |
+| [`useFocusTrap`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/hooks/use-focus-trap)             | A hook for trapping keyboard focus within a given element, offering optional looping and control over initial and final focus. |
