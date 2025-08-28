@@ -37,6 +37,14 @@ Dedicated to enabling intuitive and efficient movement throughout your applicati
 | :----------------------------------------------------------------------------- | :--------------------------------------------- |
 | [`Link`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/link) | Semantic element for navigation between pages. |
 
+## Overlays
+
+Designed to display content on top of an application's primary interface. These components interrupt the main flow to convey important information or require user interaction, ensuring a focused and directed experience.
+
+| Component                                                                          | Description                                                                                                      |
+| :--------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
+| [`Dialog`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/dialog) | A window overlaid on either the primary window or another dialog window, rendering the content underneath inert. |
+
 ## Utilities
 
 Comprising components that offer foundational, non-visual, or assistive functionalities. While not always directly visible, they enhance accessibility, structure, or behavior of other UI elements, being highly versatile for a well-structured and inclusive UI.
