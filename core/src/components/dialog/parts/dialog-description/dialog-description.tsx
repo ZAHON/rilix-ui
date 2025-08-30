@@ -4,8 +4,9 @@ import { Render } from '@/_internal';
 import { useDialogContext } from '../../contexts';
 
 /**
- * An optional accessible description to be announced when the dialog is opened.
- * If you want to remove the description entirely, remove this part and pass `aria-describedby={undefined}` to `Dialog.Content` component.
+ * An optional accessible description to be announced when the dialog is opened. If you want to remove the description
+ * entirely, remove this part and pass `aria-describedby={undefined}` to `Dialog.Content` component,
+ * or pass `ids={{ description: undefined }}` to `Dialog.Root`.
  * Renders a `<p>` element.
  */
 export const DialogDescription = component$<DialogDescriptionProps>((props) => {
