@@ -41,9 +41,10 @@ Dedicated to enabling intuitive and efficient movement throughout your applicati
 
 Designed to display content on top of an application's primary interface. These components interrupt the main flow to convey important information or require user interaction, ensuring a focused and directed experience.
 
-| Component                                                                          | Description                                                                                                      |
-| :--------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
-| [`Dialog`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/dialog) | A window overlaid on either the primary window or another dialog window, rendering the content underneath inert. |
+| Component                                                                                     | Description                                                                                                      |
+| :-------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
+| [`AlertDialog`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/alert-dialog) | A modal dialog that interrupts the user with important content and expects a response.                           |
+| [`Dialog`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/dialog)            | A window overlaid on either the primary window or another dialog window, rendering the content underneath inert. |
 
 ## Utilities
 
