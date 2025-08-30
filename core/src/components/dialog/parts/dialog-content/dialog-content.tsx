@@ -71,7 +71,8 @@ export const DialogContent = component$<DialogContentProps>((props) => {
       } else {
         if (ref.value?.hasAttribute('data-rilix-ui-alert-dialog-content')) {
           const contentRef = ref.value;
-          const alertDialogCancelRef = contentRef?.querySelector<HTMLElement>('[data-rilix-ui-alert-dialog-cancel]');
+          const alertDialogCancelSelector = '[data-rilix-ui-alert-dialog-cancel]:not([data-disabled])';
+          const alertDialogCancelRef = contentRef?.querySelector<HTMLElement>(alertDialogCancelSelector);
 
           if (alertDialogCancelRef) {
             return alertDialogCancelRef;
