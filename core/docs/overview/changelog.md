@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.10.0 (30.08.2025)
+
+### 🚀 Features
+
+- **Add `Dialog` component, a robust and accessible modal window solution.** This component is built on the native `<dialog>` element, which simplifies issues related to z-index and provides accessibility features like focus trapping and scroll locking. Its overlay is based on the Popover API, which provides better control over styling and animations.
+
+- **Add `AlertDialog` component, a robust and accessible modal dialog.** This component is built on the native `<dialog>` element, which simplifies issues related to z-index and provides accessibility features like focus trapping and scroll locking. Its overlay is based on the Popover API for enhanced styling and animation control.
+
+- **Add `useBodyScrollLock` hook for managing body scroll.** This hook provides a centralized and robust way to lock and unlock scrolling on the `<body>` element, which is essential for components like modals and overlays.
+
+- **Add `useFocusTrap` hook for managing keyboard focus.** This hook is essential for accessibility, ensuring that user focus remains contained within a specific element (e.g., a modal or dialog) and can optionally be configured to loop through tabbable elements.
+
 ## 0.9.0 (16.08.2025)
 
 ### 🚨 Breaking Changes
