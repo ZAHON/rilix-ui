@@ -187,21 +187,7 @@
 
 ### 🚀 Features
 
-- Add `Label` component, which renders an accessible label associated with controls.
-
-  ```tsx
-  import { component$ } from '@builder.io/qwik';
-  import { Label } from 'rilix-ui';
-
-  const LabelDemo = component$(() => {
-    return (
-      <>
-        <Label.Root for="first-name">First name</Label.Root>
-        <input id="first-name" type="text" />
-      </>
-    );
-  });
-  ```
+- **Add `Label` component.** A component that renders an accessible label associated with controls.
 
 ## 0.1.0 (02.04.2025)
 
