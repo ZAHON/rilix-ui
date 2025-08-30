@@ -90,6 +90,20 @@ A button that opens the dialog. Renders a `<button>` element.
 | `data-state`    | `"open" \| "closed"` | Indicates whether the dialog is currently open or closed.           |
 | `data-disabled` | `-`                  | Present when the trigger is disabled and cannot be interacted with. |
 
+### Overlay
+
+A layer that covers the inert portion of the view when the dialog is open. Renders a `<div>` element.
+
+| Prop                    | Type                                                                                                                                                              | Default | Description                                                                                                                                                                                                                                                                                   |
+| :---------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `onOpenChangeComplete$` | `QRL<(open: boolean) => void>`                                                                                                                                    | `-`     | A `QRL` callback function invoked after the dialog overlay's open or close animation/transition has fully completed. Use this to react once the overlay has settled in its final open or closed state, regardless of whether it was animated with CSS `animation` or `transition` properties. |
+| `render$`               | `(props: Record<string, unknown>, state: { open: ReadonlySignal<boolean>; presence: ReadonlySignal<"showing" \| "shown" \| "hiding" \| "hidden"> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details.                                                    |
+
+| Data attribute  | Values                                         | Description                                                                                                                                                                                                                |
+| :-------------- | :--------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `data-state`    | `"open" \| "closed"`                           | Indicates whether the dialog is currently open or closed.                                                                                                                                                                  |
+| `data-presence` | `"showing" \| "shown" \| "hiding" \| "hidden"` | Indicates the overlay’s current presence state. Useful for managing animations, as `"showing"` and `"hiding"` are active during the animation, while `"shown"` and `"hidden"` are active once the animation has completed. |
+
 ### Content
 
 Contains content to be rendered in the open dialog. Renders a `<dialog>` element.
@@ -113,20 +127,6 @@ Contains content to be rendered in the open dialog. Renders a `<dialog>` element
 | `data-state`    | `"open" \| "closed"`                           | Indicates whether the dialog is currently open or closed.                                                                                                                                                                  |
 | `data-presence` | `"showing" \| "shown" \| "hiding" \| "hidden"` | Indicates the content’s current presence state. Useful for managing animations, as `"showing"` and `"hiding"` are active during the animation, while `"shown"` and `"hidden"` are active once the animation has completed. |
 
-### Overlay
-
-A layer that covers the inert portion of the view when the dialog is open. Renders a `<div>` element.
-
-| Prop                    | Type                                                                                                                                                              | Default | Description                                                                                                                                                                                                                                                                                   |
-| :---------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `onOpenChangeComplete$` | `QRL<(open: boolean) => void>`                                                                                                                                    | `-`     | A `QRL` callback function invoked after the dialog overlay's open or close animation/transition has fully completed. Use this to react once the overlay has settled in its final open or closed state, regardless of whether it was animated with CSS `animation` or `transition` properties. |
-| `render$`               | `(props: Record<string, unknown>, state: { open: ReadonlySignal<boolean>; presence: ReadonlySignal<"showing" \| "shown" \| "hiding" \| "hidden"> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details.                                                    |
-
-| Data attribute  | Values                                         | Description                                                                                                                                                                                                                |
-| :-------------- | :--------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `data-state`    | `"open" \| "closed"`                           | Indicates whether the dialog is currently open or closed.                                                                                                                                                                  |
-| `data-presence` | `"showing" \| "shown" \| "hiding" \| "hidden"` | Indicates the overlay’s current presence state. Useful for managing animations, as `"showing"` and `"hiding"` are active during the animation, while `"shown"` and `"hidden"` are active once the animation has completed. |
-
 ### Close
 
 A button that closes the dialog. Renders a `<button>` element.
@@ -142,7 +142,7 @@ A button that closes the dialog. Renders a `<button>` element.
 
 ### Title
 
-An accessible title to be announced when the dialog is opened. If you want to remove the title entirely, remove this part and pass `aria-labelledby={undefined}` to `Dialog.Content` component. If you remove the title, ensure you provide a descriptive `aria-label` directly on the `Dialog.Content` component, to provide an accessible label. Renders an `<h2>` element.
+An accessible title to be announced when the dialog is opened. If you want to remove the title entirely, remove this part and pass `aria-labelledby={undefined}` to `Dialog.Content` component, or pass `ids={{ title: undefined }}` to `Dialog.Root`. If you remove the title, ensure you provide a descriptive `aria-label` directly on the `Dialog.Content` component to provide an accessible label. Renders an `<h2>` element.
 
 | Prop      | Type                                                       | Default | Description                                                                                                                                                                                                                                |
 | :-------- | :--------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -150,7 +150,7 @@ An accessible title to be announced when the dialog is opened. If you want to re
 
 ### Description
 
-An optional accessible description to be announced when the dialog is opened. If you want to remove the description entirely, remove this part and pass `aria-describedby={undefined}` to `Dialog.Content` component. Renders a `<p>` element.
+An optional accessible description to be announced when the dialog is opened. If you want to remove the description entirely, remove this part and pass `aria-describedby={undefined}` to `Dialog.Content` component, or pass `ids={{ description: undefined }}` to `Dialog.Root`. Renders a `<p>` element.
 
 | Prop      | Type                                                       | Default | Description                                                                                                                                                                                                                                |
 | :-------- | :--------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -191,7 +191,7 @@ A hook that provides access to the `Dialog.Content` component's internal state. 
 | `loop`                      | `ReadonlySignal<boolean>`                                     | A readonly signal whose value indicates whether the focus trap should have looping behavior. When `true`, focus will cycle from the last to the first tabbable element and vice versa.                                                                                                                                                                                                                                                                                                                             |
 | `scrollToFinalFocus`        | `ReadonlySignal<boolean>`                                     | A readonly signal whose value indicates whether automatic scrolling to the final focused element is enabled.                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `preventScroll`             | `ReadonlySignal<boolean>`                                     | A readonly signal whose value indicates whether scrolling of the page's `<body>` element is prevented when the dialog is open.                                                                                                                                                                                                                                                                                                                                                                                     |
-| `closeOnEscapeKeyDown`      | `ReadonlySignal<boolean>`                                     | A readonly signal whose value indicates whether the dialog can be closed by pressing the `Escape` key.                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `closeOnEscapeKeyDown`      | `ReadonlySignal<boolean>`                                     | A readonly signal whose value indicates whether the dialog can be closed by pressing the <kbd>Esc</kbd> key.                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `closeOnPointerDownOutside` | `ReadonlySignal<boolean>`                                     | A readonly signal whose value indicates whether the dialog can be closed by clicking or tapping outside of the dialog content.                                                                                                                                                                                                                                                                                                                                                                                     |
 
 ### useDialogCloseContext
@@ -254,7 +254,7 @@ const Demo = component$(() => {
 });
 ```
 
-## Initially open
+### Initially open
 
 To render a dialog in an initially open state, you must use the controlled mode with the `open` prop. Since the `Dialog` component uses the native `<dialog>` element, it cannot be rendered as open on the server. This can be achieved by updating the `Dialog.Root` component's `open` boolean signal within a `useOnDocument` hook (specifically for the `DOMContentLoaded` event) or by using a `useVisibleTask$` hook with a strategy like `"document-ready"` or `"document-idle"`. In both cases, the dialog will be visible from the moment the page's content is fully loaded.
 
@@ -636,7 +636,7 @@ const Demo = component$(() => {
 
 By default, the `Dialog`'s subcomponents each render a sensible HTML element. For example, `Dialog.Trigger` renders a `<button>`, and `Dialog.Title` renders an `<h2>`. For a complete overview of these default elements, refer to the [Rendered elements](#rendered-elements) section.
 
-You can customize the underlying HTML element rendered by these subcomponents, or even compose them with your own custom Qwik components, by using the render$ prop. This provides immense flexibility, allowing you to:
+You can customize the underlying HTML element rendered by these subcomponents, or even compose them with your own custom Qwik components, by using the `render$` prop. This provides immense flexibility, allowing you to:
 
 - Replace the default HTML tag with any other valid HTML element that fits your design and semantic needs.
 
@@ -671,6 +671,7 @@ const Demo = component$(() => {
       >
         Open dialog
       </Dialog.Trigger>
+      <Dialog.Overlay />
       <Dialog.Content>
         <Dialog.Title
           render$={(props) => (
@@ -704,3 +705,19 @@ Users can interact with the `Dialog` component efficiently using only a keyboard
 | <kbd>Tab</kbd>         | Moves focus to the next focusable element inside the `Dialog.Content`.                        |
 | <kbd>Shift + Tab</kbd> | Moves focus to the previous focusable element inside the `Dialog.Content`.                    |
 | <kbd>Esc</kbd>         | Closes the dialog and moves focus to `Dialog.Trigger`.                                        |
+
+## Caveats
+
+This section highlights important technical details and specific implementation choices related to the `Dialog` component that might not be immediately obvious. Understanding these nuances can help you use the component more effectively, especially when it comes to customization and advanced use cases.
+
+### Rationale for the `<dialog>` element
+
+The `Dialog.Content` component is based on the native `<dialog>` element to provide a robust solution for creating modal dialogs. This choice was made because Qwik does not support the Portal API, which is common in other frameworks. Instead of relying on a dedicated API, the `<dialog>` element leverages the native top layer behavior in browsers.
+
+This approach ensures that the dialog is automatically rendered on top of the rest of the page content, simplifying issues related to z-index and stacking contexts. By building on native browser specifications, this component reduces the amount of JavaScript that needs to be pre-fetched, which can lead to better performance. You can check the current compatibility for the `<dialog>` element on [Can I Use: dialog element](https://caniuse.com/mdn-html_elements_dialog).
+
+### Rationale for the `Dialog.Overlay` component
+
+The `Dialog.Overlay` component is a crucial part of the dialog's structure, primarily used for styling and animating the backdrop. It offers greater control than the native `::backdrop` CSS pseudo-element, which is available through the `Dialog.Content` component (as it's based on the native `<dialog>` element). The reason for this approach is that native `::backdrop` currently has limited animation support in some browsers, like Firefox.
+
+This implementation leverages the Popover API to create the overlay. This decision was made because modern browser support for the native Popover API is already quite extensive. You can check the current compatibility on [Can I use: Popover API](https://caniuse.com/mdn-api_htmlelement_popover).
