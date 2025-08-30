@@ -29,6 +29,8 @@ const Demo = component$(() => {
 
 Each of `Link`'s subcomponents renders a default HTML element that makes sense for its role. This overview outlines the default element rendered by each part of the component. You can customize this element using the `render$` prop, as shown in the [Rendering different elements](#rendering-different-elements) example.
 
+**While it's possible to change the element rendered by `Link.Root`, for accessibility and correct component functionality, it should always render an `<a>` element.**
+
 | Component   | Default rendered element |
 | :---------- | :----------------------- |
 | `Link.Root` | `<a>`                    |
@@ -104,6 +106,8 @@ You can customize the underlying HTML element rendered by this component, or eve
 - Integrate your own Qwik components, wrapping them with custom styles or behaviors while ensuring the component's core logic and accessibility features remain intact.
 
 When using the `render$` prop, always spread the provided `props` object onto your custom element or component. This ensures all essential attributes are correctly applied, maintaining the component's intended behavior and accessibility.
+
+**While it's possible to change the element rendered by `Link.Root`, for accessibility and correct component functionality, it should always render an `<a>` element.**
 
 ```tsx
 import type { PropsOf } from '@builder.io/qwik';
