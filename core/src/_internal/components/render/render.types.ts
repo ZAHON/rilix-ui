@@ -7,6 +7,7 @@ export type RenderAsTag =
   | 'div'
   | 'h2'
   | 'h3'
+  | 'img'
   | 'label'
   | 'li'
   | 'nav'
