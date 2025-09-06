@@ -10,6 +10,7 @@ Engineered for clear and structured presentation of various content types. These
 | :--------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
 | [`Accordion`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/accordion)       | A vertically stacked set of interactive headings that each reveal an associated section of content. |
 | [`Aspect Ratio`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/aspect-ratio) | Displays content within a desired ratio.                                                            |
+| [`Avatar`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/avatar)             | An image element with a fallback for representing the user.                                         |
 | [`Collapsible`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/collapsible)   | An interactive component which expands/collapses a panel.                                           |
 | [`Separator`](https://github.com/ZAHON/rilix-ui/tree/main/core/src/components/separator)       | Visually or semantically separates content.                                                         |
 
