@@ -11,9 +11,11 @@ import { CollapsibleContext } from '../../contexts';
  * @example
  * ```tsx
  * <Collapsible.Root>
- * 	<Collapsible.Trigger>
- * 		<Collapsible.Indicator />
- * 	</Collapsible.Trigger>
+ * 	<Collapsible.Header>
+ * 		<Collapsible.Trigger>
+ * 			<Collapsible.Indicator />
+ * 		</Collapsible.Trigger>
+ * 	</Collapsible.Header>
  * 	<Collapsible.Panel>
  * 		<Collapsible.Content />
  * 	</Collapsible.Panel>
