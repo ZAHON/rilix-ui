@@ -1,5 +1,5 @@
 import type { CollapsibleRootProps } from './collapsible-root.types';
-import { component$, useId, useComputed$, useContextProvider, Slot } from '@builder.io/qwik';
+import { component$, useId, useComputed$, useConstant, useContextProvider, Slot } from '@builder.io/qwik';
 import { useUncontrolled } from '@/hooks';
 import { Render } from '@/_internal';
 import { CollapsibleContext } from '../../contexts';
@@ -33,10 +33,10 @@ export const CollapsibleRoot = component$<CollapsibleRootProps>((props) => {
   const id = useId();
   const disabled = useComputed$(() => _disabled ?? false);
 
-  const ids = {
+  const ids = useConstant(() => ({
     panel: `rilix-ui-collapsible-panel-${id}`,
     ..._ids,
-  };
+  }));
 
   useContextProvider(CollapsibleContext, { open, setOpen$, disabled, ids });
 
