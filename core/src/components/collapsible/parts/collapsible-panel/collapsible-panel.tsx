@@ -118,6 +118,7 @@ export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
       ref={composeRefs([_ref, ref])}
       id={ids.panel}
       hidden={hidden.value}
+      role="group"
       data-rilix-ui-collapsible-panel
       data-state={open.value ? 'open' : 'closed'}
       data-presence={presence.value}
