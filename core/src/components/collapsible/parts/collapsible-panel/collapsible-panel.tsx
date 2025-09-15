@@ -22,7 +22,8 @@ export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
 
   useTask$(({ track, cleanup }) => {
     const isOpen = track(() => open.value);
-    const panelRef = track(() => ref.value);
+
+    const panelRef = ref.value;
 
     if (isBrowser && panelRef) {
       if (preventInitialAnimation.value) {
