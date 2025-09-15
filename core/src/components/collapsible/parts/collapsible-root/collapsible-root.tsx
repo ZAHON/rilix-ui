@@ -34,6 +34,7 @@ export const CollapsibleRoot = component$<CollapsibleRootProps>((props) => {
   const disabled = useComputed$(() => _disabled ?? false);
 
   const ids = useConstant(() => ({
+    trigger: `rilix-ui-collapsible-trigger-${id}`,
     panel: `rilix-ui-collapsible-panel-${id}`,
     ..._ids,
   }));

@@ -24,6 +24,11 @@ export interface CollapsibleContextValue {
    */
   ids: {
     /**
+     * The unique ID for the collapsible trigger element.
+     */
+    trigger: string;
+
+    /**
      * The unique ID for the collapsible panel element.
      */
     panel: string;

@@ -119,6 +119,7 @@ export const CollapsiblePanel = component$<CollapsiblePanelProps>((props) => {
       id={ids.panel}
       hidden={hidden.value}
       role="group"
+      aria-labelledby={ids.trigger}
       data-rilix-ui-collapsible-panel
       data-state={open.value ? 'open' : 'closed'}
       data-presence={presence.value}

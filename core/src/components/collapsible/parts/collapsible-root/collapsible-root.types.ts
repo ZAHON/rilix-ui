@@ -31,6 +31,12 @@ export interface CollapsibleRootProps extends PropsOf<'div'> {
    */
   ids?: Partial<{
     /**
+     * The ID of the collapsible trigger element.
+     * This ID is used to associate the trigger with its panel for accessibility purposes.
+     */
+    trigger: string;
+
+    /**
      * The unique ID for the collapsible panel element.
      * This ID is used for accessibility to connect the panel with its trigger.
      */

@@ -22,6 +22,7 @@ export const CollapsibleTrigger = component$<CollapsibleTriggerProps>((props) =>
     <Render
       as="button"
       type="button"
+      id={ids.trigger}
       disabled={disabled.value}
       aria-controls={ids.panel}
       aria-expanded={ids.panel ? open.value : undefined}
