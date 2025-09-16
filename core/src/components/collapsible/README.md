@@ -13,7 +13,7 @@ An interactive component which expands/collapses a panel.
 ## Import
 
 ```tsx
-import { Collapsible } from 'rilix-ui';
+import { Collapsible, useCollapsibleContext, useCollapsiblePanelContext } from 'rilix-ui';
 ```
 
 ## Anatomy
@@ -27,9 +27,11 @@ import { Collapsible } from 'rilix-ui';
 const Demo = component$(() => {
   return (
     <Collapsible.Root>
-      <Collapsible.Trigger>
-        <Collapsible.Indicator />
-      </Collapsible.Trigger>
+      <Collapsible.Header>
+        <Collapsible.Trigger>
+          <Collapsible.Indicator />
+        </Collapsible.Trigger>
+      </Collapsible.Header>
       <Collapsible.Panel>
         <Collapsible.Content />
       </Collapsible.Panel>
@@ -45,6 +47,7 @@ Each of `Collapsible`'s subcomponents renders a default HTML element that is sen
 | Component               | Default rendered element |
 | :---------------------- | :----------------------- |
 | `Collapsible.Root`      | `<div>`                  |
+| `Collapsible.Header`    | `<h3>`                   |
 | `Collapsible.Trigger`   | `<button>`               |
 | `Collapsible.Panel`     | `<div>`                  |
 | `Collapsible.Content`   | `<div>`                  |
@@ -72,13 +75,26 @@ Contains all the parts of a collapsible. Renders a `<div>` element.
 | `data-state`    | `"open" \| "closed"` | Indicates whether the collapsible is currently expanded (`"open"`) or collapsed (`"closed"`). |
 | `data-disabled` | `-`                  | Present when the collapsible is disabled and cannot be interacted with.                       |
 
+### Header
+
+Wraps a `Collapsible.Trigger`. Use the `render$` prop to update it to the appropriate heading level for your page. Renders an `<h3>` element.
+
+| Prop      | Type                                                                                                                         | Default | Description                                                                                                                                                                                                                                |
+| :-------- | :--------------------------------------------------------------------------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `render$` | `(props: Record<string, unknown>, state: { open: ReadonlySignal<boolean>; disabled: ReadonlySignal<boolean> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
+
+| Data attribute  | Values               | Description                                                                                   |
+| :-------------- | :------------------- | :-------------------------------------------------------------------------------------------- |
+| `data-state`    | `"open" \| "closed"` | Indicates whether the collapsible is currently expanded (`"open"`) or collapsed (`"closed"`). |
+| `data-disabled` | `-`                  | Present when the collapsible is disabled and cannot be interacted with.                       |
+
 ### Trigger
 
 The button that toggles the collapsible. Renders a `<button>` element.
 
-| Prop      | Type                                                                                                                         | Default | Description                                                                                                                                                                                                                               |
-| :-------- | :--------------------------------------------------------------------------------------------------------------------------- | :------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `render$` | `(props: Record<string, unknown>, state: { open: ReadonlySignal<boolean>; disabled: ReadonlySignal<boolean> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details |
+| Prop      | Type                                                                                                                         | Default | Description                                                                                                                                                                                                                                |
+| :-------- | :--------------------------------------------------------------------------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `render$` | `(props: Record<string, unknown>, state: { open: ReadonlySignal<boolean>; disabled: ReadonlySignal<boolean> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
 
 | Data attribute  | Values               | Description                                                                                   |
 | :-------------- | :------------------- | :-------------------------------------------------------------------------------------------- |
@@ -104,9 +120,9 @@ The expandable and collapsible wrapper for the actual content. Renders a `<div>`
 
 The component that contains the collapsible content. Must be nested inside `Collapsible.Panel`. Renders a `<div>` element.
 
-| Prop      | Type                                                                                                                         | Default | Description                                                                                                                                                                                                                               |
-| :-------- | :--------------------------------------------------------------------------------------------------------------------------- | :------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `render$` | `(props: Record<string, unknown>, state: { open: ReadonlySignal<boolean>; disabled: ReadonlySignal<boolean> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details |
+| Prop      | Type                                                                                                                         | Default | Description                                                                                                                                                                                                                                |
+| :-------- | :--------------------------------------------------------------------------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `render$` | `(props: Record<string, unknown>, state: { open: ReadonlySignal<boolean>; disabled: ReadonlySignal<boolean> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
 
 | Data attribute  | Values               | Description                                                                                   |
 | :-------------- | :------------------- | :-------------------------------------------------------------------------------------------- |
@@ -117,9 +133,9 @@ The component that contains the collapsible content. Must be nested inside `Coll
 
 An optional visual indicator that reflects the collapsible's open or closed state. It typically displays an icon or other visual cue to show the current status. Renders a `<span>` element.
 
-| Prop      | Type                                                                                                                         | Default | Description                                                                                                                                                                                                                               |
-| :-------- | :--------------------------------------------------------------------------------------------------------------------------- | :------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `render$` | `(props: Record<string, unknown>, state: { open: ReadonlySignal<boolean>; disabled: ReadonlySignal<boolean> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details |
+| Prop      | Type                                                                                                                         | Default | Description                                                                                                                                                                                                                                |
+| :-------- | :--------------------------------------------------------------------------------------------------------------------------- | :------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `render$` | `(props: Record<string, unknown>, state: { open: ReadonlySignal<boolean>; disabled: ReadonlySignal<boolean> }) => JSXOutput` | `-`     | Allows you to replace the component’s HTML element with a different tag, or compose it with another component. Read our [Composition](https://github.com/ZAHON/rilix-ui/blob/main/core/docs/guides/composition.md) guide for more details. |
 
 | Data attribute  | Values               | Description                                                                                   |
 | :-------------- | :------------------- | :-------------------------------------------------------------------------------------------- |
@@ -159,7 +175,9 @@ import { Collapsible } from 'rilix-ui';
 const Demo = component$(() => {
   return (
     <Collapsible.Root defaultOpen={false}>
-      <Collapsible.Trigger>What is Rilix UI?</Collapsible.Trigger>
+      <Collapsible.Header>
+        <Collapsible.Trigger>What is Rilix UI?</Collapsible.Trigger>
+      </Collapsible.Header>
       <Collapsible.Panel>
         <Collapsible.Content>
           A collection of accessible, unstyled components, hooks, and utilities for Qwik applications.
@@ -183,7 +201,9 @@ const Demo = component$(() => {
 
   return (
     <Collapsible.Root open={isOpen} onOpenChange$={(open) => (isOpen.value = open)}>
-      <Collapsible.Trigger>What is Rilix UI?</Collapsible.Trigger>
+      <Collapsible.Header>
+        <Collapsible.Trigger>What is Rilix UI?</Collapsible.Trigger>
+      </Collapsible.Header>
       <Collapsible.Panel>
         <Collapsible.Content>
           A collection of accessible, unstyled components, hooks, and utilities for Qwik applications.
@@ -210,7 +230,9 @@ const Demo = component$(() => {
 
   return (
     <Collapsible.Root>
-      <Collapsible.Trigger>What is Rilix UI?</Collapsible.Trigger>
+      <Collapsible.Header>
+        <Collapsible.Trigger>What is Rilix UI?</Collapsible.Trigger>
+      </Collapsible.Header>
       <Collapsible.Panel class="collapsible-panel">
         <Collapsible.Content>
           A collection of accessible, unstyled components, hooks, and utilities for Qwik applications.
@@ -265,7 +287,9 @@ const Demo = component$(() => {
 
   return (
     <Collapsible.Root>
-      <Collapsible.Trigger>What is Rilix UI?</Collapsible.Trigger>
+      <Collapsible.Header>
+        <Collapsible.Trigger>What is Rilix UI?</Collapsible.Trigger>
+      </Collapsible.Header>
       <Collapsible.Panel class="collapsible-panel">
         <Collapsible.Content>
           A collection of accessible, unstyled components, hooks, and utilities for Qwik applications.
@@ -296,28 +320,30 @@ const Demo = component$(() => {
 
   return (
     <Collapsible.Root>
-      <Collapsible.Trigger>
-        What is Rilix UI?
-        <Collapsible.Indicator class="collapsible-indicator">
-          <svg
-            aria-hidden="true"
-            focusable="false"
-            width="15"
-            height="15"
-            viewBox="0 0 15 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="collapsible-indicator-icon"
-          >
-            <path
-              d="M8.84182 3.13514C9.04327 3.32401 9.05348 3.64042 8.86462 3.84188L5.43521 7.49991L8.86462 11.1579C9.05348 11.3594 9.04327 11.6758 8.84182 11.8647C8.64036 12.0535 8.32394 12.0433 8.13508 11.8419L4.38508 7.84188C4.20477 7.64955 4.20477 7.35027 4.38508 7.15794L8.13508 3.15794C8.32394 2.95648 8.64036 2.94628 8.84182 3.13514Z"
-              fill="currentColor"
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-            />
-          </svg>
-        </Collapsible.Indicator>
-      </Collapsible.Trigger>
+      <Collapsible.Header>
+        <Collapsible.Trigger>
+          What is Rilix UI?
+          <Collapsible.Indicator class="collapsible-indicator">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              width="15"
+              height="15"
+              viewBox="0 0 15 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="collapsible-indicator-icon"
+            >
+              <path
+                d="M8.84182 3.13514C9.04327 3.32401 9.05348 3.64042 8.86462 3.84188L5.43521 7.49991L8.86462 11.1579C9.05348 11.3594 9.04327 11.6758 8.84182 11.8647C8.64036 12.0535 8.32394 12.0433 8.13508 11.8419L4.38508 7.84188C4.20477 7.64955 4.20477 7.35027 4.38508 7.15794L8.13508 3.15794C8.32394 2.95648 8.64036 2.94628 8.84182 3.13514Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </Collapsible.Indicator>
+        </Collapsible.Trigger>
+      </Collapsible.Header>
       <Collapsible.Panel>
         <Collapsible.Content>
           A collection of accessible, unstyled components, hooks, and utilities for Qwik applications.
@@ -336,7 +362,7 @@ const Demo = component$(() => {
 
 ### Rendering different elements
 
-By default, `Collapsible`'s subcomponents each render a sensible HTML element. For example, `Collapsible.Trigger` renders a `<button>`, and `Collapsible.Content` renders a `<div>`. For a complete overview of these default elements, refer to the [Rendered elements](#rendered-elements) section.
+By default, each of `Collapsible`'s subcomponents renders a sensible HTML element, such as a `<button>` for `Collapsible.Trigger`, an `<h3>` for `Collapsible.Header`, or a `<div>` for `Collapsible.Content`. For a complete overview of these default elements, refer to the [Rendered elements](#rendered-elements) section.
 
 You can customize the underlying HTML element rendered by these subcomponents, or even compose them with your own custom Qwik components, by using the `render$` prop. This provides immense flexibility, allowing you to:
 
@@ -362,15 +388,23 @@ const MyCustomButton = component$<PropsOf<'button'>>((props) => {
 const Demo = component$(() => {
   return (
     <Collapsible.Root>
-      <Collapsible.Trigger
+      <Collapsible.Header
         render$={(props) => (
-          <MyCustomButton {...props}>
+          <h2 {...props}>
             <Slot />
-          </MyCustomButton>
+          </h2>
         )}
       >
-        What languages do you support?
-      </Collapsible.Trigger>
+        <Collapsible.Trigger
+          render$={(props) => (
+            <MyCustomButton {...props}>
+              <Slot />
+            </MyCustomButton>
+          )}
+        >
+          What languages do you support?
+        </Collapsible.Trigger>
+      </Collapsible.Header>
       <Collapsible.Panel>
         <Collapsible.Content
           render$={(props) => (
