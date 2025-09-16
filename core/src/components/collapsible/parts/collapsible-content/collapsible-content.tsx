@@ -13,13 +13,13 @@ export const CollapsibleContent = component$<CollapsibleContentProps>((props) =>
   const { style, ...others } = props;
 
   const { open, disabled } = useCollapsibleContext();
-  const { isContentOverflowHidden } = useCollapsiblePanelContext();
+  const { state, isContentOverflowHidden } = useCollapsiblePanelContext();
 
   return (
     <Render
       as="div"
       data-rilix-ui-collapsible-content
-      data-state={open.value ? 'open' : 'closed'}
+      data-state={state.value}
       data-disabled={disabled.value ? '' : undefined}
       style={combineStyle({ overflow: isContentOverflowHidden.value ? 'hidden' : undefined }, style)}
       state={{ open, disabled }}
