@@ -1,5 +1,5 @@
 import type { AccordionItemProps } from './accordion-item.types';
-import { component$, useId, useComputed$, useContextProvider, Slot } from '@builder.io/qwik';
+import { component$, useId, useComputed$, useConstant, useContextProvider, Slot } from '@builder.io/qwik';
 import { Render } from '@/_internal';
 import { useAccordionContext, AccordionItemContext } from '../../contexts';
 
@@ -17,11 +17,11 @@ export const AccordionItem = component$<AccordionItemProps>((props) => {
   const open = useComputed$(() => rootValue.value.includes(_value));
   const disabled = useComputed$(() => (rootDisabled.value || _disabled) ?? false);
 
-  const ids = {
+  const ids = useConstant(() => ({
     trigger: `rilix-ui-accordion-item-trigger-${id}`,
     panel: `rilix-ui-accordion-item-panel-${id}`,
     ..._ids,
-  };
+  }));
 
   useContextProvider(AccordionItemContext, { value, open, disabled, ids });
 
