@@ -51,23 +51,25 @@ export const AccordionItemPanel = component$<AccordionItemPanelProps>((props) =>
           }, 0);
         }
 
+        presence.value = 'showing';
         panelRef.setAttribute('data-presence', 'showing');
       } else {
         isContentOverflowHidden.value = true;
 
+        presence.value = 'hiding';
         panelRef.setAttribute('data-presence', 'hiding');
       }
 
       const applyFinalState = () => {
         if (isOpen) {
-          presence.value = 'shown';
           isContentOverflowHidden.value = false;
 
+          presence.value = 'shown';
           panelRef.setAttribute('data-presence', 'shown');
         } else {
           hidden.value = true;
-          presence.value = 'hidden';
 
+          presence.value = 'hidden';
           panelRef.setAttribute('data-presence', 'hidden');
         }
 
