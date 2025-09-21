@@ -39,7 +39,11 @@ export const AccordionItemPanel = component$<AccordionItemPanelProps>((props) =>
         const { animationDuration, transitionDuration } = getComputedStyle(panelRef);
 
         if (animationDuration === '0s' && transitionDuration !== '0s') {
-          panelRef.style.setProperty('display', 'grid');
+          // The use of `!important` is necessary to override the default `display: none !important;`
+          // styles set by Tailwind CSS's Preflight. This allows us to control the panel's visibility
+          // using `grid-template-rows` and correctly animate its height when opening.
+          // https://github.com/tailwindlabs/tailwindcss/blob/cd154a4f471e7a63cc27cad15dada650de89d52b/packages/tailwindcss/preflight.css#L320-L326
+          panelRef.style.setProperty('display', 'grid', 'important');
           panelRef.style.setProperty('grid-template-rows', '0fr');
 
           setTimeout(() => {
