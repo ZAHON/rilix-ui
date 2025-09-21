@@ -1,7 +1,7 @@
 import type { AccordionRootProps } from './accordion-root.types';
 import { component$, useSignal, useComputed$, useTask$, $, useContextProvider, Slot } from '@builder.io/qwik';
 import { isDev, isBrowser } from '@builder.io/qwik/build';
-import { composeRefs } from '@/utilities';
+import { composeRefs, combineStyle } from '@/utilities';
 import { useUncontrolled, useArrowNavigation } from '@/hooks';
 import { error, Render } from '@/_internal';
 import { AccordionContext } from '../../contexts';
@@ -40,6 +40,7 @@ export const AccordionRoot = component$<AccordionRootProps>((props) => {
     dir: _dir,
     orientation: _orientation,
     onFocusIn$,
+    style,
     ...others
   } = props;
 
@@ -135,6 +136,22 @@ export const AccordionRoot = component$<AccordionRootProps>((props) => {
       data-disabled={disabled.value ? '' : undefined}
       data-orientation={orientation.value}
       onFocusIn$={[onFocusIn$, handleFocusIn$]}
+      style={combineStyle(
+        {
+          // Performance optimization
+          // The `contain: layout style;` CSS property is used here to improve rendering performance.
+          // `contain: layout;` tells the browser that the internal layout of this component
+          // is self-contained and does not affect the layout of elements outside of it. This prevents
+          // costly re-calculations of the entire page layout when the accordion item panel
+          // expands or collapses, which is especially beneficial during animations.
+          // `contain: style;` ensures that CSS properties that can affect the rest of the page,
+          // such as counters, are isolated to this element.
+          // Together, these properties create a performance "bubble," allowing the browser to optimize
+          // rendering by treating the accordion component as an independent unit.
+          contain: 'layout style',
+        },
+        style
+      )}
       state={{ value, disabled }}
       defaultRender$={(props) => (
         <div {...props}>
