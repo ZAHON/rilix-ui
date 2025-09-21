@@ -214,11 +214,11 @@ const Demo = component$(() => {
 });
 ```
 
-### Animating panel height with animations
-
-While CSS animations (`@keyframes`) can be used to control the `Collapsible.Panel`'s expansion and collapse, transitions are generally recommended for animating panel height. This is because transitions offer smoother cancellation mid-way through an animation. For example, if a user quickly opens and then closes the collapsible before it fully expands, a transition would allow it to smoothly animate back to its closed state without any abrupt jumps, unlike some CSS animation implementations.
+### Animating panel height with CSS animations
 
 To animate the panel's height with CSS animations, you can use the `grid-template-rows` CSS property with `0fr` (for closed) and `1fr` (for open) values. This approach allows for fluid size changes of the panel. Define your desired animation using CSS `@keyframes` and apply them to the `Collapsible.Panel` based on its `data-state` attribute, which dynamically changes between `"open"` and `"closed"`.
+
+While CSS animations (`@keyframes`) can be used to control the `Collapsible.Panel`'s expansion and collapse, transitions are generally recommended for animating panel height. This is because transitions offer smoother cancellation mid-way through an animation. For example, if a user quickly opens and then closes the collapsible before it fully expands, a transition would allow it to smoothly animate back to its closed state without any abrupt jumps, unlike some CSS animation implementations.
 
 ```tsx
 import { component$, useStyles$ } from '@builder.io/qwik';
@@ -271,11 +271,11 @@ const Demo = component$(() => {
 }
 ```
 
-### Animating panel height with transitions
-
-Transitions are the recommended method for animating the `Collapsible.Panel`'s height, especially because they allow for smooth cancellation mid-way through an animation. For example, if a user quickly opens and then closes the collapsible before it fully expands, a transition will smoothly animate it back to its closed state without any abrupt jumps.
+### Animating panel height with CSS transitions
 
 To animate the panel's height using CSS transitions, simply apply a `transition` property to the `Collapsible.Panel`. The changes to the `grid-template-rows` property are handled automatically by the component's internal logic, ensuring a fluid and responsive animation experience without the need for additional CSS rules based on data attributes. This approach simplifies your styling, allowing you to focus on defining the transition properties, such as duration and easing, while the component takes care of the rest.
+
+Transitions are the recommended method for animating the `Collapsible.Panel`'s height, especially because they allow for smooth cancellation mid-way through an animation. For example, if a user quickly opens and then closes the collapsible before it fully expands, a transition will smoothly animate it back to its closed state without any abrupt jumps.
 
 ```tsx
 import { component$, useStyles$ } from '@builder.io/qwik';
