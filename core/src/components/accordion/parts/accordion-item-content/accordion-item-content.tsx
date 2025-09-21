@@ -14,13 +14,13 @@ export const AccordionItemContent = component$<AccordionItemContentProps>((props
 
   const { orientation } = useAccordionContext();
   const { open, disabled } = useAccordionItemContext();
-  const { isContentOverflowHidden } = useAccordionItemPanelContext();
+  const { state, isContentOverflowHidden } = useAccordionItemPanelContext();
 
   return (
     <Render
       as="div"
       data-rilix-ui-accordion-item-content
-      data-state={open.value ? 'open' : 'closed'}
+      data-state={state.value}
       data-disabled={disabled.value ? '' : undefined}
       data-orientation={orientation.value}
       style={combineStyle({ overflow: isContentOverflowHidden.value ? 'hidden' : undefined }, style)}

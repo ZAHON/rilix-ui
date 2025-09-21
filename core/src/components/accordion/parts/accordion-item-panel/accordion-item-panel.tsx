@@ -17,6 +17,7 @@ export const AccordionItemPanel = component$<AccordionItemPanelProps>((props) =>
 
   const ref = useSignal<HTMLElement | undefined>(undefined);
   const hidden = useSignal(!open.value);
+  const state = useSignal<'open' | 'closed'>(open.value ? 'open' : 'closed');
   const presence = useSignal<'showing' | 'shown' | 'hiding' | 'hidden'>(open.value ? 'shown' : 'hidden');
   const isContentOverflowHidden = useSignal(!open.value);
   const preventInitialAnimation = useSignal(true);
@@ -51,10 +52,16 @@ export const AccordionItemPanel = component$<AccordionItemPanelProps>((props) =>
           }, 0);
         }
 
+        state.value = 'open';
+        panelRef.setAttribute('data-state', 'open');
+
         presence.value = 'showing';
         panelRef.setAttribute('data-presence', 'showing');
       } else {
         isContentOverflowHidden.value = true;
+
+        state.value = 'closed';
+        panelRef.setAttribute('data-state', 'closed');
 
         presence.value = 'hiding';
         panelRef.setAttribute('data-presence', 'hiding');
@@ -113,7 +120,7 @@ export const AccordionItemPanel = component$<AccordionItemPanelProps>((props) =>
     }
   });
 
-  useContextProvider(AccordionItemPanelContext, { presence, isContentOverflowHidden });
+  useContextProvider(AccordionItemPanelContext, { state, presence, isContentOverflowHidden });
 
   return (
     <Render
@@ -124,7 +131,7 @@ export const AccordionItemPanel = component$<AccordionItemPanelProps>((props) =>
       hidden={hidden.value}
       aria-labelledby={ids.trigger}
       data-rilix-ui-accordion-item-panel
-      data-state={open.value ? 'open' : 'closed'}
+      data-state={state.value}
       data-presence={presence.value}
       data-disabled={disabled.value ? '' : undefined}
       data-orientation={orientation.value}
