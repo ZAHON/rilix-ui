@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.11.0 (23.09.2025)
+
+### 🐞 Bug Fixes
+
+- **Fix `Collapsible.Panel` animation and state.** Solves an issue where the animation for the component was not working correctly due to a conflict with Tailwind CSS. Additionally, it addresses a problem where the `presence` signal was not being updated at the start of the animation, ensuring the internal state accurately reflects the component's visual phase.
+
+- **Fix `Accordion.ItemPanel` animation and state.** This update addresses a conflict with Tailwind CSS that caused the component's animation to fail. It also ensures the `presence` signal is properly updated at the start of the animation, guaranteeing the internal state accurately reflects the component's visual phase.
+
+### 🚀 Features
+
+- **Add `Avatar` component.** Introduces a new `Avatar` component for displaying user representations. This component includes image rendering capabilities and a fallback mechanism. It offers control over image loading strategies and integrates seamlessly with other elements for enhanced functionality.
+
+- **Enhance `Collapsible` component with improved functionality, accessibility, and performance.**
+
+  - **Add `Collapsible.Header` component:** A new sub-component that semantically wraps the trigger, allowing for better document structure and improved screen reader navigation.
+
+  - **Add `role="group"`:** The `Collapsible.Panel` component now has `role="group"` to correctly identify its content for assistive technologies.
+
+  - **Connect trigger and panel:** Adds a unique `id` to the trigger and sets the `aria-labelledby` attribute on the panel. This creates a clear programmatic relationship between the two elements. Additionally, the `Collapsible.Root` component now supports an optional `ids.trigger` prop.
+
+  - **Sync `Collapsible.Content` with panel state**: The `data-state` attribute on the `Collapsible.Content` component now accurately reflects the state of the parent `Collapsible.Panel` component. This ensures consistent state information for styling.
+
+  - **Optimize `Collapsible.Root` performance:** Implemented `contain: layout style;` CSS property to isolate the component's rendering. This prevents costly page re-layouts during animations and improves overall performance.
+
+- **Enhance `Accordion` component with improved functionality and performance.**
+
+  - **Optimize `Accordion.Root` performance:** Implemented `contain: layout style;` CSS property to isolate the component's rendering. This prevents costly page re-layouts during animations and improves overall performance.
+
+  - **Sync `Accordion.ItemContent` with panel state:** The data-state attribute on the `Accordion.ItemContent` component now accurately reflects the state of the parent `Accordion.ItemPanel` component. This ensures consistent state information for styling.
+
 ## 0.10.0 (30.08.2025)
 
 ### 🚀 Features
