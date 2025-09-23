@@ -1,5 +1,5 @@
 import type { DialogRootProps } from './dialog-root.types';
-import { component$, useId, useSignal, useContextProvider, Slot } from '@builder.io/qwik';
+import { component$, useId, useSignal, useConstant, useContextProvider, Slot } from '@builder.io/qwik';
 import { isDev, isServer } from '@builder.io/qwik/build';
 import { useUncontrolled } from '@/hooks';
 import { error } from '@/_internal';
@@ -35,12 +35,12 @@ export const DialogRoot = component$<DialogRootProps>((props) => {
   const id = useId();
   const triggerRef = useSignal<HTMLElement | undefined>(undefined);
 
-  const ids = {
+  const ids = useConstant(() => ({
     content: `rilix-ui-dialog-content-${id}`,
     title: `rilix-ui-dialog-title-${id}`,
     description: `rilix-ui-dialog-description-${id}`,
     ..._ids,
-  };
+  }));
 
   if (isDev && isServer && open.value) {
     error(
