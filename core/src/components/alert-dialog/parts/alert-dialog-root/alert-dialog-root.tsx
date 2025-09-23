@@ -1,5 +1,5 @@
 import type { AlertDialogRootProps } from './alert-dialog-root.types';
-import { component$, useId, Slot } from '@builder.io/qwik';
+import { component$, useId, useConstant, Slot } from '@builder.io/qwik';
 import { isDev, isServer } from '@builder.io/qwik/build';
 import { error } from '@/_internal';
 import { DialogRoot } from '@/components/dialog/parts/dialog-root';
@@ -27,12 +27,12 @@ export const AlertDialogRoot = component$<AlertDialogRootProps>((props) => {
 
   const id = useId();
 
-  const ids = {
+  const ids = useConstant(() => ({
     content: `rilix-ui-alert-dialog-content-${id}`,
     title: `rilix-ui-alert-dialog-title-${id}`,
     description: `rilix-ui-alert-dialog-description-${id}`,
     ..._ids,
-  };
+  }));
 
   if (isDev && isServer && (defaultOpen || open?.value)) {
     error(
